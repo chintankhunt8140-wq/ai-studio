@@ -94,26 +94,30 @@ export class BaseVeoVideoProvider implements IVideoProvider {
 
     const fullPrompt = promptSegments.join('. ');
 
-    const generatePayload: any = {
-      model: this.model,
+    const source: any = {
       prompt: fullPrompt,
-      config: {
-        numberOfVideos: 1,
-        resolution: this.resolution,
-        aspectRatio: veoAspectRatio,
-      },
     };
 
     // If reference image exists, pass it for visual conditioning
     if (referenceImage?.dataUrl) {
       const match = referenceImage.dataUrl.match(/^data:([^;]+);base64,(.+)$/);
       if (match) {
-        generatePayload.image = {
+        source.image = {
           imageBytes: match[2],
           mimeType: match[1] || 'image/png',
         };
       }
     }
+
+    const generatePayload: any = {
+      model: this.model,
+      source,
+      config: {
+        numberOfVideos: 1,
+        resolution: this.resolution,
+        aspectRatio: veoAspectRatio,
+      },
+    };
 
     let operation: any;
     try {

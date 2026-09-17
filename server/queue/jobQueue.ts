@@ -33,6 +33,44 @@ class BackgroundJobQueue {
   private idempotencyCache: Map<string, { jobId: string; timestamp: number }> = new Map();
   private rapidSubmissionCache: Map<string, { jobId: string; timestamp: number }> = new Map();
 
+  constructor() {
+    this.recoverOrphanedJobs();
+  }
+
+  private recoverOrphanedJobs(): void {
+    try {
+      const jobs = store.getAllJobs();
+      let resumed = 0;
+      let reconciled = 0;
+      for (const job of jobs) {
+        if (['analyzing', 'planning', 'generating', 'finalizing'].includes(job.status)) {
+          job.status = 'failed';
+          job.error = 'Job interrupted by server restart. You may click Retry to resume synthesis.';
+          job.currentStepMessage = 'Interrupted by server restart';
+          job.updatedAt = Date.now();
+          job.logs.push({
+            timestamp: Date.now(),
+            step: 'failed',
+            message: 'Server process restarted while job was in-flight. State cleanly reconciled.',
+          });
+          store.setJob(job);
+          reconciled++;
+        } else if (['created', 'queued'].includes(job.status)) {
+          this.processingQueue.push(job.id);
+          resumed++;
+        }
+      }
+      if (reconciled > 0 || resumed > 0) {
+        console.log(`[JobQueue Startup] Recovered jobs from persistent store: ${resumed} resumed, ${reconciled} reconciled.`);
+      }
+      if (this.processingQueue.length > 0) {
+        this.triggerWorker();
+      }
+    } catch (err) {
+      console.warn('[JobQueue Startup] Error during startup job recovery:', err);
+    }
+  }
+
   public createJob(params: {
     userId: string;
     userName: string;

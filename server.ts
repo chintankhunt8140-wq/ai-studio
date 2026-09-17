@@ -7,6 +7,7 @@ import { queue } from './server/queue/jobQueue';
 import { planCreativeGeneration } from './server/ai/brain';
 import { ASSETS_DIR, GENERATED_DIR, UPLOADS_DIR } from './server/services/storageService';
 import { AspectRatio, GenerationMode } from './src/types';
+import { brainEnhanceLimiter, jobCreateLimiter } from './server/middleware/rateLimiter';
 
 const VALID_MODES: GenerationMode[] = ['image', 'video'];
 const VALID_ASPECT_RATIOS: AspectRatio[] = ['16:9', '9:16', '1:1', '4:3', '3:4', '21:9'];
@@ -29,6 +30,17 @@ function sanitizeErrorMessage(err: any): string {
 async function startServer() {
   const app = express();
   const PORT = 3000;
+
+  // Security hardening: hide Express fingerprint
+  app.disable('x-powered-by');
+
+  // Security headers middleware
+  app.use((req, res, next) => {
+    res.setHeader('X-Content-Type-Options', 'nosniff');
+    res.setHeader('X-XSS-Protection', '1; mode=block');
+    res.setHeader('Referrer-Policy', 'strict-origin-when-cross-origin');
+    next();
+  });
 
   // Support JSON payloads with base64 images up to 25mb
   app.use(express.json({ limit: '25mb' }));
@@ -65,7 +77,7 @@ async function startServer() {
   });
 
   // AI Brain: Standalone Instant Prompt Enhancement
-  app.post('/api/brain/enhance', async (req: Request, res: Response) => {
+  app.post('/api/brain/enhance', brainEnhanceLimiter, async (req: Request, res: Response) => {
     try {
       const { mode = 'image', rawPrompt, referenceImage, aspectRatio = '16:9', videoMotion } = req.body;
       const userId = extractUserId(req);
@@ -106,7 +118,7 @@ async function startServer() {
   });
 
   // Background Generation Jobs
-  app.post('/api/jobs/create', (req: Request, res: Response) => {
+  app.post('/api/jobs/create', jobCreateLimiter, (req: Request, res: Response) => {
     try {
       const {
         mode = 'image',
