@@ -1,0 +1,6 @@
+{
+  "name": "AI Studio",
+  "description": "Production-ready AI creative generation studio creating high-fidelity images and 10-second cinematic videos with intelligent AI Brain prompt enhancement and reference image preservation.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

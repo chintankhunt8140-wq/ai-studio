@@ -1,0 +1,700 @@
+{
+  "users": [
+    {
+      "id": "user_creator_1",
+      "name": "Creative Director",
+      "email": "director@aistudio.internal",
+      "role": "creator",
+      "avatarColor": "from-violet-500 to-indigo-600",
+      "stats": {
+        "imagesGenerated": 1,
+        "videosGenerated": 1,
+        "totalRenderSeconds": 16,
+        "promptEnhancements": 2
+      }
+    },
+    {
+      "id": "user_artist_2",
+      "name": "Concept Artist",
+      "email": "artist@aistudio.internal",
+      "role": "creator",
+      "avatarColor": "from-amber-500 to-rose-600",
+      "stats": {
+        "imagesGenerated": 0,
+        "videosGenerated": 0,
+        "totalRenderSeconds": 0,
+        "promptEnhancements": 0
+      }
+    },
+    {
+      "id": "user_admin_root",
+      "name": "Studio Admin",
+      "email": "admin@aistudio.internal",
+      "role": "admin",
+      "avatarColor": "from-emerald-500 to-teal-600",
+      "stats": {
+        "imagesGenerated": 0,
+        "videosGenerated": 0,
+        "totalRenderSeconds": 0,
+        "promptEnhancements": 0
+      }
+    }
+  ],
+  "creations": [
+    {
+      "id": "asset_1789551082598_7c4128",
+      "userId": "user_creator_1",
+      "userName": "Creative Director",
+      "mode": "video",
+      "status": "completed",
+      "originalPrompt": "Futuristic hovercraft racing across desert salt flats at dusk",
+      "enhancedPrompt": "Futuristic hovercraft racing across desert salt flats at dusk, Cyberpunk neo-noir cinematic realism, shot on 35mm master lens, Bioluminescent neon ambient reflections, diffused fog, wet street specularities, Low-angle hero perspective with towering architectural vanishing lines, High fidelity with intricate micro-textures, specular highlights, and natural physics, photorealistic, ultra-detailed 8k resolution, masterful color grading.",
+      "aiPlan": {
+        "originalPrompt": "Futuristic hovercraft racing across desert salt flats at dusk",
+        "enhancedPrompt": "Futuristic hovercraft racing across desert salt flats at dusk, Cyberpunk neo-noir cinematic realism, shot on 35mm master lens, Bioluminescent neon ambient reflections, diffused fog, wet street specularities, Low-angle hero perspective with towering architectural vanishing lines, High fidelity with intricate micro-textures, specular highlights, and natural physics, photorealistic, ultra-detailed 8k resolution, masterful color grading.",
+        "intent": "Evocative 10-second visual cinematic experience capturing \"Futuristic hovercraft racing across desert salt flats at dusk\"",
+        "visualStyle": "Cyberpunk neo-noir cinematic realism",
+        "composition": "Low-angle hero perspective with towering architectural vanishing lines",
+        "subjectDetails": "High fidelity with intricate micro-textures, specular highlights, and natural physics",
+        "lighting": "Bioluminescent neon ambient reflections, diffused fog, wet street specularities",
+        "colorPalette": [
+          "#0f172a",
+          "#3b82f6",
+          "#06b6d4",
+          "#f8fafc"
+        ],
+        "referencePreservation": [],
+        "negativeConstraints": "blurry, noise, low resolution, oversaturated, deformed proportions, plastic skin, artifacts, stuttering motion, watermarks",
+        "videoPlan": {
+          "cameraMovement": "Steadicam tracking shot with smooth linear motion",
+          "subjectMotion": "Organic, fluid kinematics with natural momentum",
+          "environmentMotion": "Atmospheric particles, soft breeze dynamics, shifting specular reflections",
+          "speed": "medium",
+          "cinematicDirection": "24fps cinematic motion blur, temporal cohesion across 10 seconds, seamless continuity",
+          "durationSeconds": 10,
+          "timelineKeyframes": [
+            "00:00 - 00:02: Establishing initial framing with fluid camera ingress",
+            "00:02 - 00:05: Subject motion accelerates with secondary particle dynamics",
+            "00:05 - 00:08: Dynamic lighting shift revealing intricate material textures",
+            "00:08 - 00:10: Graceful deceleration framing final hero composition"
+          ]
+        }
+      },
+      "mediaUrl": "/assets/generated/studio_10s_job_1789551072402_1d8adcef.mp4",
+      "thumbnailUrl": "/assets/generated/studio_10s_job_1789551072402_1d8adcef.mp4",
+      "aspectRatio": "16:9",
+      "durationSeconds": 10,
+      "fileSizeBytes": 351696,
+      "mimeType": "video/mp4",
+      "provider": "studio-cinematic-engine-10s",
+      "createdAt": 1789551072403,
+      "completedAt": 1789551082598,
+      "isFavorite": false,
+      "metadata": {
+        "renderTimeMs": 10195,
+        "model": "studio-cinematic-engine-v2",
+        "resolution": "1280x720",
+        "fps": 24
+      }
+    },
+    {
+      "id": "asset_1789550689155_82a551",
+      "userId": "user_creator_1",
+      "userName": "Creative Director",
+      "mode": "image",
+      "status": "completed",
+      "originalPrompt": "Futuristic flying vehicle gliding through rainy neon metropolis",
+      "enhancedPrompt": "Futuristic flying vehicle gliding through rainy neon metropolis, Cyberpunk neo-noir cinematic realism, shot on 35mm master lens, Bioluminescent neon ambient reflections, diffused fog, wet street specularities, Low-angle hero perspective with towering architectural vanishing lines, High fidelity with intricate micro-textures, specular highlights, and natural physics, photorealistic, ultra-detailed 8k resolution, masterful color grading.",
+      "aiPlan": {
+        "originalPrompt": "Futuristic flying vehicle gliding through rainy neon metropolis",
+        "enhancedPrompt": "Futuristic flying vehicle gliding through rainy neon metropolis, Cyberpunk neo-noir cinematic realism, shot on 35mm master lens, Bioluminescent neon ambient reflections, diffused fog, wet street specularities, Low-angle hero perspective with towering architectural vanishing lines, High fidelity with intricate micro-textures, specular highlights, and natural physics, photorealistic, ultra-detailed 8k resolution, masterful color grading.",
+        "intent": "Evocative high-resolution creative image capturing \"Futuristic flying vehicle gliding through rainy neon metropolis\"",
+        "visualStyle": "Cyberpunk neo-noir cinematic realism",
+        "composition": "Low-angle hero perspective with towering architectural vanishing lines",
+        "subjectDetails": "High fidelity with intricate micro-textures, specular highlights, and natural physics",
+        "lighting": "Bioluminescent neon ambient reflections, diffused fog, wet street specularities",
+        "colorPalette": [
+          "#0f172a",
+          "#3b82f6",
+          "#06b6d4",
+          "#f8fafc"
+        ],
+        "referencePreservation": [],
+        "negativeConstraints": "blurry, noise, low resolution, oversaturated, deformed proportions, plastic skin, artifacts, stuttering motion, watermarks"
+      },
+      "mediaUrl": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjgwIDcyMCIgd2lkdGg9IjEyODAiIGhlaWdodD0iNzIwIj4KICA8ZGVmcz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iYmdHcmFkIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIxMDAlIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzBmMTcyYSIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjUwJSIgc3RvcC1jb2xvcj0iIzNiODJmNiIgc3RvcC1vcGFjaXR5PSIwLjg1Ii8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzA2YjZkNCIgc3RvcC1vcGFjaXR5PSIwLjk1Ii8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogICAgPHJhZGlhbEdyYWRpZW50IGlkPSJzdW5HbG93IiBjeD0iNTAlIiBjeT0iNDAlIiByPSI2MCUiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjZjhmYWZjIiBzdG9wLW9wYWNpdHk9IjAuNDUiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSI0MCUiIHN0b3AtY29sb3I9IiMwNmI2ZDQiIHN0b3Atb3BhY2l0eT0iMC4yNSIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwZjE3MmEiIHN0b3Atb3BhY2l0eT0iMCIvPgogICAgPC9yYWRpYWxHcmFkaWVudD4KICAgIDxmaWx0ZXIgaWQ9ImJsdXJGaWx0ZXIiIHg9Ii0yMCUiIHk9Ii0yMCUiIHdpZHRoPSIxNDAlIiBoZWlnaHQ9IjE0MCUiPgogICAgICA8ZmVHYXVzc2lhbkJsdXIgc3RkRGV2aWF0aW9uPSI0MCIgcmVzdWx0PSJibHVyIiAvPgogICAgPC9maWx0ZXI+CiAgICA8ZmlsdGVyIGlkPSJzb2Z0R2xvdyIgeD0iLTIwJSIgeT0iLTIwJSIgd2lkdGg9IjE0MCUiIGhlaWdodD0iMTQwJSI+CiAgICAgIDxmZUdhdXNzaWFuQmx1ciBzdGREZXZpYXRpb249IjE1IiByZXN1bHQ9ImJsdXIiIC8+CiAgICAgIDxmZU1lcmdlPgogICAgICAgIDxmZU1lcmdlTm9kZSBpbj0iYmx1ciIgLz4KICAgICAgICA8ZmVNZXJnZU5vZGUgaW49IlNvdXJjZUdyYXBoaWMiIC8+CiAgICAgIDwvZmVNZXJnZT4KICAgIDwvZmlsdGVyPgogIDwvZGVmcz4KCiAgPCEtLSBCYWNrZ3JvdW5kIEJhc2UgLS0+CiAgPHJlY3Qgd2lkdGg9IjEyODAiIGhlaWdodD0iNzIwIiBmaWxsPSJ1cmwoI2JnR3JhZCkiLz4KICA8cmVjdCB3aWR0aD0iMTI4MCIgaGVpZ2h0PSI3MjAiIGZpbGw9InVybCgjc3VuR2xvdykiLz4KCiAgPCEtLSBEeW5hbWljIEF0bW9zcGhlcmljIE9yYnMgLS0+CiAgPGNpcmNsZSBjeD0iMzIwIiBjeT0iMjUxLjk5OTk5OTk5OTk5OTk3IiByPSIyMDEuNjAwMDAwMDAwMDAwMDIiIGZpbGw9IiMzYjgyZjYiIG9wYWNpdHk9IjAuMzUiIGZpbHRlcj0idXJsKCNibHVyRmlsdGVyKSIvPgogIDxjaXJjbGUgY3g9Ijk2MCIgY3k9IjQ2OCIgcj0iMjMwLjQiIGZpbGw9IiMwNmI2ZDQiIG9wYWNpdHk9IjAuNCIgZmlsdGVyPSJ1cmwoI2JsdXJGaWx0ZXIpIi8+CgogIDwhLS0gR2VvbWV0cmljIC8gU3ViamVjdCBGcmFtaW5nIC0tPgogIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDY0MCwgMzQ1LjU5OTk5OTk5OTk5OTk3KSIgZmlsdGVyPSJ1cmwoI3NvZnRHbG93KSI+CiAgICA8cmVjdCB4PSItMTU4LjQiIHk9Ii0xNTguNCIgCiAgICAgICAgICB3aWR0aD0iMzE2LjgiIGhlaWdodD0iMzE2LjgiIAogICAgICAgICAgcng9IjI0IiBmaWxsPSIjMGYxNzJhIiBmaWxsLW9wYWNpdHk9IjAuNCIgc3Ryb2tlPSIjZjhmYWZjIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1vcGFjaXR5PSIwLjUiIAogICAgICAgICAgdHJhbnNmb3JtPSJyb3RhdGUoNDUpIi8+CiAgICA8Y2lyY2xlIGN4PSIwIiBjeT0iMCIgcj0iMTE1LjIiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2Y4ZmFmYyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1kYXNoYXJyYXk9IjggNiIgb3BhY2l0eT0iMC42Ii8+CiAgPC9nPgoKICA8IS0tIEdyb3VuZCAvIEhvcml6b24gU2lsaG91ZXR0ZXMgLS0+CiAgPHBhdGggZD0iTTAsNTE4LjQgUTMyMCw0NDYuNCA2NDAsNTAzLjk5OTk5OTk5OTk5OTk0IFQxMjgwLDQ3NS4yMDAwMDAwMDAwMDAwNSBMMTI4MCw3MjAgTDAsNzIwIFoiIGZpbGw9IiMwZjE3MmEiIG9wYWNpdHk9IjAuNzUiLz4KICA8cGF0aCBkPSJNMCw1OTAuNCBRNDQ4LDU0MCA4OTYsNjA0LjggVDEyODAsNTYxLjYgTDEyODAsNzIwIEwwLDcyMCBaIiBmaWxsPSIjMDUwODExIiBvcGFjaXR5PSIwLjk1Ii8+CgogIDwhLS0gVmlzdWFsIEhpZ2hsaWdodHMgJiBMaWdodCBQYXJ0aWNsZXMgLS0+CiAgPGNpcmNsZSBjeD0iMzg0IiBjeT0iMTU4LjQiIHI9IjMiIGZpbGw9IiNmOGZhZmMiIG9wYWNpdHk9IjAuOCIvPgogIDxjaXJjbGUgY3g9IjcwNCIgY3k9IjEyOS42IiByPSIyIiBmaWxsPSIjZjhmYWZjIiBvcGFjaXR5PSIwLjciLz4KICA8Y2lyY2xlIGN4PSIxMDI0IiBjeT0iMjE2IiByPSI0IiBmaWxsPSIjZjhmYWZjIiBvcGFjaXR5PSIwLjkiLz4KICA8Y2lyY2xlIGN4PSIyNTYiIGN5PSIzNjAiIHI9IjIuNSIgZmlsbD0iI2Y4ZmFmYyIgb3BhY2l0eT0iMC42Ii8+CiAgPGNpcmNsZSBjeD0iODk2IiBjeT0iMzAyLjQiIHI9IjMiIGZpbGw9IiNmOGZhZmMiIG9wYWNpdHk9IjAuNzUiLz4KCiAgPCEtLSBBZXN0aGV0aWMgSW5mbyBPdmVybGF5IEJhciAtLT4KICA8cmVjdCB4PSIyNCIgeT0iNjQ4IiB3aWR0aD0iMTIzMiIgaGVpZ2h0PSI0OCIgcng9IjEyIiBmaWxsPSIjMDAwMDAwIiBmaWxsLW9wYWNpdHk9IjAuNTUiIHN0cm9rZT0iI2ZmZmZmZiIgc3Ryb2tlLW9wYWNpdHk9IjAuMSIgLz4KICA8dGV4dCB4PSI0NCIgeT0iNjc4IiBmaWxsPSIjZjhmYWZjIiBmb250LWZhbWlseT0ic3lzdGVtLXVpLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjE0IiBmb250LXdlaWdodD0iNjAwIiBsZXR0ZXItc3BhY2luZz0iMC41Ij4KICAgIEFJIFNUVURJTyDigKIgQ3liZXJwdW5rIG5lby1ub2lyIGNpbmVtYXRpYyByZWFsaXNtCiAgPC90ZXh0PgogIDx0ZXh0IHg9IjEyMzYiIHk9IjY3OCIgdGV4dC1hbmNob3I9ImVuZCIgZmlsbD0iIzk0YTNiOCIgZm9udC1mYW1pbHk9InN5c3RlbS11aSwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMiI+CiAgICAxMjgww5c3MjAg4oCiIFVsdHJhIEhEIE1hc3RlcgogIDwvdGV4dD4KPC9zdmc+",
+      "thumbnailUrl": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjgwIDcyMCIgd2lkdGg9IjEyODAiIGhlaWdodD0iNzIwIj4KICA8ZGVmcz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iYmdHcmFkIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIxMDAlIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzBmMTcyYSIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjUwJSIgc3RvcC1jb2xvcj0iIzNiODJmNiIgc3RvcC1vcGFjaXR5PSIwLjg1Ii8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzA2YjZkNCIgc3RvcC1vcGFjaXR5PSIwLjk1Ii8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogICAgPHJhZGlhbEdyYWRpZW50IGlkPSJzdW5HbG93IiBjeD0iNTAlIiBjeT0iNDAlIiByPSI2MCUiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjZjhmYWZjIiBzdG9wLW9wYWNpdHk9IjAuNDUiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSI0MCUiIHN0b3AtY29sb3I9IiMwNmI2ZDQiIHN0b3Atb3BhY2l0eT0iMC4yNSIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwZjE3MmEiIHN0b3Atb3BhY2l0eT0iMCIvPgogICAgPC9yYWRpYWxHcmFkaWVudD4KICAgIDxmaWx0ZXIgaWQ9ImJsdXJGaWx0ZXIiIHg9Ii0yMCUiIHk9Ii0yMCUiIHdpZHRoPSIxNDAlIiBoZWlnaHQ9IjE0MCUiPgogICAgICA8ZmVHYXVzc2lhbkJsdXIgc3RkRGV2aWF0aW9uPSI0MCIgcmVzdWx0PSJibHVyIiAvPgogICAgPC9maWx0ZXI+CiAgICA8ZmlsdGVyIGlkPSJzb2Z0R2xvdyIgeD0iLTIwJSIgeT0iLTIwJSIgd2lkdGg9IjE0MCUiIGhlaWdodD0iMTQwJSI+CiAgICAgIDxmZUdhdXNzaWFuQmx1ciBzdGREZXZpYXRpb249IjE1IiByZXN1bHQ9ImJsdXIiIC8+CiAgICAgIDxmZU1lcmdlPgogICAgICAgIDxmZU1lcmdlTm9kZSBpbj0iYmx1ciIgLz4KICAgICAgICA8ZmVNZXJnZU5vZGUgaW49IlNvdXJjZUdyYXBoaWMiIC8+CiAgICAgIDwvZmVNZXJnZT4KICAgIDwvZmlsdGVyPgogIDwvZGVmcz4KCiAgPCEtLSBCYWNrZ3JvdW5kIEJhc2UgLS0+CiAgPHJlY3Qgd2lkdGg9IjEyODAiIGhlaWdodD0iNzIwIiBmaWxsPSJ1cmwoI2JnR3JhZCkiLz4KICA8cmVjdCB3aWR0aD0iMTI4MCIgaGVpZ2h0PSI3MjAiIGZpbGw9InVybCgjc3VuR2xvdykiLz4KCiAgPCEtLSBEeW5hbWljIEF0bW9zcGhlcmljIE9yYnMgLS0+CiAgPGNpcmNsZSBjeD0iMzIwIiBjeT0iMjUxLjk5OTk5OTk5OTk5OTk3IiByPSIyMDEuNjAwMDAwMDAwMDAwMDIiIGZpbGw9IiMzYjgyZjYiIG9wYWNpdHk9IjAuMzUiIGZpbHRlcj0idXJsKCNibHVyRmlsdGVyKSIvPgogIDxjaXJjbGUgY3g9Ijk2MCIgY3k9IjQ2OCIgcj0iMjMwLjQiIGZpbGw9IiMwNmI2ZDQiIG9wYWNpdHk9IjAuNCIgZmlsdGVyPSJ1cmwoI2JsdXJGaWx0ZXIpIi8+CgogIDwhLS0gR2VvbWV0cmljIC8gU3ViamVjdCBGcmFtaW5nIC0tPgogIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDY0MCwgMzQ1LjU5OTk5OTk5OTk5OTk3KSIgZmlsdGVyPSJ1cmwoI3NvZnRHbG93KSI+CiAgICA8cmVjdCB4PSItMTU4LjQiIHk9Ii0xNTguNCIgCiAgICAgICAgICB3aWR0aD0iMzE2LjgiIGhlaWdodD0iMzE2LjgiIAogICAgICAgICAgcng9IjI0IiBmaWxsPSIjMGYxNzJhIiBmaWxsLW9wYWNpdHk9IjAuNCIgc3Ryb2tlPSIjZjhmYWZjIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1vcGFjaXR5PSIwLjUiIAogICAgICAgICAgdHJhbnNmb3JtPSJyb3RhdGUoNDUpIi8+CiAgICA8Y2lyY2xlIGN4PSIwIiBjeT0iMCIgcj0iMTE1LjIiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2Y4ZmFmYyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1kYXNoYXJyYXk9IjggNiIgb3BhY2l0eT0iMC42Ii8+CiAgPC9nPgoKICA8IS0tIEdyb3VuZCAvIEhvcml6b24gU2lsaG91ZXR0ZXMgLS0+CiAgPHBhdGggZD0iTTAsNTE4LjQgUTMyMCw0NDYuNCA2NDAsNTAzLjk5OTk5OTk5OTk5OTk0IFQxMjgwLDQ3NS4yMDAwMDAwMDAwMDAwNSBMMTI4MCw3MjAgTDAsNzIwIFoiIGZpbGw9IiMwZjE3MmEiIG9wYWNpdHk9IjAuNzUiLz4KICA8cGF0aCBkPSJNMCw1OTAuNCBRNDQ4LDU0MCA4OTYsNjA0LjggVDEyODAsNTYxLjYgTDEyODAsNzIwIEwwLDcyMCBaIiBmaWxsPSIjMDUwODExIiBvcGFjaXR5PSIwLjk1Ii8+CgogIDwhLS0gVmlzdWFsIEhpZ2hsaWdodHMgJiBMaWdodCBQYXJ0aWNsZXMgLS0+CiAgPGNpcmNsZSBjeD0iMzg0IiBjeT0iMTU4LjQiIHI9IjMiIGZpbGw9IiNmOGZhZmMiIG9wYWNpdHk9IjAuOCIvPgogIDxjaXJjbGUgY3g9IjcwNCIgY3k9IjEyOS42IiByPSIyIiBmaWxsPSIjZjhmYWZjIiBvcGFjaXR5PSIwLjciLz4KICA8Y2lyY2xlIGN4PSIxMDI0IiBjeT0iMjE2IiByPSI0IiBmaWxsPSIjZjhmYWZjIiBvcGFjaXR5PSIwLjkiLz4KICA8Y2lyY2xlIGN4PSIyNTYiIGN5PSIzNjAiIHI9IjIuNSIgZmlsbD0iI2Y4ZmFmYyIgb3BhY2l0eT0iMC42Ii8+CiAgPGNpcmNsZSBjeD0iODk2IiBjeT0iMzAyLjQiIHI9IjMiIGZpbGw9IiNmOGZhZmMiIG9wYWNpdHk9IjAuNzUiLz4KCiAgPCEtLSBBZXN0aGV0aWMgSW5mbyBPdmVybGF5IEJhciAtLT4KICA8cmVjdCB4PSIyNCIgeT0iNjQ4IiB3aWR0aD0iMTIzMiIgaGVpZ2h0PSI0OCIgcng9IjEyIiBmaWxsPSIjMDAwMDAwIiBmaWxsLW9wYWNpdHk9IjAuNTUiIHN0cm9rZT0iI2ZmZmZmZiIgc3Ryb2tlLW9wYWNpdHk9IjAuMSIgLz4KICA8dGV4dCB4PSI0NCIgeT0iNjc4IiBmaWxsPSIjZjhmYWZjIiBmb250LWZhbWlseT0ic3lzdGVtLXVpLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjE0IiBmb250LXdlaWdodD0iNjAwIiBsZXR0ZXItc3BhY2luZz0iMC41Ij4KICAgIEFJIFNUVURJTyDigKIgQ3liZXJwdW5rIG5lby1ub2lyIGNpbmVtYXRpYyByZWFsaXNtCiAgPC90ZXh0PgogIDx0ZXh0IHg9IjEyMzYiIHk9IjY3OCIgdGV4dC1hbmNob3I9ImVuZCIgZmlsbD0iIzk0YTNiOCIgZm9udC1mYW1pbHk9InN5c3RlbS11aSwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMiI+CiAgICAxMjgww5c3MjAg4oCiIFVsdHJhIEhEIE1hc3RlcgogIDwvdGV4dD4KPC9zdmc+",
+      "aspectRatio": "16:9",
+      "fileSizeBytes": 3103,
+      "mimeType": "image/svg+xml",
+      "provider": "studio-creative-canvas",
+      "createdAt": 1789550683047,
+      "completedAt": 1789550689155,
+      "isFavorite": false,
+      "metadata": {
+        "renderTimeMs": 6108,
+        "model": "studio-canvas-engine-v2",
+        "resolution": "1280x720"
+      }
+    }
+  ],
+  "jobs": {
+    "job_1789550683046_308407c8": {
+      "id": "job_1789550683046_308407c8",
+      "userId": "user_creator_1",
+      "userName": "Creative Director",
+      "mode": "image",
+      "prompt": "Futuristic flying vehicle gliding through rainy neon metropolis",
+      "aspectRatio": "16:9",
+      "status": "completed",
+      "progress": 100,
+      "currentStepMessage": "Successfully created creative image in 6s!",
+      "logs": [
+        {
+          "timestamp": 1789550683047,
+          "step": "queued",
+          "message": "Generation job enqueued for high-resolution creative image."
+        },
+        {
+          "timestamp": 1789550683047,
+          "step": "analyzing",
+          "message": "AI Brain is interpreting intent, semantics, and reference imagery..."
+        },
+        {
+          "timestamp": 1789550683047,
+          "step": "planning",
+          "message": "AI Brain synthesizing visual plan, negative constraints & motion timeline..."
+        },
+        {
+          "timestamp": 1789550688911,
+          "step": "generating",
+          "message": "Dispatching to neural image generator..."
+        },
+        {
+          "timestamp": 1789550689155,
+          "step": "finalizing",
+          "message": "Finalizing output asset and cataloging in generation library..."
+        },
+        {
+          "timestamp": 1789550689156,
+          "step": "completed",
+          "message": "Successfully created creative image in 6s!"
+        }
+      ],
+      "createdAt": 1789550683047,
+      "updatedAt": 1789550689156,
+      "aiPlan": {
+        "originalPrompt": "Futuristic flying vehicle gliding through rainy neon metropolis",
+        "enhancedPrompt": "Futuristic flying vehicle gliding through rainy neon metropolis, Cyberpunk neo-noir cinematic realism, shot on 35mm master lens, Bioluminescent neon ambient reflections, diffused fog, wet street specularities, Low-angle hero perspective with towering architectural vanishing lines, High fidelity with intricate micro-textures, specular highlights, and natural physics, photorealistic, ultra-detailed 8k resolution, masterful color grading.",
+        "intent": "Evocative high-resolution creative image capturing \"Futuristic flying vehicle gliding through rainy neon metropolis\"",
+        "visualStyle": "Cyberpunk neo-noir cinematic realism",
+        "composition": "Low-angle hero perspective with towering architectural vanishing lines",
+        "subjectDetails": "High fidelity with intricate micro-textures, specular highlights, and natural physics",
+        "lighting": "Bioluminescent neon ambient reflections, diffused fog, wet street specularities",
+        "colorPalette": [
+          "#0f172a",
+          "#3b82f6",
+          "#06b6d4",
+          "#f8fafc"
+        ],
+        "referencePreservation": [],
+        "negativeConstraints": "blurry, noise, low resolution, oversaturated, deformed proportions, plastic skin, artifacts, stuttering motion, watermarks"
+      },
+      "result": {
+        "id": "asset_1789550689155_82a551",
+        "userId": "user_creator_1",
+        "userName": "Creative Director",
+        "mode": "image",
+        "status": "completed",
+        "originalPrompt": "Futuristic flying vehicle gliding through rainy neon metropolis",
+        "enhancedPrompt": "Futuristic flying vehicle gliding through rainy neon metropolis, Cyberpunk neo-noir cinematic realism, shot on 35mm master lens, Bioluminescent neon ambient reflections, diffused fog, wet street specularities, Low-angle hero perspective with towering architectural vanishing lines, High fidelity with intricate micro-textures, specular highlights, and natural physics, photorealistic, ultra-detailed 8k resolution, masterful color grading.",
+        "aiPlan": {
+          "originalPrompt": "Futuristic flying vehicle gliding through rainy neon metropolis",
+          "enhancedPrompt": "Futuristic flying vehicle gliding through rainy neon metropolis, Cyberpunk neo-noir cinematic realism, shot on 35mm master lens, Bioluminescent neon ambient reflections, diffused fog, wet street specularities, Low-angle hero perspective with towering architectural vanishing lines, High fidelity with intricate micro-textures, specular highlights, and natural physics, photorealistic, ultra-detailed 8k resolution, masterful color grading.",
+          "intent": "Evocative high-resolution creative image capturing \"Futuristic flying vehicle gliding through rainy neon metropolis\"",
+          "visualStyle": "Cyberpunk neo-noir cinematic realism",
+          "composition": "Low-angle hero perspective with towering architectural vanishing lines",
+          "subjectDetails": "High fidelity with intricate micro-textures, specular highlights, and natural physics",
+          "lighting": "Bioluminescent neon ambient reflections, diffused fog, wet street specularities",
+          "colorPalette": [
+            "#0f172a",
+            "#3b82f6",
+            "#06b6d4",
+            "#f8fafc"
+          ],
+          "referencePreservation": [],
+          "negativeConstraints": "blurry, noise, low resolution, oversaturated, deformed proportions, plastic skin, artifacts, stuttering motion, watermarks"
+        },
+        "mediaUrl": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjgwIDcyMCIgd2lkdGg9IjEyODAiIGhlaWdodD0iNzIwIj4KICA8ZGVmcz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iYmdHcmFkIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIxMDAlIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzBmMTcyYSIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjUwJSIgc3RvcC1jb2xvcj0iIzNiODJmNiIgc3RvcC1vcGFjaXR5PSIwLjg1Ii8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzA2YjZkNCIgc3RvcC1vcGFjaXR5PSIwLjk1Ii8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogICAgPHJhZGlhbEdyYWRpZW50IGlkPSJzdW5HbG93IiBjeD0iNTAlIiBjeT0iNDAlIiByPSI2MCUiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjZjhmYWZjIiBzdG9wLW9wYWNpdHk9IjAuNDUiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSI0MCUiIHN0b3AtY29sb3I9IiMwNmI2ZDQiIHN0b3Atb3BhY2l0eT0iMC4yNSIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwZjE3MmEiIHN0b3Atb3BhY2l0eT0iMCIvPgogICAgPC9yYWRpYWxHcmFkaWVudD4KICAgIDxmaWx0ZXIgaWQ9ImJsdXJGaWx0ZXIiIHg9Ii0yMCUiIHk9Ii0yMCUiIHdpZHRoPSIxNDAlIiBoZWlnaHQ9IjE0MCUiPgogICAgICA8ZmVHYXVzc2lhbkJsdXIgc3RkRGV2aWF0aW9uPSI0MCIgcmVzdWx0PSJibHVyIiAvPgogICAgPC9maWx0ZXI+CiAgICA8ZmlsdGVyIGlkPSJzb2Z0R2xvdyIgeD0iLTIwJSIgeT0iLTIwJSIgd2lkdGg9IjE0MCUiIGhlaWdodD0iMTQwJSI+CiAgICAgIDxmZUdhdXNzaWFuQmx1ciBzdGREZXZpYXRpb249IjE1IiByZXN1bHQ9ImJsdXIiIC8+CiAgICAgIDxmZU1lcmdlPgogICAgICAgIDxmZU1lcmdlTm9kZSBpbj0iYmx1ciIgLz4KICAgICAgICA8ZmVNZXJnZU5vZGUgaW49IlNvdXJjZUdyYXBoaWMiIC8+CiAgICAgIDwvZmVNZXJnZT4KICAgIDwvZmlsdGVyPgogIDwvZGVmcz4KCiAgPCEtLSBCYWNrZ3JvdW5kIEJhc2UgLS0+CiAgPHJlY3Qgd2lkdGg9IjEyODAiIGhlaWdodD0iNzIwIiBmaWxsPSJ1cmwoI2JnR3JhZCkiLz4KICA8cmVjdCB3aWR0aD0iMTI4MCIgaGVpZ2h0PSI3MjAiIGZpbGw9InVybCgjc3VuR2xvdykiLz4KCiAgPCEtLSBEeW5hbWljIEF0bW9zcGhlcmljIE9yYnMgLS0+CiAgPGNpcmNsZSBjeD0iMzIwIiBjeT0iMjUxLjk5OTk5OTk5OTk5OTk3IiByPSIyMDEuNjAwMDAwMDAwMDAwMDIiIGZpbGw9IiMzYjgyZjYiIG9wYWNpdHk9IjAuMzUiIGZpbHRlcj0idXJsKCNibHVyRmlsdGVyKSIvPgogIDxjaXJjbGUgY3g9Ijk2MCIgY3k9IjQ2OCIgcj0iMjMwLjQiIGZpbGw9IiMwNmI2ZDQiIG9wYWNpdHk9IjAuNCIgZmlsdGVyPSJ1cmwoI2JsdXJGaWx0ZXIpIi8+CgogIDwhLS0gR2VvbWV0cmljIC8gU3ViamVjdCBGcmFtaW5nIC0tPgogIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDY0MCwgMzQ1LjU5OTk5OTk5OTk5OTk3KSIgZmlsdGVyPSJ1cmwoI3NvZnRHbG93KSI+CiAgICA8cmVjdCB4PSItMTU4LjQiIHk9Ii0xNTguNCIgCiAgICAgICAgICB3aWR0aD0iMzE2LjgiIGhlaWdodD0iMzE2LjgiIAogICAgICAgICAgcng9IjI0IiBmaWxsPSIjMGYxNzJhIiBmaWxsLW9wYWNpdHk9IjAuNCIgc3Ryb2tlPSIjZjhmYWZjIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1vcGFjaXR5PSIwLjUiIAogICAgICAgICAgdHJhbnNmb3JtPSJyb3RhdGUoNDUpIi8+CiAgICA8Y2lyY2xlIGN4PSIwIiBjeT0iMCIgcj0iMTE1LjIiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2Y4ZmFmYyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1kYXNoYXJyYXk9IjggNiIgb3BhY2l0eT0iMC42Ii8+CiAgPC9nPgoKICA8IS0tIEdyb3VuZCAvIEhvcml6b24gU2lsaG91ZXR0ZXMgLS0+CiAgPHBhdGggZD0iTTAsNTE4LjQgUTMyMCw0NDYuNCA2NDAsNTAzLjk5OTk5OTk5OTk5OTk0IFQxMjgwLDQ3NS4yMDAwMDAwMDAwMDAwNSBMMTI4MCw3MjAgTDAsNzIwIFoiIGZpbGw9IiMwZjE3MmEiIG9wYWNpdHk9IjAuNzUiLz4KICA8cGF0aCBkPSJNMCw1OTAuNCBRNDQ4LDU0MCA4OTYsNjA0LjggVDEyODAsNTYxLjYgTDEyODAsNzIwIEwwLDcyMCBaIiBmaWxsPSIjMDUwODExIiBvcGFjaXR5PSIwLjk1Ii8+CgogIDwhLS0gVmlzdWFsIEhpZ2hsaWdodHMgJiBMaWdodCBQYXJ0aWNsZXMgLS0+CiAgPGNpcmNsZSBjeD0iMzg0IiBjeT0iMTU4LjQiIHI9IjMiIGZpbGw9IiNmOGZhZmMiIG9wYWNpdHk9IjAuOCIvPgogIDxjaXJjbGUgY3g9IjcwNCIgY3k9IjEyOS42IiByPSIyIiBmaWxsPSIjZjhmYWZjIiBvcGFjaXR5PSIwLjciLz4KICA8Y2lyY2xlIGN4PSIxMDI0IiBjeT0iMjE2IiByPSI0IiBmaWxsPSIjZjhmYWZjIiBvcGFjaXR5PSIwLjkiLz4KICA8Y2lyY2xlIGN4PSIyNTYiIGN5PSIzNjAiIHI9IjIuNSIgZmlsbD0iI2Y4ZmFmYyIgb3BhY2l0eT0iMC42Ii8+CiAgPGNpcmNsZSBjeD0iODk2IiBjeT0iMzAyLjQiIHI9IjMiIGZpbGw9IiNmOGZhZmMiIG9wYWNpdHk9IjAuNzUiLz4KCiAgPCEtLSBBZXN0aGV0aWMgSW5mbyBPdmVybGF5IEJhciAtLT4KICA8cmVjdCB4PSIyNCIgeT0iNjQ4IiB3aWR0aD0iMTIzMiIgaGVpZ2h0PSI0OCIgcng9IjEyIiBmaWxsPSIjMDAwMDAwIiBmaWxsLW9wYWNpdHk9IjAuNTUiIHN0cm9rZT0iI2ZmZmZmZiIgc3Ryb2tlLW9wYWNpdHk9IjAuMSIgLz4KICA8dGV4dCB4PSI0NCIgeT0iNjc4IiBmaWxsPSIjZjhmYWZjIiBmb250LWZhbWlseT0ic3lzdGVtLXVpLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjE0IiBmb250LXdlaWdodD0iNjAwIiBsZXR0ZXItc3BhY2luZz0iMC41Ij4KICAgIEFJIFNUVURJTyDigKIgQ3liZXJwdW5rIG5lby1ub2lyIGNpbmVtYXRpYyByZWFsaXNtCiAgPC90ZXh0PgogIDx0ZXh0IHg9IjEyMzYiIHk9IjY3OCIgdGV4dC1hbmNob3I9ImVuZCIgZmlsbD0iIzk0YTNiOCIgZm9udC1mYW1pbHk9InN5c3RlbS11aSwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMiI+CiAgICAxMjgww5c3MjAg4oCiIFVsdHJhIEhEIE1hc3RlcgogIDwvdGV4dD4KPC9zdmc+",
+        "thumbnailUrl": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjgwIDcyMCIgd2lkdGg9IjEyODAiIGhlaWdodD0iNzIwIj4KICA8ZGVmcz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iYmdHcmFkIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIxMDAlIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzBmMTcyYSIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjUwJSIgc3RvcC1jb2xvcj0iIzNiODJmNiIgc3RvcC1vcGFjaXR5PSIwLjg1Ii8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzA2YjZkNCIgc3RvcC1vcGFjaXR5PSIwLjk1Ii8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogICAgPHJhZGlhbEdyYWRpZW50IGlkPSJzdW5HbG93IiBjeD0iNTAlIiBjeT0iNDAlIiByPSI2MCUiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjZjhmYWZjIiBzdG9wLW9wYWNpdHk9IjAuNDUiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSI0MCUiIHN0b3AtY29sb3I9IiMwNmI2ZDQiIHN0b3Atb3BhY2l0eT0iMC4yNSIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwZjE3MmEiIHN0b3Atb3BhY2l0eT0iMCIvPgogICAgPC9yYWRpYWxHcmFkaWVudD4KICAgIDxmaWx0ZXIgaWQ9ImJsdXJGaWx0ZXIiIHg9Ii0yMCUiIHk9Ii0yMCUiIHdpZHRoPSIxNDAlIiBoZWlnaHQ9IjE0MCUiPgogICAgICA8ZmVHYXVzc2lhbkJsdXIgc3RkRGV2aWF0aW9uPSI0MCIgcmVzdWx0PSJibHVyIiAvPgogICAgPC9maWx0ZXI+CiAgICA8ZmlsdGVyIGlkPSJzb2Z0R2xvdyIgeD0iLTIwJSIgeT0iLTIwJSIgd2lkdGg9IjE0MCUiIGhlaWdodD0iMTQwJSI+CiAgICAgIDxmZUdhdXNzaWFuQmx1ciBzdGREZXZpYXRpb249IjE1IiByZXN1bHQ9ImJsdXIiIC8+CiAgICAgIDxmZU1lcmdlPgogICAgICAgIDxmZU1lcmdlTm9kZSBpbj0iYmx1ciIgLz4KICAgICAgICA8ZmVNZXJnZU5vZGUgaW49IlNvdXJjZUdyYXBoaWMiIC8+CiAgICAgIDwvZmVNZXJnZT4KICAgIDwvZmlsdGVyPgogIDwvZGVmcz4KCiAgPCEtLSBCYWNrZ3JvdW5kIEJhc2UgLS0+CiAgPHJlY3Qgd2lkdGg9IjEyODAiIGhlaWdodD0iNzIwIiBmaWxsPSJ1cmwoI2JnR3JhZCkiLz4KICA8cmVjdCB3aWR0aD0iMTI4MCIgaGVpZ2h0PSI3MjAiIGZpbGw9InVybCgjc3VuR2xvdykiLz4KCiAgPCEtLSBEeW5hbWljIEF0bW9zcGhlcmljIE9yYnMgLS0+CiAgPGNpcmNsZSBjeD0iMzIwIiBjeT0iMjUxLjk5OTk5OTk5OTk5OTk3IiByPSIyMDEuNjAwMDAwMDAwMDAwMDIiIGZpbGw9IiMzYjgyZjYiIG9wYWNpdHk9IjAuMzUiIGZpbHRlcj0idXJsKCNibHVyRmlsdGVyKSIvPgogIDxjaXJjbGUgY3g9Ijk2MCIgY3k9IjQ2OCIgcj0iMjMwLjQiIGZpbGw9IiMwNmI2ZDQiIG9wYWNpdHk9IjAuNCIgZmlsdGVyPSJ1cmwoI2JsdXJGaWx0ZXIpIi8+CgogIDwhLS0gR2VvbWV0cmljIC8gU3ViamVjdCBGcmFtaW5nIC0tPgogIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDY0MCwgMzQ1LjU5OTk5OTk5OTk5OTk3KSIgZmlsdGVyPSJ1cmwoI3NvZnRHbG93KSI+CiAgICA8cmVjdCB4PSItMTU4LjQiIHk9Ii0xNTguNCIgCiAgICAgICAgICB3aWR0aD0iMzE2LjgiIGhlaWdodD0iMzE2LjgiIAogICAgICAgICAgcng9IjI0IiBmaWxsPSIjMGYxNzJhIiBmaWxsLW9wYWNpdHk9IjAuNCIgc3Ryb2tlPSIjZjhmYWZjIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1vcGFjaXR5PSIwLjUiIAogICAgICAgICAgdHJhbnNmb3JtPSJyb3RhdGUoNDUpIi8+CiAgICA8Y2lyY2xlIGN4PSIwIiBjeT0iMCIgcj0iMTE1LjIiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2Y4ZmFmYyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1kYXNoYXJyYXk9IjggNiIgb3BhY2l0eT0iMC42Ii8+CiAgPC9nPgoKICA8IS0tIEdyb3VuZCAvIEhvcml6b24gU2lsaG91ZXR0ZXMgLS0+CiAgPHBhdGggZD0iTTAsNTE4LjQgUTMyMCw0NDYuNCA2NDAsNTAzLjk5OTk5OTk5OTk5OTk0IFQxMjgwLDQ3NS4yMDAwMDAwMDAwMDAwNSBMMTI4MCw3MjAgTDAsNzIwIFoiIGZpbGw9IiMwZjE3MmEiIG9wYWNpdHk9IjAuNzUiLz4KICA8cGF0aCBkPSJNMCw1OTAuNCBRNDQ4LDU0MCA4OTYsNjA0LjggVDEyODAsNTYxLjYgTDEyODAsNzIwIEwwLDcyMCBaIiBmaWxsPSIjMDUwODExIiBvcGFjaXR5PSIwLjk1Ii8+CgogIDwhLS0gVmlzdWFsIEhpZ2hsaWdodHMgJiBMaWdodCBQYXJ0aWNsZXMgLS0+CiAgPGNpcmNsZSBjeD0iMzg0IiBjeT0iMTU4LjQiIHI9IjMiIGZpbGw9IiNmOGZhZmMiIG9wYWNpdHk9IjAuOCIvPgogIDxjaXJjbGUgY3g9IjcwNCIgY3k9IjEyOS42IiByPSIyIiBmaWxsPSIjZjhmYWZjIiBvcGFjaXR5PSIwLjciLz4KICA8Y2lyY2xlIGN4PSIxMDI0IiBjeT0iMjE2IiByPSI0IiBmaWxsPSIjZjhmYWZjIiBvcGFjaXR5PSIwLjkiLz4KICA8Y2lyY2xlIGN4PSIyNTYiIGN5PSIzNjAiIHI9IjIuNSIgZmlsbD0iI2Y4ZmFmYyIgb3BhY2l0eT0iMC42Ii8+CiAgPGNpcmNsZSBjeD0iODk2IiBjeT0iMzAyLjQiIHI9IjMiIGZpbGw9IiNmOGZhZmMiIG9wYWNpdHk9IjAuNzUiLz4KCiAgPCEtLSBBZXN0aGV0aWMgSW5mbyBPdmVybGF5IEJhciAtLT4KICA8cmVjdCB4PSIyNCIgeT0iNjQ4IiB3aWR0aD0iMTIzMiIgaGVpZ2h0PSI0OCIgcng9IjEyIiBmaWxsPSIjMDAwMDAwIiBmaWxsLW9wYWNpdHk9IjAuNTUiIHN0cm9rZT0iI2ZmZmZmZiIgc3Ryb2tlLW9wYWNpdHk9IjAuMSIgLz4KICA8dGV4dCB4PSI0NCIgeT0iNjc4IiBmaWxsPSIjZjhmYWZjIiBmb250LWZhbWlseT0ic3lzdGVtLXVpLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjE0IiBmb250LXdlaWdodD0iNjAwIiBsZXR0ZXItc3BhY2luZz0iMC41Ij4KICAgIEFJIFNUVURJTyDigKIgQ3liZXJwdW5rIG5lby1ub2lyIGNpbmVtYXRpYyByZWFsaXNtCiAgPC90ZXh0PgogIDx0ZXh0IHg9IjEyMzYiIHk9IjY3OCIgdGV4dC1hbmNob3I9ImVuZCIgZmlsbD0iIzk0YTNiOCIgZm9udC1mYW1pbHk9InN5c3RlbS11aSwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMiI+CiAgICAxMjgww5c3MjAg4oCiIFVsdHJhIEhEIE1hc3RlcgogIDwvdGV4dD4KPC9zdmc+",
+        "aspectRatio": "16:9",
+        "fileSizeBytes": 3103,
+        "mimeType": "image/svg+xml",
+        "provider": "studio-creative-canvas",
+        "createdAt": 1789550683047,
+        "completedAt": 1789550689155,
+        "isFavorite": false,
+        "metadata": {
+          "renderTimeMs": 6108,
+          "model": "studio-canvas-engine-v2",
+          "resolution": "1280x720"
+        }
+      }
+    },
+    "job_1789550703378_bb79e8d2": {
+      "id": "job_1789550703378_bb79e8d2",
+      "userId": "user_creator_1",
+      "userName": "Creative Director",
+      "mode": "video",
+      "prompt": "Cinematic drone flythrough of misty pine forest with morning sun rays",
+      "aspectRatio": "16:9",
+      "videoMotion": {
+        "cameraMovement": "Continuous forward dolly glide",
+        "speed": "medium"
+      },
+      "status": "planning",
+      "progress": 35,
+      "currentStepMessage": "AI Brain synthesizing visual plan, negative constraints & motion timeline...",
+      "logs": [
+        {
+          "timestamp": 1789550703378,
+          "step": "queued",
+          "message": "Generation job enqueued for 10-second cinematic video."
+        },
+        {
+          "timestamp": 1789550703378,
+          "step": "analyzing",
+          "message": "AI Brain is interpreting intent, semantics, and reference imagery..."
+        },
+        {
+          "timestamp": 1789550703378,
+          "step": "planning",
+          "message": "AI Brain synthesizing visual plan, negative constraints & motion timeline..."
+        }
+      ],
+      "createdAt": 1789550703378,
+      "updatedAt": 1789550703378
+    },
+    "job_1789550804944_c2487d3f": {
+      "id": "job_1789550804944_c2487d3f",
+      "userId": "user_creator_1",
+      "userName": "Creative Director",
+      "mode": "video",
+      "prompt": "Cinematic aerial glide through misty alpine peaks at sunrise",
+      "aspectRatio": "16:9",
+      "status": "failed",
+      "progress": 100,
+      "currentStepMessage": "Generation encountered error: Video encoding failed: Command failed: ffmpeg -y -loop 1 -t 10 -r 24 -i \"/app/applet/public/assets/generated/temp_job_1789550804944_c2487d3f.svg\" -vf \"scale=1280:720,format=yuv420p\" -c:v libx264 -preset ultrafast -movflags +faststart \"/app/applet/public/assets/generated/studio_10s_job_1789550804944_c2487d3f.mp4\"\nffmpeg version 4.4.2-0ubuntu0.22.04.1+esm14 Copyright (c) 2000-2021 the FFmpeg developers\n  built with gcc 11 (Ubuntu 11.4.0-1ubuntu1~22.04.3)\n  configuration: --prefix=/usr --extra-version=0ubuntu0.22.04.1+esm14 --toolchain=hardened --libdir=/usr/lib/x86_64-linux-gnu --incdir=/usr/include/x86_64-linux-gnu --arch=amd64 --enable-gpl --disable-stripping --enable-gnutls --enable-ladspa --enable-libaom --enable-libass --enable-libbluray --enable-libbs2b --enable-libcaca --enable-libcdio --enable-libcodec2 --enable-libdav1d --enable-libflite --enable-libfontconfig --enable-libfreetype --enable-libfribidi --enable-libgme --enable-libgsm --enable-libjack --enable-libmp3lame --enable-libmysofa --enable-libopenjpeg --enable-libopenmpt --enable-libopus --enable-libpulse --enable-librabbitmq --enable-librubberband --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libspeex --enable-libsrt --enable-libssh --enable-libtheora --enable-libtwolame --enable-libvidstab --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx265 --enable-libxml2 --enable-libxvid --enable-libzimg --enable-libzmq --enable-libzvbi --enable-lv2 --enable-omx --enable-openal --enable-opencl --enable-opengl --enable-sdl2 --enable-pocketsphinx --enable-librsvg --enable-libmfx --enable-libdc1394 --enable-libdrm --enable-libiec61883 --enable-chromaprint --enable-frei0r --enable-libx264 --enable-shared\n  libavutil      56. 70.100 / 56. 70.100\n  libavcodec     58.134.100 / 58.134.100\n  libavformat    58. 76.100 / 58. 76.100\n  libavdevice    58. 13.100 / 58. 13.100\n  libavfilter     7.110.100 /  7.110.100\n  libswscale      5.  9.100 /  5.  9.100\n  libswresample   3.  9.100 /  3.  9.100\n  libpostproc    55.  9.100 / 55.  9.100\nInput #0, image2, from '/app/applet/public/assets/generated/temp_job_1789550804944_c2487d3f.svg':\n  Duration: 00:00:00.04, start: 0.000000, bitrate: 645 kb/s\n  Stream #0:0: Video: svg, bgra, 1280x720, 25 fps, 25 tbr, 25 tbn, 25 tbc\nStream mapping:\n  Stream #0:0 -> #0:0 (svg (librsvg) -> h264 (libx264))\nPress [q] to stop, [?] for help\n[libx264 @ 0x55c65931c4c0] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2 AVX512\n[libx264 @ 0x55c65931c4c0] profile Constrained Baseline, level 3.1, 4:2:0, 8-bit\n[libx264 @ 0x55c65931c4c0] 264 - core 163 r3060 5db6aa6 - H.264/MPEG-4 AVC codec - Copyleft 2003-2021 - http://www.videolan.org/x264.html - options: cabac=0 ref=1 deblock=0:0:0 analyse=0:0 me=dia subme=0 psy=1 psy_rd=1.00:0.00 mixed_ref=0 me_range=16 chroma_me=1 trellis=0 8x8dct=0 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=0 threads=3 lookahead_threads=1 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=0 weightp=0 keyint=250 keyint_min=24 scenecut=0 intra_refresh=0 rc=crf mbtree=0 crf=23.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=0\nOutput #0, mp4, to '/app/applet/public/assets/generated/studio_10s_job_1789550804944_c2487d3f.mp4':\n  Metadata:\n    encoder         : Lavf58.76.100\n  Stream #0:0: Video: h264 (avc1 / 0x31637661), yuv420p(tv, progressive), 1280x720, q=2-31, 24 fps, 12288 tbn\n    Metadata:\n      encoder         : Lavc58.134.100 libx264\n    Side data:\n      cpb: bitrate max/min/avg: 0/0/0 buffer size: 0 vbv_delay: N/A\nframe=    1 fps=0.0 q=0.0 size=       0kB time=00:00:00.00 bitrate=N/A speed=N/A    \rframe=    6 fps=0.0 q=15.0 size=       0kB time=00:00:00.04 bitrate=   9.2kbits/s speed=0.0834x    \rframe=   11 fps= 10 q=12.0 size=       0kB time=00:00:00.25 bitrate=   1.5kbits/s speed=0.236x    \rframe=   17 fps= 10 q=12.0 size=       0kB time=00:00:00.50 bitrate=   0.8kbits/s speed=0.309x    \rframe=   23 fps= 10 q=12.0 size=       0kB time=00:00:00.75 bitrate=   0.5kbits/s speed=0.339x    \rframe=   28 fps= 10 q=12.0 size=       0kB time=00:00:00.95 bitrate=   0.4kbits/s speed=0.352x    \rframe=   33 fps= 10 q=12.0 size=       0kB time=00:00:01.16 bitrate=   0.3kbits/s speed=0.358x    \rframe=   38 fps=9.9 q=12.0 size=       0kB time=00:00:01.37 bitrate=   0.3kbits/s speed=0.36x    \rframe=   43 fps=9.8 q=12.0 size=       0kB time=00:00:01.58 bitrate=   0.2kbits/s speed=0.361x    \rframe=   48 fps=9.8 q=12.0 size=       0kB time=00:00:01.79 bitrate=   0.2kbits/s speed=0.365x    \rframe=   53 fps=9.7 q=12.0 size=       0kB time=00:00:02.00 bitrate=   0.2kbits/s speed=0.366x    \rframe=   58 fps=9.6 q=12.0 size=       0kB time=00:00:02.20 bitrate=   0.2kbits/s speed=0.367x    \rframe=   64 fps=9.7 q=12.0 size=       0kB time=00:00:02.45 bitrate=   0.2kbits/s speed=0.372x    \rframe=   70 fps=9.7 q=12.0 size=       0kB time=00:00:02.70 bitrate=   0.1kbits/s speed=0.376x    \rframe=   75 fps=9.7 q=12.0 size=       0kB time=00:00:02.91 bitrate=   0.1kbits/s speed=0.378x    \rframe=   80 fps=9.7 q=12.0 size=       0kB time=00:00:03.12 bitrate=   0.1kbits/s speed=0.38x    \rframe=   85 fps=9.7 q=12.0 size=       0kB time=00:00:03.33 bitrate=   0.1kbits/s speed=0.381x    \rframe=   90 fps=9.7 q=12.0 size=       0kB time=00:00:03.54 bitrate=   0.1kbits/s speed=0.382x    \rframe=   95 fps=9.7 q=12.0 size=       0kB time=00:00:03.75 bitrate=   0.1kbits/s speed=0.384x    \rframe=  101 fps=9.7 q=12.0 size=       0kB time=00:00:04.00 bitrate=   0.1kbits/s speed=0.385x    \rframe=  106 fps=9.7 q=12.0 size=       0kB time=00:00:04.20 bitrate=   0.1kbits/s speed=0.386x    \rframe=  111 fps=9.7 q=12.0 size=       0kB time=00:00:04.41 bitrate=   0.1kbits/s speed=0.385x    \rframe=  116 fps=9.7 q=12.0 size=       0kB time=00:00:04.62 bitrate=   0.1kbits/s speed=0.386x    \rframe=  121 fps=9.7 q=12.0 size=       0kB time=00:00:04.83 bitrate=   0.1kbits/s speed=0.387x    \rframe=  126 fps=9.7 q=12.0 size=       0kB time=00:00:05.04 bitrate=   0.1kbits/s speed=0.387x    \rframe=  131 fps=9.7 q=12.0 size=       0kB time=00:00:05.25 bitrate=   0.1kbits/s speed=0.387x    \rframe=  136 fps=9.7 q=12.0 size=       0kB time=00:00:05.45 bitrate=   0.1kbits/s speed=0.388x    \rframe=  141 fps=9.7 q=12.0 size=       0kB time=00:00:05.66 bitrate=   0.1kbits/s speed=0.388x    \rframe=  146 fps=9.7 q=12.0 size=       0kB time=00:00:05.87 bitrate=   0.1kbits/s speed=0.389x    \rframe=  151 fps=9.7 q=12.0 size=       0kB time=00:00:06.08 bitrate=   0.1kbits/s speed=0.39x    \rframe=  156 fps=9.7 q=12.0 size=       0kB time=00:00:06.29 bitrate=   0.1kbits/s speed=0.39x    \rframe=  161 fps=9.7 q=12.0 size=       0kB time=00:00:06.50 bitrate=   0.1kbits/s speed=0.39x    \rframe=  166 fps=9.7 q=12.0 size=       0kB time=00:00:06.70 bitrate=   0.1kbits/s speed=0.391x    \rframe=  171 fps=9.7 q=12.0 size=       0kB time=00:00:06.91 bitrate=   0.1kbits/s speed=0.391x    \rframe=  176 fps=9.7 q=12.0 size=     256kB time=00:00:07.12 bitrate= 294.4kbits/s speed=0.391x    \rframe=  181 fps=9.7 q=12.0 size=     256kB time=00:00:07.33 bitrate= 286.0kbits/s speed=0.392x    \rframe=  186 fps=9.7 q=12.0 size=     256kB time=00:00:07.54 bitrate= 278.1kbits/s speed=0.392x    \r",
+      "logs": [
+        {
+          "timestamp": 1789550804944,
+          "step": "queued",
+          "message": "Generation job enqueued for 10-second cinematic video."
+        },
+        {
+          "timestamp": 1789550804945,
+          "step": "analyzing",
+          "message": "AI Brain is interpreting intent, semantics, and reference imagery..."
+        },
+        {
+          "timestamp": 1789550804945,
+          "step": "planning",
+          "message": "AI Brain synthesizing visual plan, negative constraints & motion timeline..."
+        },
+        {
+          "timestamp": 1789550809950,
+          "step": "generating",
+          "message": "Dispatching to 10s cinematic video engine..."
+        },
+        {
+          "timestamp": 1789550809950,
+          "step": "generating",
+          "message": "Submitting 10-second cinematic prompt to Veo 3.1..."
+        },
+        {
+          "timestamp": 1789550810139,
+          "step": "generating",
+          "message": "Synthesizing visual keyframe composition with reference preservation..."
+        },
+        {
+          "timestamp": 1789550810139,
+          "step": "generating",
+          "message": "Rendering 10-second cinematic 24fps video stream with dynamic camera dolly & pan..."
+        },
+        {
+          "timestamp": 1789550860154,
+          "step": "failed",
+          "message": "Generation encountered error: Video encoding failed: Command failed: ffmpeg -y -loop 1 -t 10 -r 24 -i \"/app/applet/public/assets/generated/temp_job_1789550804944_c2487d3f.svg\" -vf \"scale=1280:720,format=yuv420p\" -c:v libx264 -preset ultrafast -movflags +faststart \"/app/applet/public/assets/generated/studio_10s_job_1789550804944_c2487d3f.mp4\"\nffmpeg version 4.4.2-0ubuntu0.22.04.1+esm14 Copyright (c) 2000-2021 the FFmpeg developers\n  built with gcc 11 (Ubuntu 11.4.0-1ubuntu1~22.04.3)\n  configuration: --prefix=/usr --extra-version=0ubuntu0.22.04.1+esm14 --toolchain=hardened --libdir=/usr/lib/x86_64-linux-gnu --incdir=/usr/include/x86_64-linux-gnu --arch=amd64 --enable-gpl --disable-stripping --enable-gnutls --enable-ladspa --enable-libaom --enable-libass --enable-libbluray --enable-libbs2b --enable-libcaca --enable-libcdio --enable-libcodec2 --enable-libdav1d --enable-libflite --enable-libfontconfig --enable-libfreetype --enable-libfribidi --enable-libgme --enable-libgsm --enable-libjack --enable-libmp3lame --enable-libmysofa --enable-libopenjpeg --enable-libopenmpt --enable-libopus --enable-libpulse --enable-librabbitmq --enable-librubberband --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libspeex --enable-libsrt --enable-libssh --enable-libtheora --enable-libtwolame --enable-libvidstab --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx265 --enable-libxml2 --enable-libxvid --enable-libzimg --enable-libzmq --enable-libzvbi --enable-lv2 --enable-omx --enable-openal --enable-opencl --enable-opengl --enable-sdl2 --enable-pocketsphinx --enable-librsvg --enable-libmfx --enable-libdc1394 --enable-libdrm --enable-libiec61883 --enable-chromaprint --enable-frei0r --enable-libx264 --enable-shared\n  libavutil      56. 70.100 / 56. 70.100\n  libavcodec     58.134.100 / 58.134.100\n  libavformat    58. 76.100 / 58. 76.100\n  libavdevice    58. 13.100 / 58. 13.100\n  libavfilter     7.110.100 /  7.110.100\n  libswscale      5.  9.100 /  5.  9.100\n  libswresample   3.  9.100 /  3.  9.100\n  libpostproc    55.  9.100 / 55.  9.100\nInput #0, image2, from '/app/applet/public/assets/generated/temp_job_1789550804944_c2487d3f.svg':\n  Duration: 00:00:00.04, start: 0.000000, bitrate: 645 kb/s\n  Stream #0:0: Video: svg, bgra, 1280x720, 25 fps, 25 tbr, 25 tbn, 25 tbc\nStream mapping:\n  Stream #0:0 -> #0:0 (svg (librsvg) -> h264 (libx264))\nPress [q] to stop, [?] for help\n[libx264 @ 0x55c65931c4c0] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2 AVX512\n[libx264 @ 0x55c65931c4c0] profile Constrained Baseline, level 3.1, 4:2:0, 8-bit\n[libx264 @ 0x55c65931c4c0] 264 - core 163 r3060 5db6aa6 - H.264/MPEG-4 AVC codec - Copyleft 2003-2021 - http://www.videolan.org/x264.html - options: cabac=0 ref=1 deblock=0:0:0 analyse=0:0 me=dia subme=0 psy=1 psy_rd=1.00:0.00 mixed_ref=0 me_range=16 chroma_me=1 trellis=0 8x8dct=0 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=0 threads=3 lookahead_threads=1 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=0 weightp=0 keyint=250 keyint_min=24 scenecut=0 intra_refresh=0 rc=crf mbtree=0 crf=23.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=0\nOutput #0, mp4, to '/app/applet/public/assets/generated/studio_10s_job_1789550804944_c2487d3f.mp4':\n  Metadata:\n    encoder         : Lavf58.76.100\n  Stream #0:0: Video: h264 (avc1 / 0x31637661), yuv420p(tv, progressive), 1280x720, q=2-31, 24 fps, 12288 tbn\n    Metadata:\n      encoder         : Lavc58.134.100 libx264\n    Side data:\n      cpb: bitrate max/min/avg: 0/0/0 buffer size: 0 vbv_delay: N/A\nframe=    1 fps=0.0 q=0.0 size=       0kB time=00:00:00.00 bitrate=N/A speed=N/A    \rframe=    6 fps=0.0 q=15.0 size=       0kB time=00:00:00.04 bitrate=   9.2kbits/s speed=0.0834x    \rframe=   11 fps= 10 q=12.0 size=       0kB time=00:00:00.25 bitrate=   1.5kbits/s speed=0.236x    \rframe=   17 fps= 10 q=12.0 size=       0kB time=00:00:00.50 bitrate=   0.8kbits/s speed=0.309x    \rframe=   23 fps= 10 q=12.0 size=       0kB time=00:00:00.75 bitrate=   0.5kbits/s speed=0.339x    \rframe=   28 fps= 10 q=12.0 size=       0kB time=00:00:00.95 bitrate=   0.4kbits/s speed=0.352x    \rframe=   33 fps= 10 q=12.0 size=       0kB time=00:00:01.16 bitrate=   0.3kbits/s speed=0.358x    \rframe=   38 fps=9.9 q=12.0 size=       0kB time=00:00:01.37 bitrate=   0.3kbits/s speed=0.36x    \rframe=   43 fps=9.8 q=12.0 size=       0kB time=00:00:01.58 bitrate=   0.2kbits/s speed=0.361x    \rframe=   48 fps=9.8 q=12.0 size=       0kB time=00:00:01.79 bitrate=   0.2kbits/s speed=0.365x    \rframe=   53 fps=9.7 q=12.0 size=       0kB time=00:00:02.00 bitrate=   0.2kbits/s speed=0.366x    \rframe=   58 fps=9.6 q=12.0 size=       0kB time=00:00:02.20 bitrate=   0.2kbits/s speed=0.367x    \rframe=   64 fps=9.7 q=12.0 size=       0kB time=00:00:02.45 bitrate=   0.2kbits/s speed=0.372x    \rframe=   70 fps=9.7 q=12.0 size=       0kB time=00:00:02.70 bitrate=   0.1kbits/s speed=0.376x    \rframe=   75 fps=9.7 q=12.0 size=       0kB time=00:00:02.91 bitrate=   0.1kbits/s speed=0.378x    \rframe=   80 fps=9.7 q=12.0 size=       0kB time=00:00:03.12 bitrate=   0.1kbits/s speed=0.38x    \rframe=   85 fps=9.7 q=12.0 size=       0kB time=00:00:03.33 bitrate=   0.1kbits/s speed=0.381x    \rframe=   90 fps=9.7 q=12.0 size=       0kB time=00:00:03.54 bitrate=   0.1kbits/s speed=0.382x    \rframe=   95 fps=9.7 q=12.0 size=       0kB time=00:00:03.75 bitrate=   0.1kbits/s speed=0.384x    \rframe=  101 fps=9.7 q=12.0 size=       0kB time=00:00:04.00 bitrate=   0.1kbits/s speed=0.385x    \rframe=  106 fps=9.7 q=12.0 size=       0kB time=00:00:04.20 bitrate=   0.1kbits/s speed=0.386x    \rframe=  111 fps=9.7 q=12.0 size=       0kB time=00:00:04.41 bitrate=   0.1kbits/s speed=0.385x    \rframe=  116 fps=9.7 q=12.0 size=       0kB time=00:00:04.62 bitrate=   0.1kbits/s speed=0.386x    \rframe=  121 fps=9.7 q=12.0 size=       0kB time=00:00:04.83 bitrate=   0.1kbits/s speed=0.387x    \rframe=  126 fps=9.7 q=12.0 size=       0kB time=00:00:05.04 bitrate=   0.1kbits/s speed=0.387x    \rframe=  131 fps=9.7 q=12.0 size=       0kB time=00:00:05.25 bitrate=   0.1kbits/s speed=0.387x    \rframe=  136 fps=9.7 q=12.0 size=       0kB time=00:00:05.45 bitrate=   0.1kbits/s speed=0.388x    \rframe=  141 fps=9.7 q=12.0 size=       0kB time=00:00:05.66 bitrate=   0.1kbits/s speed=0.388x    \rframe=  146 fps=9.7 q=12.0 size=       0kB time=00:00:05.87 bitrate=   0.1kbits/s speed=0.389x    \rframe=  151 fps=9.7 q=12.0 size=       0kB time=00:00:06.08 bitrate=   0.1kbits/s speed=0.39x    \rframe=  156 fps=9.7 q=12.0 size=       0kB time=00:00:06.29 bitrate=   0.1kbits/s speed=0.39x    \rframe=  161 fps=9.7 q=12.0 size=       0kB time=00:00:06.50 bitrate=   0.1kbits/s speed=0.39x    \rframe=  166 fps=9.7 q=12.0 size=       0kB time=00:00:06.70 bitrate=   0.1kbits/s speed=0.391x    \rframe=  171 fps=9.7 q=12.0 size=       0kB time=00:00:06.91 bitrate=   0.1kbits/s speed=0.391x    \rframe=  176 fps=9.7 q=12.0 size=     256kB time=00:00:07.12 bitrate= 294.4kbits/s speed=0.391x    \rframe=  181 fps=9.7 q=12.0 size=     256kB time=00:00:07.33 bitrate= 286.0kbits/s speed=0.392x    \rframe=  186 fps=9.7 q=12.0 size=     256kB time=00:00:07.54 bitrate= 278.1kbits/s speed=0.392x    \r"
+        }
+      ],
+      "createdAt": 1789550804944,
+      "updatedAt": 1789550860154,
+      "aiPlan": {
+        "originalPrompt": "Cinematic aerial glide through misty alpine peaks at sunrise",
+        "enhancedPrompt": "Cinematic aerial glide through misty alpine peaks at sunrise, Cinematic 35mm film photograph, shot on 35mm master lens, Volumetric rim lighting with soft golden hour fill, Wide cinematic angle with depth-of-field separation, High fidelity with intricate micro-textures, specular highlights, and natural physics, photorealistic, ultra-detailed 8k resolution, masterful color grading.",
+        "intent": "Evocative 10-second visual cinematic experience capturing \"Cinematic aerial glide through misty alpine peaks at sunrise\"",
+        "visualStyle": "Cinematic 35mm film photograph",
+        "composition": "Wide cinematic angle with depth-of-field separation",
+        "subjectDetails": "High fidelity with intricate micro-textures, specular highlights, and natural physics",
+        "lighting": "Volumetric rim lighting with soft golden hour fill",
+        "colorPalette": [
+          "#0f172a",
+          "#3b82f6",
+          "#06b6d4",
+          "#f8fafc"
+        ],
+        "referencePreservation": [],
+        "negativeConstraints": "blurry, noise, low resolution, oversaturated, deformed proportions, plastic skin, artifacts, stuttering motion, watermarks",
+        "videoPlan": {
+          "cameraMovement": "Steadicam tracking shot with smooth linear motion",
+          "subjectMotion": "Organic, fluid kinematics with natural momentum",
+          "environmentMotion": "Atmospheric particles, soft breeze dynamics, shifting specular reflections",
+          "speed": "medium",
+          "cinematicDirection": "24fps cinematic motion blur, temporal cohesion across 10 seconds, seamless continuity",
+          "durationSeconds": 10,
+          "timelineKeyframes": [
+            "00:00 - 00:02: Establishing initial framing with fluid camera ingress",
+            "00:02 - 00:05: Subject motion accelerates with secondary particle dynamics",
+            "00:05 - 00:08: Dynamic lighting shift revealing intricate material textures",
+            "00:08 - 00:10: Graceful deceleration framing final hero composition"
+          ]
+        }
+      },
+      "error": "Video encoding failed: Command failed: ffmpeg -y -loop 1 -t 10 -r 24 -i \"/app/applet/public/assets/generated/temp_job_1789550804944_c2487d3f.svg\" -vf \"scale=1280:720,format=yuv420p\" -c:v libx264 -preset ultrafast -movflags +faststart \"/app/applet/public/assets/generated/studio_10s_job_1789550804944_c2487d3f.mp4\"\nffmpeg version 4.4.2-0ubuntu0.22.04.1+esm14 Copyright (c) 2000-2021 the FFmpeg developers\n  built with gcc 11 (Ubuntu 11.4.0-1ubuntu1~22.04.3)\n  configuration: --prefix=/usr --extra-version=0ubuntu0.22.04.1+esm14 --toolchain=hardened --libdir=/usr/lib/x86_64-linux-gnu --incdir=/usr/include/x86_64-linux-gnu --arch=amd64 --enable-gpl --disable-stripping --enable-gnutls --enable-ladspa --enable-libaom --enable-libass --enable-libbluray --enable-libbs2b --enable-libcaca --enable-libcdio --enable-libcodec2 --enable-libdav1d --enable-libflite --enable-libfontconfig --enable-libfreetype --enable-libfribidi --enable-libgme --enable-libgsm --enable-libjack --enable-libmp3lame --enable-libmysofa --enable-libopenjpeg --enable-libopenmpt --enable-libopus --enable-libpulse --enable-librabbitmq --enable-librubberband --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libspeex --enable-libsrt --enable-libssh --enable-libtheora --enable-libtwolame --enable-libvidstab --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx265 --enable-libxml2 --enable-libxvid --enable-libzimg --enable-libzmq --enable-libzvbi --enable-lv2 --enable-omx --enable-openal --enable-opencl --enable-opengl --enable-sdl2 --enable-pocketsphinx --enable-librsvg --enable-libmfx --enable-libdc1394 --enable-libdrm --enable-libiec61883 --enable-chromaprint --enable-frei0r --enable-libx264 --enable-shared\n  libavutil      56. 70.100 / 56. 70.100\n  libavcodec     58.134.100 / 58.134.100\n  libavformat    58. 76.100 / 58. 76.100\n  libavdevice    58. 13.100 / 58. 13.100\n  libavfilter     7.110.100 /  7.110.100\n  libswscale      5.  9.100 /  5.  9.100\n  libswresample   3.  9.100 /  3.  9.100\n  libpostproc    55.  9.100 / 55.  9.100\nInput #0, image2, from '/app/applet/public/assets/generated/temp_job_1789550804944_c2487d3f.svg':\n  Duration: 00:00:00.04, start: 0.000000, bitrate: 645 kb/s\n  Stream #0:0: Video: svg, bgra, 1280x720, 25 fps, 25 tbr, 25 tbn, 25 tbc\nStream mapping:\n  Stream #0:0 -> #0:0 (svg (librsvg) -> h264 (libx264))\nPress [q] to stop, [?] for help\n[libx264 @ 0x55c65931c4c0] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2 AVX512\n[libx264 @ 0x55c65931c4c0] profile Constrained Baseline, level 3.1, 4:2:0, 8-bit\n[libx264 @ 0x55c65931c4c0] 264 - core 163 r3060 5db6aa6 - H.264/MPEG-4 AVC codec - Copyleft 2003-2021 - http://www.videolan.org/x264.html - options: cabac=0 ref=1 deblock=0:0:0 analyse=0:0 me=dia subme=0 psy=1 psy_rd=1.00:0.00 mixed_ref=0 me_range=16 chroma_me=1 trellis=0 8x8dct=0 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=0 threads=3 lookahead_threads=1 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=0 weightp=0 keyint=250 keyint_min=24 scenecut=0 intra_refresh=0 rc=crf mbtree=0 crf=23.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=0\nOutput #0, mp4, to '/app/applet/public/assets/generated/studio_10s_job_1789550804944_c2487d3f.mp4':\n  Metadata:\n    encoder         : Lavf58.76.100\n  Stream #0:0: Video: h264 (avc1 / 0x31637661), yuv420p(tv, progressive), 1280x720, q=2-31, 24 fps, 12288 tbn\n    Metadata:\n      encoder         : Lavc58.134.100 libx264\n    Side data:\n      cpb: bitrate max/min/avg: 0/0/0 buffer size: 0 vbv_delay: N/A\nframe=    1 fps=0.0 q=0.0 size=       0kB time=00:00:00.00 bitrate=N/A speed=N/A    \rframe=    6 fps=0.0 q=15.0 size=       0kB time=00:00:00.04 bitrate=   9.2kbits/s speed=0.0834x    \rframe=   11 fps= 10 q=12.0 size=       0kB time=00:00:00.25 bitrate=   1.5kbits/s speed=0.236x    \rframe=   17 fps= 10 q=12.0 size=       0kB time=00:00:00.50 bitrate=   0.8kbits/s speed=0.309x    \rframe=   23 fps= 10 q=12.0 size=       0kB time=00:00:00.75 bitrate=   0.5kbits/s speed=0.339x    \rframe=   28 fps= 10 q=12.0 size=       0kB time=00:00:00.95 bitrate=   0.4kbits/s speed=0.352x    \rframe=   33 fps= 10 q=12.0 size=       0kB time=00:00:01.16 bitrate=   0.3kbits/s speed=0.358x    \rframe=   38 fps=9.9 q=12.0 size=       0kB time=00:00:01.37 bitrate=   0.3kbits/s speed=0.36x    \rframe=   43 fps=9.8 q=12.0 size=       0kB time=00:00:01.58 bitrate=   0.2kbits/s speed=0.361x    \rframe=   48 fps=9.8 q=12.0 size=       0kB time=00:00:01.79 bitrate=   0.2kbits/s speed=0.365x    \rframe=   53 fps=9.7 q=12.0 size=       0kB time=00:00:02.00 bitrate=   0.2kbits/s speed=0.366x    \rframe=   58 fps=9.6 q=12.0 size=       0kB time=00:00:02.20 bitrate=   0.2kbits/s speed=0.367x    \rframe=   64 fps=9.7 q=12.0 size=       0kB time=00:00:02.45 bitrate=   0.2kbits/s speed=0.372x    \rframe=   70 fps=9.7 q=12.0 size=       0kB time=00:00:02.70 bitrate=   0.1kbits/s speed=0.376x    \rframe=   75 fps=9.7 q=12.0 size=       0kB time=00:00:02.91 bitrate=   0.1kbits/s speed=0.378x    \rframe=   80 fps=9.7 q=12.0 size=       0kB time=00:00:03.12 bitrate=   0.1kbits/s speed=0.38x    \rframe=   85 fps=9.7 q=12.0 size=       0kB time=00:00:03.33 bitrate=   0.1kbits/s speed=0.381x    \rframe=   90 fps=9.7 q=12.0 size=       0kB time=00:00:03.54 bitrate=   0.1kbits/s speed=0.382x    \rframe=   95 fps=9.7 q=12.0 size=       0kB time=00:00:03.75 bitrate=   0.1kbits/s speed=0.384x    \rframe=  101 fps=9.7 q=12.0 size=       0kB time=00:00:04.00 bitrate=   0.1kbits/s speed=0.385x    \rframe=  106 fps=9.7 q=12.0 size=       0kB time=00:00:04.20 bitrate=   0.1kbits/s speed=0.386x    \rframe=  111 fps=9.7 q=12.0 size=       0kB time=00:00:04.41 bitrate=   0.1kbits/s speed=0.385x    \rframe=  116 fps=9.7 q=12.0 size=       0kB time=00:00:04.62 bitrate=   0.1kbits/s speed=0.386x    \rframe=  121 fps=9.7 q=12.0 size=       0kB time=00:00:04.83 bitrate=   0.1kbits/s speed=0.387x    \rframe=  126 fps=9.7 q=12.0 size=       0kB time=00:00:05.04 bitrate=   0.1kbits/s speed=0.387x    \rframe=  131 fps=9.7 q=12.0 size=       0kB time=00:00:05.25 bitrate=   0.1kbits/s speed=0.387x    \rframe=  136 fps=9.7 q=12.0 size=       0kB time=00:00:05.45 bitrate=   0.1kbits/s speed=0.388x    \rframe=  141 fps=9.7 q=12.0 size=       0kB time=00:00:05.66 bitrate=   0.1kbits/s speed=0.388x    \rframe=  146 fps=9.7 q=12.0 size=       0kB time=00:00:05.87 bitrate=   0.1kbits/s speed=0.389x    \rframe=  151 fps=9.7 q=12.0 size=       0kB time=00:00:06.08 bitrate=   0.1kbits/s speed=0.39x    \rframe=  156 fps=9.7 q=12.0 size=       0kB time=00:00:06.29 bitrate=   0.1kbits/s speed=0.39x    \rframe=  161 fps=9.7 q=12.0 size=       0kB time=00:00:06.50 bitrate=   0.1kbits/s speed=0.39x    \rframe=  166 fps=9.7 q=12.0 size=       0kB time=00:00:06.70 bitrate=   0.1kbits/s speed=0.391x    \rframe=  171 fps=9.7 q=12.0 size=       0kB time=00:00:06.91 bitrate=   0.1kbits/s speed=0.391x    \rframe=  176 fps=9.7 q=12.0 size=     256kB time=00:00:07.12 bitrate= 294.4kbits/s speed=0.391x    \rframe=  181 fps=9.7 q=12.0 size=     256kB time=00:00:07.33 bitrate= 286.0kbits/s speed=0.392x    \rframe=  186 fps=9.7 q=12.0 size=     256kB time=00:00:07.54 bitrate= 278.1kbits/s speed=0.392x    \r"
+    },
+    "job_1789550875604_a508a00f": {
+      "id": "job_1789550875604_a508a00f",
+      "userId": "user_creator_1",
+      "userName": "Creative Director",
+      "mode": "video",
+      "prompt": "Cinematic aerial glide through misty alpine peaks at sunrise",
+      "aspectRatio": "16:9",
+      "status": "failed",
+      "progress": 100,
+      "currentStepMessage": "Generation encountered error: Video encoding failed: Command failed: ffmpeg -y -loop 1 -t 10 -r 24 -i \"/app/applet/public/assets/generated/temp_job_1789550875604_a508a00f.svg\" -vf \"scale=1280:720,format=yuv420p\" -c:v libx264 -preset ultrafast -movflags +faststart \"/app/applet/public/assets/generated/studio_10s_job_1789550875604_a508a00f.mp4\"\nffmpeg version 4.4.2-0ubuntu0.22.04.1+esm14 Copyright (c) 2000-2021 the FFmpeg developers\n  built with gcc 11 (Ubuntu 11.4.0-1ubuntu1~22.04.3)\n  configuration: --prefix=/usr --extra-version=0ubuntu0.22.04.1+esm14 --toolchain=hardened --libdir=/usr/lib/x86_64-linux-gnu --incdir=/usr/include/x86_64-linux-gnu --arch=amd64 --enable-gpl --disable-stripping --enable-gnutls --enable-ladspa --enable-libaom --enable-libass --enable-libbluray --enable-libbs2b --enable-libcaca --enable-libcdio --enable-libcodec2 --enable-libdav1d --enable-libflite --enable-libfontconfig --enable-libfreetype --enable-libfribidi --enable-libgme --enable-libgsm --enable-libjack --enable-libmp3lame --enable-libmysofa --enable-libopenjpeg --enable-libopenmpt --enable-libopus --enable-libpulse --enable-librabbitmq --enable-librubberband --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libspeex --enable-libsrt --enable-libssh --enable-libtheora --enable-libtwolame --enable-libvidstab --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx265 --enable-libxml2 --enable-libxvid --enable-libzimg --enable-libzmq --enable-libzvbi --enable-lv2 --enable-omx --enable-openal --enable-opencl --enable-opengl --enable-sdl2 --enable-pocketsphinx --enable-librsvg --enable-libmfx --enable-libdc1394 --enable-libdrm --enable-libiec61883 --enable-chromaprint --enable-frei0r --enable-libx264 --enable-shared\n  libavutil      56. 70.100 / 56. 70.100\n  libavcodec     58.134.100 / 58.134.100\n  libavformat    58. 76.100 / 58. 76.100\n  libavdevice    58. 13.100 / 58. 13.100\n  libavfilter     7.110.100 /  7.110.100\n  libswscale      5.  9.100 /  5.  9.100\n  libswresample   3.  9.100 /  3.  9.100\n  libpostproc    55.  9.100 / 55.  9.100\nInput #0, image2, from '/app/applet/public/assets/generated/temp_job_1789550875604_a508a00f.svg':\n  Duration: 00:00:00.04, start: 0.000000, bitrate: 645 kb/s\n  Stream #0:0: Video: svg, bgra, 1280x720, 25 fps, 25 tbr, 25 tbn, 25 tbc\nStream mapping:\n  Stream #0:0 -> #0:0 (svg (librsvg) -> h264 (libx264))\nPress [q] to stop, [?] for help\n[libx264 @ 0x55dbfd988cc0] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2 AVX512\n[libx264 @ 0x55dbfd988cc0] profile Constrained Baseline, level 3.1, 4:2:0, 8-bit\n[libx264 @ 0x55dbfd988cc0] 264 - core 163 r3060 5db6aa6 - H.264/MPEG-4 AVC codec - Copyleft 2003-2021 - http://www.videolan.org/x264.html - options: cabac=0 ref=1 deblock=0:0:0 analyse=0:0 me=dia subme=0 psy=1 psy_rd=1.00:0.00 mixed_ref=0 me_range=16 chroma_me=1 trellis=0 8x8dct=0 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=0 threads=3 lookahead_threads=1 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=0 weightp=0 keyint=250 keyint_min=24 scenecut=0 intra_refresh=0 rc=crf mbtree=0 crf=23.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=0\nOutput #0, mp4, to '/app/applet/public/assets/generated/studio_10s_job_1789550875604_a508a00f.mp4':\n  Metadata:\n    encoder         : Lavf58.76.100\n  Stream #0:0: Video: h264 (avc1 / 0x31637661), yuv420p(tv, progressive), 1280x720, q=2-31, 24 fps, 12288 tbn\n    Metadata:\n      encoder         : Lavc58.134.100 libx264\n    Side data:\n      cpb: bitrate max/min/avg: 0/0/0 buffer size: 0 vbv_delay: N/A\nframe=    1 fps=0.0 q=0.0 size=       0kB time=00:00:00.00 bitrate=N/A speed=N/A    \rframe=    5 fps=0.0 q=17.0 size=       0kB time=00:00:00.00 bitrate=4740.7kbits/s speed=0.000159x    \rframe=    9 fps=8.2 q=13.0 size=       0kB time=00:00:00.16 bitrate=   2.3kbits/s speed=0.152x    \rframe=   13 fps=8.0 q=12.0 size=       0kB time=00:00:00.33 bitrate=   1.2kbits/s speed=0.206x    \rframe=   17 fps=7.7 q=12.0 size=       0kB time=00:00:00.50 bitrate=   0.8kbits/s speed=0.227x    \rframe=   21 fps=7.6 q=12.0 size=       0kB time=00:00:00.66 bitrate=   0.6kbits/s speed=0.24x    \rframe=   25 fps=7.6 q=12.0 size=       0kB time=00:00:00.83 bitrate=   0.5kbits/s speed=0.253x    \rframe=   29 fps=7.5 q=12.0 size=       0kB time=00:00:01.00 bitrate=   0.4kbits/s speed=0.258x    \rframe=   33 fps=7.3 q=12.0 size=       0kB time=00:00:01.16 bitrate=   0.3kbits/s speed=0.259x    \rframe=   37 fps=7.2 q=12.0 size=       0kB time=00:00:01.33 bitrate=   0.3kbits/s speed=0.261x    \rframe=   41 fps=7.1 q=12.0 size=       0kB time=00:00:01.50 bitrate=   0.3kbits/s speed=0.26x    \rframe=   45 fps=7.2 q=12.0 size=       0kB time=00:00:01.66 bitrate=   0.2kbits/s speed=0.265x    \rframe=   49 fps=7.2 q=12.0 size=       0kB time=00:00:01.83 bitrate=   0.2kbits/s speed=0.269x    \rframe=   53 fps=7.1 q=12.0 size=       0kB time=00:00:02.00 bitrate=   0.2kbits/s speed=0.269x    \rframe=   57 fps=7.1 q=12.0 size=       0kB time=00:00:02.16 bitrate=   0.2kbits/s speed=0.271x    \rframe=   61 fps=7.2 q=12.0 size=       0kB time=00:00:02.33 bitrate=   0.2kbits/s speed=0.274x    \rframe=   65 fps=7.1 q=12.0 size=       0kB time=00:00:02.50 bitrate=   0.2kbits/s speed=0.274x    \rframe=   69 fps=7.1 q=12.0 size=       0kB time=00:00:02.66 bitrate=   0.1kbits/s speed=0.275x    \rframe=   73 fps=7.1 q=12.0 size=       0kB time=00:00:02.83 bitrate=   0.1kbits/s speed=0.276x    \rframe=   77 fps=7.1 q=12.0 size=       0kB time=00:00:03.00 bitrate=   0.1kbits/s speed=0.278x    \rframe=   81 fps=7.1 q=12.0 size=       0kB time=00:00:03.16 bitrate=   0.1kbits/s speed=0.278x    \rframe=   85 fps=7.1 q=12.0 size=       0kB time=00:00:03.33 bitrate=   0.1kbits/s speed=0.28x    \rframe=   89 fps=7.1 q=12.0 size=       0kB time=00:00:03.50 bitrate=   0.1kbits/s speed=0.28x    \rframe=   93 fps=7.1 q=12.0 size=       0kB time=00:00:03.66 bitrate=   0.1kbits/s speed=0.28x    \rframe=   97 fps=7.1 q=12.0 size=       0kB time=00:00:03.83 bitrate=   0.1kbits/s speed=0.28x    \rframe=  101 fps=7.1 q=12.0 size=       0kB time=00:00:04.00 bitrate=   0.1kbits/s speed=0.28x    \rframe=  105 fps=7.1 q=12.0 size=       0kB time=00:00:04.16 bitrate=   0.1kbits/s speed=0.282x    \rframe=  109 fps=7.1 q=12.0 size=       0kB time=00:00:04.33 bitrate=   0.1kbits/s speed=0.282x    \rframe=  113 fps=7.1 q=12.0 size=       0kB time=00:00:04.50 bitrate=   0.1kbits/s speed=0.283x    \rframe=  117 fps=7.1 q=12.0 size=       0kB time=00:00:04.66 bitrate=   0.1kbits/s speed=0.283x    \rframe=  121 fps=7.1 q=12.0 size=       0kB time=00:00:04.83 bitrate=   0.1kbits/s speed=0.284x    \rframe=  125 fps=7.1 q=12.0 size=       0kB time=00:00:05.00 bitrate=   0.1kbits/s speed=0.284x    \rframe=  129 fps=7.1 q=12.0 size=       0kB time=00:00:05.16 bitrate=   0.1kbits/s speed=0.285x    \rframe=  133 fps=7.1 q=12.0 size=       0kB time=00:00:05.33 bitrate=   0.1kbits/s speed=0.285x    \rframe=  137 fps=7.1 q=12.0 size=       0kB time=00:00:05.50 bitrate=   0.1kbits/s speed=0.285x    \r",
+      "logs": [
+        {
+          "timestamp": 1789550875604,
+          "step": "queued",
+          "message": "Generation job enqueued for 10-second cinematic video."
+        },
+        {
+          "timestamp": 1789550875604,
+          "step": "analyzing",
+          "message": "AI Brain is interpreting intent, semantics, and reference imagery..."
+        },
+        {
+          "timestamp": 1789550875605,
+          "step": "planning",
+          "message": "AI Brain synthesizing visual plan, negative constraints & motion timeline..."
+        },
+        {
+          "timestamp": 1789550880610,
+          "step": "generating",
+          "message": "Dispatching to 10s cinematic video engine..."
+        },
+        {
+          "timestamp": 1789550880611,
+          "step": "generating",
+          "message": "Submitting 10-second cinematic prompt to Veo 3.1..."
+        },
+        {
+          "timestamp": 1789550880802,
+          "step": "generating",
+          "message": "Synthesizing visual keyframe composition with reference preservation..."
+        },
+        {
+          "timestamp": 1789550880803,
+          "step": "generating",
+          "message": "Rendering 10-second cinematic 24fps video stream with dynamic camera dolly & pan..."
+        },
+        {
+          "timestamp": 1789550930818,
+          "step": "failed",
+          "message": "Generation encountered error: Video encoding failed: Command failed: ffmpeg -y -loop 1 -t 10 -r 24 -i \"/app/applet/public/assets/generated/temp_job_1789550875604_a508a00f.svg\" -vf \"scale=1280:720,format=yuv420p\" -c:v libx264 -preset ultrafast -movflags +faststart \"/app/applet/public/assets/generated/studio_10s_job_1789550875604_a508a00f.mp4\"\nffmpeg version 4.4.2-0ubuntu0.22.04.1+esm14 Copyright (c) 2000-2021 the FFmpeg developers\n  built with gcc 11 (Ubuntu 11.4.0-1ubuntu1~22.04.3)\n  configuration: --prefix=/usr --extra-version=0ubuntu0.22.04.1+esm14 --toolchain=hardened --libdir=/usr/lib/x86_64-linux-gnu --incdir=/usr/include/x86_64-linux-gnu --arch=amd64 --enable-gpl --disable-stripping --enable-gnutls --enable-ladspa --enable-libaom --enable-libass --enable-libbluray --enable-libbs2b --enable-libcaca --enable-libcdio --enable-libcodec2 --enable-libdav1d --enable-libflite --enable-libfontconfig --enable-libfreetype --enable-libfribidi --enable-libgme --enable-libgsm --enable-libjack --enable-libmp3lame --enable-libmysofa --enable-libopenjpeg --enable-libopenmpt --enable-libopus --enable-libpulse --enable-librabbitmq --enable-librubberband --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libspeex --enable-libsrt --enable-libssh --enable-libtheora --enable-libtwolame --enable-libvidstab --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx265 --enable-libxml2 --enable-libxvid --enable-libzimg --enable-libzmq --enable-libzvbi --enable-lv2 --enable-omx --enable-openal --enable-opencl --enable-opengl --enable-sdl2 --enable-pocketsphinx --enable-librsvg --enable-libmfx --enable-libdc1394 --enable-libdrm --enable-libiec61883 --enable-chromaprint --enable-frei0r --enable-libx264 --enable-shared\n  libavutil      56. 70.100 / 56. 70.100\n  libavcodec     58.134.100 / 58.134.100\n  libavformat    58. 76.100 / 58. 76.100\n  libavdevice    58. 13.100 / 58. 13.100\n  libavfilter     7.110.100 /  7.110.100\n  libswscale      5.  9.100 /  5.  9.100\n  libswresample   3.  9.100 /  3.  9.100\n  libpostproc    55.  9.100 / 55.  9.100\nInput #0, image2, from '/app/applet/public/assets/generated/temp_job_1789550875604_a508a00f.svg':\n  Duration: 00:00:00.04, start: 0.000000, bitrate: 645 kb/s\n  Stream #0:0: Video: svg, bgra, 1280x720, 25 fps, 25 tbr, 25 tbn, 25 tbc\nStream mapping:\n  Stream #0:0 -> #0:0 (svg (librsvg) -> h264 (libx264))\nPress [q] to stop, [?] for help\n[libx264 @ 0x55dbfd988cc0] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2 AVX512\n[libx264 @ 0x55dbfd988cc0] profile Constrained Baseline, level 3.1, 4:2:0, 8-bit\n[libx264 @ 0x55dbfd988cc0] 264 - core 163 r3060 5db6aa6 - H.264/MPEG-4 AVC codec - Copyleft 2003-2021 - http://www.videolan.org/x264.html - options: cabac=0 ref=1 deblock=0:0:0 analyse=0:0 me=dia subme=0 psy=1 psy_rd=1.00:0.00 mixed_ref=0 me_range=16 chroma_me=1 trellis=0 8x8dct=0 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=0 threads=3 lookahead_threads=1 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=0 weightp=0 keyint=250 keyint_min=24 scenecut=0 intra_refresh=0 rc=crf mbtree=0 crf=23.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=0\nOutput #0, mp4, to '/app/applet/public/assets/generated/studio_10s_job_1789550875604_a508a00f.mp4':\n  Metadata:\n    encoder         : Lavf58.76.100\n  Stream #0:0: Video: h264 (avc1 / 0x31637661), yuv420p(tv, progressive), 1280x720, q=2-31, 24 fps, 12288 tbn\n    Metadata:\n      encoder         : Lavc58.134.100 libx264\n    Side data:\n      cpb: bitrate max/min/avg: 0/0/0 buffer size: 0 vbv_delay: N/A\nframe=    1 fps=0.0 q=0.0 size=       0kB time=00:00:00.00 bitrate=N/A speed=N/A    \rframe=    5 fps=0.0 q=17.0 size=       0kB time=00:00:00.00 bitrate=4740.7kbits/s speed=0.000159x    \rframe=    9 fps=8.2 q=13.0 size=       0kB time=00:00:00.16 bitrate=   2.3kbits/s speed=0.152x    \rframe=   13 fps=8.0 q=12.0 size=       0kB time=00:00:00.33 bitrate=   1.2kbits/s speed=0.206x    \rframe=   17 fps=7.7 q=12.0 size=       0kB time=00:00:00.50 bitrate=   0.8kbits/s speed=0.227x    \rframe=   21 fps=7.6 q=12.0 size=       0kB time=00:00:00.66 bitrate=   0.6kbits/s speed=0.24x    \rframe=   25 fps=7.6 q=12.0 size=       0kB time=00:00:00.83 bitrate=   0.5kbits/s speed=0.253x    \rframe=   29 fps=7.5 q=12.0 size=       0kB time=00:00:01.00 bitrate=   0.4kbits/s speed=0.258x    \rframe=   33 fps=7.3 q=12.0 size=       0kB time=00:00:01.16 bitrate=   0.3kbits/s speed=0.259x    \rframe=   37 fps=7.2 q=12.0 size=       0kB time=00:00:01.33 bitrate=   0.3kbits/s speed=0.261x    \rframe=   41 fps=7.1 q=12.0 size=       0kB time=00:00:01.50 bitrate=   0.3kbits/s speed=0.26x    \rframe=   45 fps=7.2 q=12.0 size=       0kB time=00:00:01.66 bitrate=   0.2kbits/s speed=0.265x    \rframe=   49 fps=7.2 q=12.0 size=       0kB time=00:00:01.83 bitrate=   0.2kbits/s speed=0.269x    \rframe=   53 fps=7.1 q=12.0 size=       0kB time=00:00:02.00 bitrate=   0.2kbits/s speed=0.269x    \rframe=   57 fps=7.1 q=12.0 size=       0kB time=00:00:02.16 bitrate=   0.2kbits/s speed=0.271x    \rframe=   61 fps=7.2 q=12.0 size=       0kB time=00:00:02.33 bitrate=   0.2kbits/s speed=0.274x    \rframe=   65 fps=7.1 q=12.0 size=       0kB time=00:00:02.50 bitrate=   0.2kbits/s speed=0.274x    \rframe=   69 fps=7.1 q=12.0 size=       0kB time=00:00:02.66 bitrate=   0.1kbits/s speed=0.275x    \rframe=   73 fps=7.1 q=12.0 size=       0kB time=00:00:02.83 bitrate=   0.1kbits/s speed=0.276x    \rframe=   77 fps=7.1 q=12.0 size=       0kB time=00:00:03.00 bitrate=   0.1kbits/s speed=0.278x    \rframe=   81 fps=7.1 q=12.0 size=       0kB time=00:00:03.16 bitrate=   0.1kbits/s speed=0.278x    \rframe=   85 fps=7.1 q=12.0 size=       0kB time=00:00:03.33 bitrate=   0.1kbits/s speed=0.28x    \rframe=   89 fps=7.1 q=12.0 size=       0kB time=00:00:03.50 bitrate=   0.1kbits/s speed=0.28x    \rframe=   93 fps=7.1 q=12.0 size=       0kB time=00:00:03.66 bitrate=   0.1kbits/s speed=0.28x    \rframe=   97 fps=7.1 q=12.0 size=       0kB time=00:00:03.83 bitrate=   0.1kbits/s speed=0.28x    \rframe=  101 fps=7.1 q=12.0 size=       0kB time=00:00:04.00 bitrate=   0.1kbits/s speed=0.28x    \rframe=  105 fps=7.1 q=12.0 size=       0kB time=00:00:04.16 bitrate=   0.1kbits/s speed=0.282x    \rframe=  109 fps=7.1 q=12.0 size=       0kB time=00:00:04.33 bitrate=   0.1kbits/s speed=0.282x    \rframe=  113 fps=7.1 q=12.0 size=       0kB time=00:00:04.50 bitrate=   0.1kbits/s speed=0.283x    \rframe=  117 fps=7.1 q=12.0 size=       0kB time=00:00:04.66 bitrate=   0.1kbits/s speed=0.283x    \rframe=  121 fps=7.1 q=12.0 size=       0kB time=00:00:04.83 bitrate=   0.1kbits/s speed=0.284x    \rframe=  125 fps=7.1 q=12.0 size=       0kB time=00:00:05.00 bitrate=   0.1kbits/s speed=0.284x    \rframe=  129 fps=7.1 q=12.0 size=       0kB time=00:00:05.16 bitrate=   0.1kbits/s speed=0.285x    \rframe=  133 fps=7.1 q=12.0 size=       0kB time=00:00:05.33 bitrate=   0.1kbits/s speed=0.285x    \rframe=  137 fps=7.1 q=12.0 size=       0kB time=00:00:05.50 bitrate=   0.1kbits/s speed=0.285x    \r"
+        }
+      ],
+      "createdAt": 1789550875604,
+      "updatedAt": 1789550930818,
+      "aiPlan": {
+        "originalPrompt": "Cinematic aerial glide through misty alpine peaks at sunrise",
+        "enhancedPrompt": "Cinematic aerial glide through misty alpine peaks at sunrise, Cinematic 35mm film photograph, shot on 35mm master lens, Volumetric rim lighting with soft golden hour fill, Wide cinematic angle with depth-of-field separation, High fidelity with intricate micro-textures, specular highlights, and natural physics, photorealistic, ultra-detailed 8k resolution, masterful color grading.",
+        "intent": "Evocative 10-second visual cinematic experience capturing \"Cinematic aerial glide through misty alpine peaks at sunrise\"",
+        "visualStyle": "Cinematic 35mm film photograph",
+        "composition": "Wide cinematic angle with depth-of-field separation",
+        "subjectDetails": "High fidelity with intricate micro-textures, specular highlights, and natural physics",
+        "lighting": "Volumetric rim lighting with soft golden hour fill",
+        "colorPalette": [
+          "#0f172a",
+          "#3b82f6",
+          "#06b6d4",
+          "#f8fafc"
+        ],
+        "referencePreservation": [],
+        "negativeConstraints": "blurry, noise, low resolution, oversaturated, deformed proportions, plastic skin, artifacts, stuttering motion, watermarks",
+        "videoPlan": {
+          "cameraMovement": "Steadicam tracking shot with smooth linear motion",
+          "subjectMotion": "Organic, fluid kinematics with natural momentum",
+          "environmentMotion": "Atmospheric particles, soft breeze dynamics, shifting specular reflections",
+          "speed": "medium",
+          "cinematicDirection": "24fps cinematic motion blur, temporal cohesion across 10 seconds, seamless continuity",
+          "durationSeconds": 10,
+          "timelineKeyframes": [
+            "00:00 - 00:02: Establishing initial framing with fluid camera ingress",
+            "00:02 - 00:05: Subject motion accelerates with secondary particle dynamics",
+            "00:05 - 00:08: Dynamic lighting shift revealing intricate material textures",
+            "00:08 - 00:10: Graceful deceleration framing final hero composition"
+          ]
+        }
+      },
+      "error": "Video encoding failed: Command failed: ffmpeg -y -loop 1 -t 10 -r 24 -i \"/app/applet/public/assets/generated/temp_job_1789550875604_a508a00f.svg\" -vf \"scale=1280:720,format=yuv420p\" -c:v libx264 -preset ultrafast -movflags +faststart \"/app/applet/public/assets/generated/studio_10s_job_1789550875604_a508a00f.mp4\"\nffmpeg version 4.4.2-0ubuntu0.22.04.1+esm14 Copyright (c) 2000-2021 the FFmpeg developers\n  built with gcc 11 (Ubuntu 11.4.0-1ubuntu1~22.04.3)\n  configuration: --prefix=/usr --extra-version=0ubuntu0.22.04.1+esm14 --toolchain=hardened --libdir=/usr/lib/x86_64-linux-gnu --incdir=/usr/include/x86_64-linux-gnu --arch=amd64 --enable-gpl --disable-stripping --enable-gnutls --enable-ladspa --enable-libaom --enable-libass --enable-libbluray --enable-libbs2b --enable-libcaca --enable-libcdio --enable-libcodec2 --enable-libdav1d --enable-libflite --enable-libfontconfig --enable-libfreetype --enable-libfribidi --enable-libgme --enable-libgsm --enable-libjack --enable-libmp3lame --enable-libmysofa --enable-libopenjpeg --enable-libopenmpt --enable-libopus --enable-libpulse --enable-librabbitmq --enable-librubberband --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libspeex --enable-libsrt --enable-libssh --enable-libtheora --enable-libtwolame --enable-libvidstab --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx265 --enable-libxml2 --enable-libxvid --enable-libzimg --enable-libzmq --enable-libzvbi --enable-lv2 --enable-omx --enable-openal --enable-opencl --enable-opengl --enable-sdl2 --enable-pocketsphinx --enable-librsvg --enable-libmfx --enable-libdc1394 --enable-libdrm --enable-libiec61883 --enable-chromaprint --enable-frei0r --enable-libx264 --enable-shared\n  libavutil      56. 70.100 / 56. 70.100\n  libavcodec     58.134.100 / 58.134.100\n  libavformat    58. 76.100 / 58. 76.100\n  libavdevice    58. 13.100 / 58. 13.100\n  libavfilter     7.110.100 /  7.110.100\n  libswscale      5.  9.100 /  5.  9.100\n  libswresample   3.  9.100 /  3.  9.100\n  libpostproc    55.  9.100 / 55.  9.100\nInput #0, image2, from '/app/applet/public/assets/generated/temp_job_1789550875604_a508a00f.svg':\n  Duration: 00:00:00.04, start: 0.000000, bitrate: 645 kb/s\n  Stream #0:0: Video: svg, bgra, 1280x720, 25 fps, 25 tbr, 25 tbn, 25 tbc\nStream mapping:\n  Stream #0:0 -> #0:0 (svg (librsvg) -> h264 (libx264))\nPress [q] to stop, [?] for help\n[libx264 @ 0x55dbfd988cc0] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2 AVX512\n[libx264 @ 0x55dbfd988cc0] profile Constrained Baseline, level 3.1, 4:2:0, 8-bit\n[libx264 @ 0x55dbfd988cc0] 264 - core 163 r3060 5db6aa6 - H.264/MPEG-4 AVC codec - Copyleft 2003-2021 - http://www.videolan.org/x264.html - options: cabac=0 ref=1 deblock=0:0:0 analyse=0:0 me=dia subme=0 psy=1 psy_rd=1.00:0.00 mixed_ref=0 me_range=16 chroma_me=1 trellis=0 8x8dct=0 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=0 threads=3 lookahead_threads=1 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=0 weightp=0 keyint=250 keyint_min=24 scenecut=0 intra_refresh=0 rc=crf mbtree=0 crf=23.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=0\nOutput #0, mp4, to '/app/applet/public/assets/generated/studio_10s_job_1789550875604_a508a00f.mp4':\n  Metadata:\n    encoder         : Lavf58.76.100\n  Stream #0:0: Video: h264 (avc1 / 0x31637661), yuv420p(tv, progressive), 1280x720, q=2-31, 24 fps, 12288 tbn\n    Metadata:\n      encoder         : Lavc58.134.100 libx264\n    Side data:\n      cpb: bitrate max/min/avg: 0/0/0 buffer size: 0 vbv_delay: N/A\nframe=    1 fps=0.0 q=0.0 size=       0kB time=00:00:00.00 bitrate=N/A speed=N/A    \rframe=    5 fps=0.0 q=17.0 size=       0kB time=00:00:00.00 bitrate=4740.7kbits/s speed=0.000159x    \rframe=    9 fps=8.2 q=13.0 size=       0kB time=00:00:00.16 bitrate=   2.3kbits/s speed=0.152x    \rframe=   13 fps=8.0 q=12.0 size=       0kB time=00:00:00.33 bitrate=   1.2kbits/s speed=0.206x    \rframe=   17 fps=7.7 q=12.0 size=       0kB time=00:00:00.50 bitrate=   0.8kbits/s speed=0.227x    \rframe=   21 fps=7.6 q=12.0 size=       0kB time=00:00:00.66 bitrate=   0.6kbits/s speed=0.24x    \rframe=   25 fps=7.6 q=12.0 size=       0kB time=00:00:00.83 bitrate=   0.5kbits/s speed=0.253x    \rframe=   29 fps=7.5 q=12.0 size=       0kB time=00:00:01.00 bitrate=   0.4kbits/s speed=0.258x    \rframe=   33 fps=7.3 q=12.0 size=       0kB time=00:00:01.16 bitrate=   0.3kbits/s speed=0.259x    \rframe=   37 fps=7.2 q=12.0 size=       0kB time=00:00:01.33 bitrate=   0.3kbits/s speed=0.261x    \rframe=   41 fps=7.1 q=12.0 size=       0kB time=00:00:01.50 bitrate=   0.3kbits/s speed=0.26x    \rframe=   45 fps=7.2 q=12.0 size=       0kB time=00:00:01.66 bitrate=   0.2kbits/s speed=0.265x    \rframe=   49 fps=7.2 q=12.0 size=       0kB time=00:00:01.83 bitrate=   0.2kbits/s speed=0.269x    \rframe=   53 fps=7.1 q=12.0 size=       0kB time=00:00:02.00 bitrate=   0.2kbits/s speed=0.269x    \rframe=   57 fps=7.1 q=12.0 size=       0kB time=00:00:02.16 bitrate=   0.2kbits/s speed=0.271x    \rframe=   61 fps=7.2 q=12.0 size=       0kB time=00:00:02.33 bitrate=   0.2kbits/s speed=0.274x    \rframe=   65 fps=7.1 q=12.0 size=       0kB time=00:00:02.50 bitrate=   0.2kbits/s speed=0.274x    \rframe=   69 fps=7.1 q=12.0 size=       0kB time=00:00:02.66 bitrate=   0.1kbits/s speed=0.275x    \rframe=   73 fps=7.1 q=12.0 size=       0kB time=00:00:02.83 bitrate=   0.1kbits/s speed=0.276x    \rframe=   77 fps=7.1 q=12.0 size=       0kB time=00:00:03.00 bitrate=   0.1kbits/s speed=0.278x    \rframe=   81 fps=7.1 q=12.0 size=       0kB time=00:00:03.16 bitrate=   0.1kbits/s speed=0.278x    \rframe=   85 fps=7.1 q=12.0 size=       0kB time=00:00:03.33 bitrate=   0.1kbits/s speed=0.28x    \rframe=   89 fps=7.1 q=12.0 size=       0kB time=00:00:03.50 bitrate=   0.1kbits/s speed=0.28x    \rframe=   93 fps=7.1 q=12.0 size=       0kB time=00:00:03.66 bitrate=   0.1kbits/s speed=0.28x    \rframe=   97 fps=7.1 q=12.0 size=       0kB time=00:00:03.83 bitrate=   0.1kbits/s speed=0.28x    \rframe=  101 fps=7.1 q=12.0 size=       0kB time=00:00:04.00 bitrate=   0.1kbits/s speed=0.28x    \rframe=  105 fps=7.1 q=12.0 size=       0kB time=00:00:04.16 bitrate=   0.1kbits/s speed=0.282x    \rframe=  109 fps=7.1 q=12.0 size=       0kB time=00:00:04.33 bitrate=   0.1kbits/s speed=0.282x    \rframe=  113 fps=7.1 q=12.0 size=       0kB time=00:00:04.50 bitrate=   0.1kbits/s speed=0.283x    \rframe=  117 fps=7.1 q=12.0 size=       0kB time=00:00:04.66 bitrate=   0.1kbits/s speed=0.283x    \rframe=  121 fps=7.1 q=12.0 size=       0kB time=00:00:04.83 bitrate=   0.1kbits/s speed=0.284x    \rframe=  125 fps=7.1 q=12.0 size=       0kB time=00:00:05.00 bitrate=   0.1kbits/s speed=0.284x    \rframe=  129 fps=7.1 q=12.0 size=       0kB time=00:00:05.16 bitrate=   0.1kbits/s speed=0.285x    \rframe=  133 fps=7.1 q=12.0 size=       0kB time=00:00:05.33 bitrate=   0.1kbits/s speed=0.285x    \rframe=  137 fps=7.1 q=12.0 size=       0kB time=00:00:05.50 bitrate=   0.1kbits/s speed=0.285x    \r"
+    },
+    "job_1789550930221_60a77dae": {
+      "id": "job_1789550930221_60a77dae",
+      "userId": "user_creator_1",
+      "userName": "Creative Director",
+      "mode": "video",
+      "prompt": "Glowing bioluminescent jellyfish floating through deep midnight sea",
+      "aspectRatio": "16:9",
+      "status": "failed",
+      "progress": 100,
+      "currentStepMessage": "Generation encountered error: Video encoding failed: Command failed: ffmpeg -y -loop 1 -t 10 -r 24 -i \"/app/applet/public/assets/generated/temp_job_1789550930221_60a77dae.svg\" -vf \"scale=1280:720,format=yuv420p\" -c:v libx264 -preset ultrafast -movflags +faststart \"/app/applet/public/assets/generated/studio_10s_job_1789550930221_60a77dae.mp4\"\nffmpeg version 4.4.2-0ubuntu0.22.04.1+esm14 Copyright (c) 2000-2021 the FFmpeg developers\n  built with gcc 11 (Ubuntu 11.4.0-1ubuntu1~22.04.3)\n  configuration: --prefix=/usr --extra-version=0ubuntu0.22.04.1+esm14 --toolchain=hardened --libdir=/usr/lib/x86_64-linux-gnu --incdir=/usr/include/x86_64-linux-gnu --arch=amd64 --enable-gpl --disable-stripping --enable-gnutls --enable-ladspa --enable-libaom --enable-libass --enable-libbluray --enable-libbs2b --enable-libcaca --enable-libcdio --enable-libcodec2 --enable-libdav1d --enable-libflite --enable-libfontconfig --enable-libfreetype --enable-libfribidi --enable-libgme --enable-libgsm --enable-libjack --enable-libmp3lame --enable-libmysofa --enable-libopenjpeg --enable-libopenmpt --enable-libopus --enable-libpulse --enable-librabbitmq --enable-librubberband --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libspeex --enable-libsrt --enable-libssh --enable-libtheora --enable-libtwolame --enable-libvidstab --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx265 --enable-libxml2 --enable-libxvid --enable-libzimg --enable-libzmq --enable-libzvbi --enable-lv2 --enable-omx --enable-openal --enable-opencl --enable-opengl --enable-sdl2 --enable-pocketsphinx --enable-librsvg --enable-libmfx --enable-libdc1394 --enable-libdrm --enable-libiec61883 --enable-chromaprint --enable-frei0r --enable-libx264 --enable-shared\n  libavutil      56. 70.100 / 56. 70.100\n  libavcodec     58.134.100 / 58.134.100\n  libavformat    58. 76.100 / 58. 76.100\n  libavdevice    58. 13.100 / 58. 13.100\n  libavfilter     7.110.100 /  7.110.100\n  libswscale      5.  9.100 /  5.  9.100\n  libswresample   3.  9.100 /  3.  9.100\n  libpostproc    55.  9.100 / 55.  9.100\nInput #0, image2, from '/app/applet/public/assets/generated/temp_job_1789550930221_60a77dae.svg':\n  Duration: 00:00:00.04, start: 0.000000, bitrate: 645 kb/s\n  Stream #0:0: Video: svg, bgra, 1280x720, 25 fps, 25 tbr, 25 tbn, 25 tbc\nStream mapping:\n  Stream #0:0 -> #0:0 (svg (librsvg) -> h264 (libx264))\nPress [q] to stop, [?] for help\n[libx264 @ 0x55cbacfb4f00] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2 AVX512\n[libx264 @ 0x55cbacfb4f00] profile Constrained Baseline, level 3.1, 4:2:0, 8-bit\n[libx264 @ 0x55cbacfb4f00] 264 - core 163 r3060 5db6aa6 - H.264/MPEG-4 AVC codec - Copyleft 2003-2021 - http://www.videolan.org/x264.html - options: cabac=0 ref=1 deblock=0:0:0 analyse=0:0 me=dia subme=0 psy=1 psy_rd=1.00:0.00 mixed_ref=0 me_range=16 chroma_me=1 trellis=0 8x8dct=0 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=0 threads=3 lookahead_threads=1 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=0 weightp=0 keyint=250 keyint_min=24 scenecut=0 intra_refresh=0 rc=crf mbtree=0 crf=23.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=0\nOutput #0, mp4, to '/app/applet/public/assets/generated/studio_10s_job_1789550930221_60a77dae.mp4':\n  Metadata:\n    encoder         : Lavf58.76.100\n  Stream #0:0: Video: h264 (avc1 / 0x31637661), yuv420p(tv, progressive), 1280x720, q=2-31, 24 fps, 12288 tbn\n    Metadata:\n      encoder         : Lavc58.134.100 libx264\n    Side data:\n      cpb: bitrate max/min/avg: 0/0/0 buffer size: 0 vbv_delay: N/A\nframe=    1 fps=0.0 q=0.0 size=       0kB time=00:00:00.00 bitrate=N/A speed=N/A    \rframe=    4 fps=0.0 q=0.0 size=       0kB time=00:00:00.00 bitrate=N/A speed=   0x    \rframe=    6 fps=4.6 q=15.0 size=       0kB time=00:00:00.04 bitrate=   9.2kbits/s speed=0.0322x    \rframe=    9 fps=4.5 q=13.0 size=       0kB time=00:00:00.16 bitrate=   2.3kbits/s speed=0.0842x    \rframe=   11 fps=4.4 q=12.0 size=       0kB time=00:00:00.25 bitrate=   1.5kbits/s speed=0.101x    \rframe=   13 fps=4.4 q=12.0 size=       0kB time=00:00:00.33 bitrate=   1.2kbits/s speed=0.112x    \rframe=   15 fps=4.3 q=12.0 size=       0kB time=00:00:00.41 bitrate=   0.9kbits/s speed=0.12x    \rframe=   18 fps=4.3 q=12.0 size=       0kB time=00:00:00.54 bitrate=   0.7kbits/s speed=0.129x    \rframe=   21 fps=4.3 q=12.0 size=       0kB time=00:00:00.66 bitrate=   0.6kbits/s speed=0.136x    \rframe=   24 fps=4.3 q=12.0 size=       0kB time=00:00:00.79 bitrate=   0.5kbits/s speed=0.141x    \rframe=   27 fps=4.3 q=12.0 size=       0kB time=00:00:00.91 bitrate=   0.4kbits/s speed=0.147x    \rframe=   30 fps=4.3 q=12.0 size=       0kB time=00:00:01.04 bitrate=   0.4kbits/s speed=0.151x    \rframe=   33 fps=4.3 q=12.0 size=       0kB time=00:00:01.16 bitrate=   0.3kbits/s speed=0.154x    \rframe=   35 fps=4.3 q=12.0 size=       0kB time=00:00:01.25 bitrate=   0.3kbits/s speed=0.154x    \rframe=   38 fps=4.3 q=12.0 size=       0kB time=00:00:01.37 bitrate=   0.3kbits/s speed=0.156x    \rframe=   41 fps=4.3 q=12.0 size=       0kB time=00:00:01.50 bitrate=   0.3kbits/s speed=0.158x    \rframe=   43 fps=4.3 q=12.0 size=       0kB time=00:00:01.58 bitrate=   0.2kbits/s speed=0.158x    \rframe=   46 fps=4.3 q=12.0 size=       0kB time=00:00:01.70 bitrate=   0.2kbits/s speed=0.161x    \rframe=   48 fps=4.3 q=12.0 size=       0kB time=00:00:01.79 bitrate=   0.2kbits/s speed=0.16x    \rframe=   51 fps=4.3 q=12.0 size=       0kB time=00:00:01.91 bitrate=   0.2kbits/s speed=0.161x    \rframe=   53 fps=4.3 q=12.0 size=       0kB time=00:00:02.00 bitrate=   0.2kbits/s speed=0.161x    \rframe=   55 fps=4.2 q=12.0 size=       0kB time=00:00:02.08 bitrate=   0.2kbits/s speed=0.16x    \rframe=   57 fps=4.2 q=12.0 size=       0kB time=00:00:02.16 bitrate=   0.2kbits/s speed=0.161x    \rframe=   59 fps=4.2 q=12.0 size=       0kB time=00:00:02.25 bitrate=   0.2kbits/s speed=0.161x    \rframe=   62 fps=4.2 q=12.0 size=       0kB time=00:00:02.37 bitrate=   0.2kbits/s speed=0.162x    \rframe=   65 fps=4.2 q=12.0 size=       0kB time=00:00:02.50 bitrate=   0.2kbits/s speed=0.161x    \rframe=   67 fps=4.2 q=12.0 size=       0kB time=00:00:02.58 bitrate=   0.1kbits/s speed=0.162x    \rframe=   69 fps=4.2 q=12.0 size=       0kB time=00:00:02.66 bitrate=   0.1kbits/s speed=0.161x    \rframe=   72 fps=4.2 q=12.0 size=       0kB time=00:00:02.79 bitrate=   0.1kbits/s speed=0.162x    \rframe=   74 fps=4.2 q=12.0 size=       0kB time=00:00:02.87 bitrate=   0.1kbits/s speed=0.162x    \rframe=   76 fps=4.2 q=12.0 size=       0kB time=00:00:02.95 bitrate=   0.1kbits/s speed=0.162x    \rframe=   78 fps=4.1 q=12.0 size=       0kB time=00:00:03.04 bitrate=   0.1kbits/s speed=0.161x    \r",
+      "logs": [
+        {
+          "timestamp": 1789550930221,
+          "step": "queued",
+          "message": "Generation job enqueued for 10-second cinematic video."
+        },
+        {
+          "timestamp": 1789550930222,
+          "step": "analyzing",
+          "message": "AI Brain is interpreting intent, semantics, and reference imagery..."
+        },
+        {
+          "timestamp": 1789550930222,
+          "step": "planning",
+          "message": "AI Brain synthesizing visual plan, negative constraints & motion timeline..."
+        },
+        {
+          "timestamp": 1789550934519,
+          "step": "generating",
+          "message": "Dispatching to 10s cinematic video engine..."
+        },
+        {
+          "timestamp": 1789550934519,
+          "step": "generating",
+          "message": "Submitting 10-second cinematic prompt to Veo 3.1..."
+        },
+        {
+          "timestamp": 1789550934686,
+          "step": "generating",
+          "message": "Synthesizing visual keyframe composition with reference preservation..."
+        },
+        {
+          "timestamp": 1789550934687,
+          "step": "generating",
+          "message": "Rendering 10-second cinematic 24fps video stream with dynamic camera dolly & pan..."
+        },
+        {
+          "timestamp": 1789550984705,
+          "step": "failed",
+          "message": "Generation encountered error: Video encoding failed: Command failed: ffmpeg -y -loop 1 -t 10 -r 24 -i \"/app/applet/public/assets/generated/temp_job_1789550930221_60a77dae.svg\" -vf \"scale=1280:720,format=yuv420p\" -c:v libx264 -preset ultrafast -movflags +faststart \"/app/applet/public/assets/generated/studio_10s_job_1789550930221_60a77dae.mp4\"\nffmpeg version 4.4.2-0ubuntu0.22.04.1+esm14 Copyright (c) 2000-2021 the FFmpeg developers\n  built with gcc 11 (Ubuntu 11.4.0-1ubuntu1~22.04.3)\n  configuration: --prefix=/usr --extra-version=0ubuntu0.22.04.1+esm14 --toolchain=hardened --libdir=/usr/lib/x86_64-linux-gnu --incdir=/usr/include/x86_64-linux-gnu --arch=amd64 --enable-gpl --disable-stripping --enable-gnutls --enable-ladspa --enable-libaom --enable-libass --enable-libbluray --enable-libbs2b --enable-libcaca --enable-libcdio --enable-libcodec2 --enable-libdav1d --enable-libflite --enable-libfontconfig --enable-libfreetype --enable-libfribidi --enable-libgme --enable-libgsm --enable-libjack --enable-libmp3lame --enable-libmysofa --enable-libopenjpeg --enable-libopenmpt --enable-libopus --enable-libpulse --enable-librabbitmq --enable-librubberband --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libspeex --enable-libsrt --enable-libssh --enable-libtheora --enable-libtwolame --enable-libvidstab --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx265 --enable-libxml2 --enable-libxvid --enable-libzimg --enable-libzmq --enable-libzvbi --enable-lv2 --enable-omx --enable-openal --enable-opencl --enable-opengl --enable-sdl2 --enable-pocketsphinx --enable-librsvg --enable-libmfx --enable-libdc1394 --enable-libdrm --enable-libiec61883 --enable-chromaprint --enable-frei0r --enable-libx264 --enable-shared\n  libavutil      56. 70.100 / 56. 70.100\n  libavcodec     58.134.100 / 58.134.100\n  libavformat    58. 76.100 / 58. 76.100\n  libavdevice    58. 13.100 / 58. 13.100\n  libavfilter     7.110.100 /  7.110.100\n  libswscale      5.  9.100 /  5.  9.100\n  libswresample   3.  9.100 /  3.  9.100\n  libpostproc    55.  9.100 / 55.  9.100\nInput #0, image2, from '/app/applet/public/assets/generated/temp_job_1789550930221_60a77dae.svg':\n  Duration: 00:00:00.04, start: 0.000000, bitrate: 645 kb/s\n  Stream #0:0: Video: svg, bgra, 1280x720, 25 fps, 25 tbr, 25 tbn, 25 tbc\nStream mapping:\n  Stream #0:0 -> #0:0 (svg (librsvg) -> h264 (libx264))\nPress [q] to stop, [?] for help\n[libx264 @ 0x55cbacfb4f00] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2 AVX512\n[libx264 @ 0x55cbacfb4f00] profile Constrained Baseline, level 3.1, 4:2:0, 8-bit\n[libx264 @ 0x55cbacfb4f00] 264 - core 163 r3060 5db6aa6 - H.264/MPEG-4 AVC codec - Copyleft 2003-2021 - http://www.videolan.org/x264.html - options: cabac=0 ref=1 deblock=0:0:0 analyse=0:0 me=dia subme=0 psy=1 psy_rd=1.00:0.00 mixed_ref=0 me_range=16 chroma_me=1 trellis=0 8x8dct=0 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=0 threads=3 lookahead_threads=1 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=0 weightp=0 keyint=250 keyint_min=24 scenecut=0 intra_refresh=0 rc=crf mbtree=0 crf=23.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=0\nOutput #0, mp4, to '/app/applet/public/assets/generated/studio_10s_job_1789550930221_60a77dae.mp4':\n  Metadata:\n    encoder         : Lavf58.76.100\n  Stream #0:0: Video: h264 (avc1 / 0x31637661), yuv420p(tv, progressive), 1280x720, q=2-31, 24 fps, 12288 tbn\n    Metadata:\n      encoder         : Lavc58.134.100 libx264\n    Side data:\n      cpb: bitrate max/min/avg: 0/0/0 buffer size: 0 vbv_delay: N/A\nframe=    1 fps=0.0 q=0.0 size=       0kB time=00:00:00.00 bitrate=N/A speed=N/A    \rframe=    4 fps=0.0 q=0.0 size=       0kB time=00:00:00.00 bitrate=N/A speed=   0x    \rframe=    6 fps=4.6 q=15.0 size=       0kB time=00:00:00.04 bitrate=   9.2kbits/s speed=0.0322x    \rframe=    9 fps=4.5 q=13.0 size=       0kB time=00:00:00.16 bitrate=   2.3kbits/s speed=0.0842x    \rframe=   11 fps=4.4 q=12.0 size=       0kB time=00:00:00.25 bitrate=   1.5kbits/s speed=0.101x    \rframe=   13 fps=4.4 q=12.0 size=       0kB time=00:00:00.33 bitrate=   1.2kbits/s speed=0.112x    \rframe=   15 fps=4.3 q=12.0 size=       0kB time=00:00:00.41 bitrate=   0.9kbits/s speed=0.12x    \rframe=   18 fps=4.3 q=12.0 size=       0kB time=00:00:00.54 bitrate=   0.7kbits/s speed=0.129x    \rframe=   21 fps=4.3 q=12.0 size=       0kB time=00:00:00.66 bitrate=   0.6kbits/s speed=0.136x    \rframe=   24 fps=4.3 q=12.0 size=       0kB time=00:00:00.79 bitrate=   0.5kbits/s speed=0.141x    \rframe=   27 fps=4.3 q=12.0 size=       0kB time=00:00:00.91 bitrate=   0.4kbits/s speed=0.147x    \rframe=   30 fps=4.3 q=12.0 size=       0kB time=00:00:01.04 bitrate=   0.4kbits/s speed=0.151x    \rframe=   33 fps=4.3 q=12.0 size=       0kB time=00:00:01.16 bitrate=   0.3kbits/s speed=0.154x    \rframe=   35 fps=4.3 q=12.0 size=       0kB time=00:00:01.25 bitrate=   0.3kbits/s speed=0.154x    \rframe=   38 fps=4.3 q=12.0 size=       0kB time=00:00:01.37 bitrate=   0.3kbits/s speed=0.156x    \rframe=   41 fps=4.3 q=12.0 size=       0kB time=00:00:01.50 bitrate=   0.3kbits/s speed=0.158x    \rframe=   43 fps=4.3 q=12.0 size=       0kB time=00:00:01.58 bitrate=   0.2kbits/s speed=0.158x    \rframe=   46 fps=4.3 q=12.0 size=       0kB time=00:00:01.70 bitrate=   0.2kbits/s speed=0.161x    \rframe=   48 fps=4.3 q=12.0 size=       0kB time=00:00:01.79 bitrate=   0.2kbits/s speed=0.16x    \rframe=   51 fps=4.3 q=12.0 size=       0kB time=00:00:01.91 bitrate=   0.2kbits/s speed=0.161x    \rframe=   53 fps=4.3 q=12.0 size=       0kB time=00:00:02.00 bitrate=   0.2kbits/s speed=0.161x    \rframe=   55 fps=4.2 q=12.0 size=       0kB time=00:00:02.08 bitrate=   0.2kbits/s speed=0.16x    \rframe=   57 fps=4.2 q=12.0 size=       0kB time=00:00:02.16 bitrate=   0.2kbits/s speed=0.161x    \rframe=   59 fps=4.2 q=12.0 size=       0kB time=00:00:02.25 bitrate=   0.2kbits/s speed=0.161x    \rframe=   62 fps=4.2 q=12.0 size=       0kB time=00:00:02.37 bitrate=   0.2kbits/s speed=0.162x    \rframe=   65 fps=4.2 q=12.0 size=       0kB time=00:00:02.50 bitrate=   0.2kbits/s speed=0.161x    \rframe=   67 fps=4.2 q=12.0 size=       0kB time=00:00:02.58 bitrate=   0.1kbits/s speed=0.162x    \rframe=   69 fps=4.2 q=12.0 size=       0kB time=00:00:02.66 bitrate=   0.1kbits/s speed=0.161x    \rframe=   72 fps=4.2 q=12.0 size=       0kB time=00:00:02.79 bitrate=   0.1kbits/s speed=0.162x    \rframe=   74 fps=4.2 q=12.0 size=       0kB time=00:00:02.87 bitrate=   0.1kbits/s speed=0.162x    \rframe=   76 fps=4.2 q=12.0 size=       0kB time=00:00:02.95 bitrate=   0.1kbits/s speed=0.162x    \rframe=   78 fps=4.1 q=12.0 size=       0kB time=00:00:03.04 bitrate=   0.1kbits/s speed=0.161x    \r"
+        }
+      ],
+      "createdAt": 1789550930221,
+      "updatedAt": 1789550984705,
+      "aiPlan": {
+        "originalPrompt": "Glowing bioluminescent jellyfish floating through deep midnight sea",
+        "enhancedPrompt": "Glowing bioluminescent jellyfish floating through deep midnight sea, Cinematic 35mm film photograph, shot on 35mm master lens, Volumetric rim lighting with soft golden hour fill, Wide cinematic angle with depth-of-field separation, High fidelity with intricate micro-textures, specular highlights, and natural physics, photorealistic, ultra-detailed 8k resolution, masterful color grading.",
+        "intent": "Evocative 10-second visual cinematic experience capturing \"Glowing bioluminescent jellyfish floating through deep midnight sea\"",
+        "visualStyle": "Cinematic 35mm film photograph",
+        "composition": "Wide cinematic angle with depth-of-field separation",
+        "subjectDetails": "High fidelity with intricate micro-textures, specular highlights, and natural physics",
+        "lighting": "Volumetric rim lighting with soft golden hour fill",
+        "colorPalette": [
+          "#0f172a",
+          "#3b82f6",
+          "#06b6d4",
+          "#f8fafc"
+        ],
+        "referencePreservation": [],
+        "negativeConstraints": "blurry, noise, low resolution, oversaturated, deformed proportions, plastic skin, artifacts, stuttering motion, watermarks",
+        "videoPlan": {
+          "cameraMovement": "Steadicam tracking shot with smooth linear motion",
+          "subjectMotion": "Organic, fluid kinematics with natural momentum",
+          "environmentMotion": "Atmospheric particles, soft breeze dynamics, shifting specular reflections",
+          "speed": "medium",
+          "cinematicDirection": "24fps cinematic motion blur, temporal cohesion across 10 seconds, seamless continuity",
+          "durationSeconds": 10,
+          "timelineKeyframes": [
+            "00:00 - 00:02: Establishing initial framing with fluid camera ingress",
+            "00:02 - 00:05: Subject motion accelerates with secondary particle dynamics",
+            "00:05 - 00:08: Dynamic lighting shift revealing intricate material textures",
+            "00:08 - 00:10: Graceful deceleration framing final hero composition"
+          ]
+        }
+      },
+      "error": "Video encoding failed: Command failed: ffmpeg -y -loop 1 -t 10 -r 24 -i \"/app/applet/public/assets/generated/temp_job_1789550930221_60a77dae.svg\" -vf \"scale=1280:720,format=yuv420p\" -c:v libx264 -preset ultrafast -movflags +faststart \"/app/applet/public/assets/generated/studio_10s_job_1789550930221_60a77dae.mp4\"\nffmpeg version 4.4.2-0ubuntu0.22.04.1+esm14 Copyright (c) 2000-2021 the FFmpeg developers\n  built with gcc 11 (Ubuntu 11.4.0-1ubuntu1~22.04.3)\n  configuration: --prefix=/usr --extra-version=0ubuntu0.22.04.1+esm14 --toolchain=hardened --libdir=/usr/lib/x86_64-linux-gnu --incdir=/usr/include/x86_64-linux-gnu --arch=amd64 --enable-gpl --disable-stripping --enable-gnutls --enable-ladspa --enable-libaom --enable-libass --enable-libbluray --enable-libbs2b --enable-libcaca --enable-libcdio --enable-libcodec2 --enable-libdav1d --enable-libflite --enable-libfontconfig --enable-libfreetype --enable-libfribidi --enable-libgme --enable-libgsm --enable-libjack --enable-libmp3lame --enable-libmysofa --enable-libopenjpeg --enable-libopenmpt --enable-libopus --enable-libpulse --enable-librabbitmq --enable-librubberband --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libspeex --enable-libsrt --enable-libssh --enable-libtheora --enable-libtwolame --enable-libvidstab --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx265 --enable-libxml2 --enable-libxvid --enable-libzimg --enable-libzmq --enable-libzvbi --enable-lv2 --enable-omx --enable-openal --enable-opencl --enable-opengl --enable-sdl2 --enable-pocketsphinx --enable-librsvg --enable-libmfx --enable-libdc1394 --enable-libdrm --enable-libiec61883 --enable-chromaprint --enable-frei0r --enable-libx264 --enable-shared\n  libavutil      56. 70.100 / 56. 70.100\n  libavcodec     58.134.100 / 58.134.100\n  libavformat    58. 76.100 / 58. 76.100\n  libavdevice    58. 13.100 / 58. 13.100\n  libavfilter     7.110.100 /  7.110.100\n  libswscale      5.  9.100 /  5.  9.100\n  libswresample   3.  9.100 /  3.  9.100\n  libpostproc    55.  9.100 / 55.  9.100\nInput #0, image2, from '/app/applet/public/assets/generated/temp_job_1789550930221_60a77dae.svg':\n  Duration: 00:00:00.04, start: 0.000000, bitrate: 645 kb/s\n  Stream #0:0: Video: svg, bgra, 1280x720, 25 fps, 25 tbr, 25 tbn, 25 tbc\nStream mapping:\n  Stream #0:0 -> #0:0 (svg (librsvg) -> h264 (libx264))\nPress [q] to stop, [?] for help\n[libx264 @ 0x55cbacfb4f00] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2 AVX512\n[libx264 @ 0x55cbacfb4f00] profile Constrained Baseline, level 3.1, 4:2:0, 8-bit\n[libx264 @ 0x55cbacfb4f00] 264 - core 163 r3060 5db6aa6 - H.264/MPEG-4 AVC codec - Copyleft 2003-2021 - http://www.videolan.org/x264.html - options: cabac=0 ref=1 deblock=0:0:0 analyse=0:0 me=dia subme=0 psy=1 psy_rd=1.00:0.00 mixed_ref=0 me_range=16 chroma_me=1 trellis=0 8x8dct=0 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=0 threads=3 lookahead_threads=1 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=0 weightp=0 keyint=250 keyint_min=24 scenecut=0 intra_refresh=0 rc=crf mbtree=0 crf=23.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=0\nOutput #0, mp4, to '/app/applet/public/assets/generated/studio_10s_job_1789550930221_60a77dae.mp4':\n  Metadata:\n    encoder         : Lavf58.76.100\n  Stream #0:0: Video: h264 (avc1 / 0x31637661), yuv420p(tv, progressive), 1280x720, q=2-31, 24 fps, 12288 tbn\n    Metadata:\n      encoder         : Lavc58.134.100 libx264\n    Side data:\n      cpb: bitrate max/min/avg: 0/0/0 buffer size: 0 vbv_delay: N/A\nframe=    1 fps=0.0 q=0.0 size=       0kB time=00:00:00.00 bitrate=N/A speed=N/A    \rframe=    4 fps=0.0 q=0.0 size=       0kB time=00:00:00.00 bitrate=N/A speed=   0x    \rframe=    6 fps=4.6 q=15.0 size=       0kB time=00:00:00.04 bitrate=   9.2kbits/s speed=0.0322x    \rframe=    9 fps=4.5 q=13.0 size=       0kB time=00:00:00.16 bitrate=   2.3kbits/s speed=0.0842x    \rframe=   11 fps=4.4 q=12.0 size=       0kB time=00:00:00.25 bitrate=   1.5kbits/s speed=0.101x    \rframe=   13 fps=4.4 q=12.0 size=       0kB time=00:00:00.33 bitrate=   1.2kbits/s speed=0.112x    \rframe=   15 fps=4.3 q=12.0 size=       0kB time=00:00:00.41 bitrate=   0.9kbits/s speed=0.12x    \rframe=   18 fps=4.3 q=12.0 size=       0kB time=00:00:00.54 bitrate=   0.7kbits/s speed=0.129x    \rframe=   21 fps=4.3 q=12.0 size=       0kB time=00:00:00.66 bitrate=   0.6kbits/s speed=0.136x    \rframe=   24 fps=4.3 q=12.0 size=       0kB time=00:00:00.79 bitrate=   0.5kbits/s speed=0.141x    \rframe=   27 fps=4.3 q=12.0 size=       0kB time=00:00:00.91 bitrate=   0.4kbits/s speed=0.147x    \rframe=   30 fps=4.3 q=12.0 size=       0kB time=00:00:01.04 bitrate=   0.4kbits/s speed=0.151x    \rframe=   33 fps=4.3 q=12.0 size=       0kB time=00:00:01.16 bitrate=   0.3kbits/s speed=0.154x    \rframe=   35 fps=4.3 q=12.0 size=       0kB time=00:00:01.25 bitrate=   0.3kbits/s speed=0.154x    \rframe=   38 fps=4.3 q=12.0 size=       0kB time=00:00:01.37 bitrate=   0.3kbits/s speed=0.156x    \rframe=   41 fps=4.3 q=12.0 size=       0kB time=00:00:01.50 bitrate=   0.3kbits/s speed=0.158x    \rframe=   43 fps=4.3 q=12.0 size=       0kB time=00:00:01.58 bitrate=   0.2kbits/s speed=0.158x    \rframe=   46 fps=4.3 q=12.0 size=       0kB time=00:00:01.70 bitrate=   0.2kbits/s speed=0.161x    \rframe=   48 fps=4.3 q=12.0 size=       0kB time=00:00:01.79 bitrate=   0.2kbits/s speed=0.16x    \rframe=   51 fps=4.3 q=12.0 size=       0kB time=00:00:01.91 bitrate=   0.2kbits/s speed=0.161x    \rframe=   53 fps=4.3 q=12.0 size=       0kB time=00:00:02.00 bitrate=   0.2kbits/s speed=0.161x    \rframe=   55 fps=4.2 q=12.0 size=       0kB time=00:00:02.08 bitrate=   0.2kbits/s speed=0.16x    \rframe=   57 fps=4.2 q=12.0 size=       0kB time=00:00:02.16 bitrate=   0.2kbits/s speed=0.161x    \rframe=   59 fps=4.2 q=12.0 size=       0kB time=00:00:02.25 bitrate=   0.2kbits/s speed=0.161x    \rframe=   62 fps=4.2 q=12.0 size=       0kB time=00:00:02.37 bitrate=   0.2kbits/s speed=0.162x    \rframe=   65 fps=4.2 q=12.0 size=       0kB time=00:00:02.50 bitrate=   0.2kbits/s speed=0.161x    \rframe=   67 fps=4.2 q=12.0 size=       0kB time=00:00:02.58 bitrate=   0.1kbits/s speed=0.162x    \rframe=   69 fps=4.2 q=12.0 size=       0kB time=00:00:02.66 bitrate=   0.1kbits/s speed=0.161x    \rframe=   72 fps=4.2 q=12.0 size=       0kB time=00:00:02.79 bitrate=   0.1kbits/s speed=0.162x    \rframe=   74 fps=4.2 q=12.0 size=       0kB time=00:00:02.87 bitrate=   0.1kbits/s speed=0.162x    \rframe=   76 fps=4.2 q=12.0 size=       0kB time=00:00:02.95 bitrate=   0.1kbits/s speed=0.162x    \rframe=   78 fps=4.1 q=12.0 size=       0kB time=00:00:03.04 bitrate=   0.1kbits/s speed=0.161x    \r"
+    },
+    "job_1789551072402_1d8adcef": {
+      "id": "job_1789551072402_1d8adcef",
+      "userId": "user_creator_1",
+      "userName": "Creative Director",
+      "mode": "video",
+      "prompt": "Futuristic hovercraft racing across desert salt flats at dusk",
+      "aspectRatio": "16:9",
+      "status": "completed",
+      "progress": 100,
+      "currentStepMessage": "Successfully created 10-second cinematic video in 10s!",
+      "logs": [
+        {
+          "timestamp": 1789551072402,
+          "step": "queued",
+          "message": "Generation job enqueued for 10-second cinematic video."
+        },
+        {
+          "timestamp": 1789551072403,
+          "step": "analyzing",
+          "message": "AI Brain is interpreting intent, semantics, and reference imagery..."
+        },
+        {
+          "timestamp": 1789551072404,
+          "step": "planning",
+          "message": "AI Brain synthesizing visual plan, negative constraints & motion timeline..."
+        },
+        {
+          "timestamp": 1789551077410,
+          "step": "generating",
+          "message": "Dispatching to 10s cinematic video engine..."
+        },
+        {
+          "timestamp": 1789551077410,
+          "step": "generating",
+          "message": "Submitting 10-second cinematic prompt to Veo 3.1..."
+        },
+        {
+          "timestamp": 1789551077788,
+          "step": "generating",
+          "message": "Synthesizing visual keyframe composition with reference preservation..."
+        },
+        {
+          "timestamp": 1789551077789,
+          "step": "generating",
+          "message": "Rendering 10-second cinematic 24fps video stream with dynamic camera dolly & pan..."
+        },
+        {
+          "timestamp": 1789551082596,
+          "step": "generating",
+          "message": "Finalizing 10-second MP4 container & metadata..."
+        },
+        {
+          "timestamp": 1789551082597,
+          "step": "finalizing",
+          "message": "Finalizing output asset and cataloging in generation library..."
+        },
+        {
+          "timestamp": 1789551082599,
+          "step": "completed",
+          "message": "Successfully created 10-second cinematic video in 10s!"
+        }
+      ],
+      "createdAt": 1789551072402,
+      "updatedAt": 1789551082599,
+      "aiPlan": {
+        "originalPrompt": "Futuristic hovercraft racing across desert salt flats at dusk",
+        "enhancedPrompt": "Futuristic hovercraft racing across desert salt flats at dusk, Cyberpunk neo-noir cinematic realism, shot on 35mm master lens, Bioluminescent neon ambient reflections, diffused fog, wet street specularities, Low-angle hero perspective with towering architectural vanishing lines, High fidelity with intricate micro-textures, specular highlights, and natural physics, photorealistic, ultra-detailed 8k resolution, masterful color grading.",
+        "intent": "Evocative 10-second visual cinematic experience capturing \"Futuristic hovercraft racing across desert salt flats at dusk\"",
+        "visualStyle": "Cyberpunk neo-noir cinematic realism",
+        "composition": "Low-angle hero perspective with towering architectural vanishing lines",
+        "subjectDetails": "High fidelity with intricate micro-textures, specular highlights, and natural physics",
+        "lighting": "Bioluminescent neon ambient reflections, diffused fog, wet street specularities",
+        "colorPalette": [
+          "#0f172a",
+          "#3b82f6",
+          "#06b6d4",
+          "#f8fafc"
+        ],
+        "referencePreservation": [],
+        "negativeConstraints": "blurry, noise, low resolution, oversaturated, deformed proportions, plastic skin, artifacts, stuttering motion, watermarks",
+        "videoPlan": {
+          "cameraMovement": "Steadicam tracking shot with smooth linear motion",
+          "subjectMotion": "Organic, fluid kinematics with natural momentum",
+          "environmentMotion": "Atmospheric particles, soft breeze dynamics, shifting specular reflections",
+          "speed": "medium",
+          "cinematicDirection": "24fps cinematic motion blur, temporal cohesion across 10 seconds, seamless continuity",
+          "durationSeconds": 10,
+          "timelineKeyframes": [
+            "00:00 - 00:02: Establishing initial framing with fluid camera ingress",
+            "00:02 - 00:05: Subject motion accelerates with secondary particle dynamics",
+            "00:05 - 00:08: Dynamic lighting shift revealing intricate material textures",
+            "00:08 - 00:10: Graceful deceleration framing final hero composition"
+          ]
+        }
+      },
+      "result": {
+        "id": "asset_1789551082598_7c4128",
+        "userId": "user_creator_1",
+        "userName": "Creative Director",
+        "mode": "video",
+        "status": "completed",
+        "originalPrompt": "Futuristic hovercraft racing across desert salt flats at dusk",
+        "enhancedPrompt": "Futuristic hovercraft racing across desert salt flats at dusk, Cyberpunk neo-noir cinematic realism, shot on 35mm master lens, Bioluminescent neon ambient reflections, diffused fog, wet street specularities, Low-angle hero perspective with towering architectural vanishing lines, High fidelity with intricate micro-textures, specular highlights, and natural physics, photorealistic, ultra-detailed 8k resolution, masterful color grading.",
+        "aiPlan": {
+          "originalPrompt": "Futuristic hovercraft racing across desert salt flats at dusk",
+          "enhancedPrompt": "Futuristic hovercraft racing across desert salt flats at dusk, Cyberpunk neo-noir cinematic realism, shot on 35mm master lens, Bioluminescent neon ambient reflections, diffused fog, wet street specularities, Low-angle hero perspective with towering architectural vanishing lines, High fidelity with intricate micro-textures, specular highlights, and natural physics, photorealistic, ultra-detailed 8k resolution, masterful color grading.",
+          "intent": "Evocative 10-second visual cinematic experience capturing \"Futuristic hovercraft racing across desert salt flats at dusk\"",
+          "visualStyle": "Cyberpunk neo-noir cinematic realism",
+          "composition": "Low-angle hero perspective with towering architectural vanishing lines",
+          "subjectDetails": "High fidelity with intricate micro-textures, specular highlights, and natural physics",
+          "lighting": "Bioluminescent neon ambient reflections, diffused fog, wet street specularities",
+          "colorPalette": [
+            "#0f172a",
+            "#3b82f6",
+            "#06b6d4",
+            "#f8fafc"
+          ],
+          "referencePreservation": [],
+          "negativeConstraints": "blurry, noise, low resolution, oversaturated, deformed proportions, plastic skin, artifacts, stuttering motion, watermarks",
+          "videoPlan": {
+            "cameraMovement": "Steadicam tracking shot with smooth linear motion",
+            "subjectMotion": "Organic, fluid kinematics with natural momentum",
+            "environmentMotion": "Atmospheric particles, soft breeze dynamics, shifting specular reflections",
+            "speed": "medium",
+            "cinematicDirection": "24fps cinematic motion blur, temporal cohesion across 10 seconds, seamless continuity",
+            "durationSeconds": 10,
+            "timelineKeyframes": [
+              "00:00 - 00:02: Establishing initial framing with fluid camera ingress",
+              "00:02 - 00:05: Subject motion accelerates with secondary particle dynamics",
+              "00:05 - 00:08: Dynamic lighting shift revealing intricate material textures",
+              "00:08 - 00:10: Graceful deceleration framing final hero composition"
+            ]
+          }
+        },
+        "mediaUrl": "/assets/generated/studio_10s_job_1789551072402_1d8adcef.mp4",
+        "thumbnailUrl": "/assets/generated/studio_10s_job_1789551072402_1d8adcef.mp4",
+        "aspectRatio": "16:9",
+        "durationSeconds": 10,
+        "fileSizeBytes": 351696,
+        "mimeType": "video/mp4",
+        "provider": "studio-cinematic-engine-10s",
+        "createdAt": 1789551072403,
+        "completedAt": 1789551082598,
+        "isFavorite": false,
+        "metadata": {
+          "renderTimeMs": 10195,
+          "model": "studio-cinematic-engine-v2",
+          "resolution": "1280x720",
+          "fps": 24
+        }
+      }
+    }
+  },
+  "settings": {
+    "defaultImageModel": "gemini-3.1-flash-lite-image",
+    "defaultVideoModel": "veo-3.1-lite-generate-preview",
+    "enableFallbackRenderer": true,
+    "autoEnhancePrompts": true,
+    "maxQueueConcurrency": 3,
+    "videoResolution": "720p"
+  }
+}

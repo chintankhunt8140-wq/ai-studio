@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bgGradMask" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b0f19" />
+      <stop offset="50%" stop-color="#121829" />
+      <stop offset="100%" stop-color="#1e1435" />
+    </linearGradient>
+    <linearGradient id="primaryGradMask" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="50%" stop-color="#818cf8" />
+      <stop offset="100%" stop-color="#c084fc" />
+    </linearGradient>
+    <linearGradient id="accentGradMask" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#06b6d4" />
+      <stop offset="100%" stop-color="#a855f7" />
+    </linearGradient>
+  </defs>
+
+  <!-- Full-bleed background with NO rounded corners (for Android maskable icon cropping) -->
+  <rect width="512" height="512" fill="url(#bgGradMask)" />
+
+  <!-- Ambient Glow in safe area -->
+  <circle cx="256" cy="256" r="110" fill="url(#accentGradMask)" opacity="0.25" />
+
+  <!-- Scaled content inside safe zone (padding 18% all sides) -->
+  <g transform="translate(256, 256) scale(0.72)">
+    <!-- Outer Aperture Ring -->
+    <circle r="120" fill="none" stroke="url(#primaryGradMask)" stroke-width="14" stroke-linecap="round" stroke-dasharray="140 30 90 25" />
+    
+    <!-- Inner Sparkle 4-point Star (AI Brain) -->
+    <path d="M 0,-85 Q 0,0 85,0 Q 0,0 0,85 Q 0,0 -85,0 Q 0,0 0,-85 Z" fill="url(#primaryGradMask)" />
+    
+    <!-- Center Radiant Core -->
+    <circle r="22" fill="#ffffff" />
+    <circle r="10" fill="#38bdf8" />
+
+    <!-- Video Play / Film Accent -->
+    <polygon points="60,-70 95,-50 60,-30" fill="#38bdf8" opacity="0.9" />
+    <polygon points="-60,70 -95,50 -60,30" fill="#c084fc" opacity="0.9" />
+  </g>
+</svg>
