@@ -1,43 +1,54 @@
 import { store } from '../db/store';
-import { GeminiImageProvider, CreativeCanvasImageProvider, IImageProvider } from './imageProvider';
-import { VeoVideoProvider, Cinematic10sVideoRenderer, IVideoProvider } from './videoProvider';
+import {
+  GeminiFlashLiteImageProvider,
+  GeminiFlashImageProvider,
+  IImageProvider,
+} from './imageProvider';
+import {
+  VeoLiteVideoProvider,
+  VeoProVideoProvider,
+  IVideoProvider,
+} from './videoProvider';
 
 class ProviderRegistry {
-  private geminiImage = new GeminiImageProvider();
-  private canvasImage = new CreativeCanvasImageProvider();
-  
-  private veoVideo = new VeoVideoProvider();
-  private cinematicVideo = new Cinematic10sVideoRenderer();
+  private flashLiteImage = new GeminiFlashLiteImageProvider();
+  private flashImage = new GeminiFlashImageProvider();
 
-  public getImageProvider(): IImageProvider {
+  private veoLiteVideo = new VeoLiteVideoProvider();
+  private veoProVideo = new VeoProVideoProvider();
+
+  public getImageProvider(modelOverride?: string): IImageProvider {
     const settings = store.getSettings();
-    const hasKey = Boolean(process.env.GEMINI_API_KEY && process.env.GEMINI_API_KEY !== 'MY_GEMINI_API_KEY');
+    const model = modelOverride || settings.defaultImageModel || 'gemini-3.1-flash-lite-image';
 
-    // If key configured and not forced fallback
-    if (hasKey && settings.defaultImageModel.includes('gemini')) {
-      return this.geminiImage;
+    if (model.includes('flash-image') && !model.includes('lite')) {
+      return this.flashImage;
     }
-    return this.canvasImage;
+    return this.flashLiteImage;
   }
 
-  public getVideoProvider(): IVideoProvider {
+  public getSecondaryImageProvider(failedModel: string): IImageProvider | null {
+    if (failedModel.includes('lite')) {
+      return this.flashImage;
+    }
+    return null;
+  }
+
+  public getVideoProvider(modelOverride?: string): IVideoProvider {
     const settings = store.getSettings();
-    const hasKey = Boolean(process.env.GEMINI_API_KEY && process.env.GEMINI_API_KEY !== 'MY_GEMINI_API_KEY');
+    const model = modelOverride || settings.defaultVideoModel || 'veo-3.1-lite-generate-preview';
 
-    // If key configured and admin selected veo
-    if (hasKey && settings.defaultVideoModel.includes('veo')) {
-      return this.veoVideo;
+    if (model.includes('generate-preview') && !model.includes('lite')) {
+      return this.veoProVideo;
     }
-    // High-performance 10s cinematic video renderer
-    return this.cinematicVideo;
+    return this.veoLiteVideo;
   }
 
-  public getFallbackImageProvider(): IImageProvider {
-    return this.canvasImage;
-  }
-
-  public getFallbackVideoProvider(): IVideoProvider {
-    return this.cinematicVideo;
+  public getSecondaryVideoProvider(failedModel: string): IVideoProvider | null {
+    if (failedModel.includes('lite')) {
+      return this.veoProVideo;
+    }
+    return null;
   }
 }
 

@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import { CreationAsset, GenerationJob, UserProfile, SystemStats } from '../../src/types';
+import { storage } from '../services/storageService';
 
 const DATA_DIR = path.join(process.cwd(), 'server', 'data');
 const DB_FILE = path.join(DATA_DIR, 'store.json');
@@ -202,9 +203,12 @@ class StoreManager {
     this.saveToDisk();
   }
 
-  public toggleFavorite(id: string): boolean {
+  public toggleFavorite(id: string, requestedByUserId?: string): boolean {
     const item = this.getCreation(id);
     if (item) {
+      if (requestedByUserId && item.userId !== requestedByUserId && requestedByUserId !== 'user_admin_root') {
+        throw new Error('Unauthorized to modify this asset');
+      }
       item.isFavorite = !item.isFavorite;
       this.saveToDisk();
       return item.isFavorite;
@@ -212,7 +216,19 @@ class StoreManager {
     return false;
   }
 
-  public deleteCreation(id: string): boolean {
+  public deleteCreation(id: string, requestedByUserId?: string): boolean {
+    const item = this.getCreation(id);
+    if (!item) return false;
+
+    if (requestedByUserId && item.userId !== requestedByUserId && requestedByUserId !== 'user_admin_root') {
+      throw new Error('Unauthorized to delete this asset');
+    }
+
+    // Delete static files from disk
+    if (item.mediaUrl) storage.deleteAssetFile(item.mediaUrl);
+    if (item.thumbnailUrl && item.thumbnailUrl !== item.mediaUrl) storage.deleteAssetFile(item.thumbnailUrl);
+    if (item.referenceImageUrl && item.referenceImageUrl.startsWith('/assets/')) storage.deleteAssetFile(item.referenceImageUrl);
+
     const initialLen = this.db.creations.length;
     this.db.creations = this.db.creations.filter(c => c.id !== id);
     if (this.db.creations.length !== initialLen) {
@@ -248,11 +264,13 @@ class StoreManager {
   }
 
   // System Stats
-  public getSystemStats(): SystemStats {
-    const creations = this.db.creations;
+  public getSystemStats(filterUserId?: string): SystemStats {
+    const allCreations = this.db.creations;
+    const creations = filterUserId ? allCreations.filter(c => c.userId === filterUserId) : allCreations;
     const images = creations.filter(c => c.mode === 'image');
     const videos = creations.filter(c => c.mode === 'video');
-    const jobs = Object.values(this.db.jobs);
+    const allJobs = Object.values(this.db.jobs);
+    const jobs = filterUserId ? allJobs.filter(j => j.userId === filterUserId) : allJobs;
     
     const active = jobs.filter(j => ['queued', 'analyzing', 'planning', 'generating', 'finalizing'].includes(j.status)).length;
     const queued = jobs.filter(j => j.status === 'queued').length;
@@ -321,13 +339,9 @@ class StoreManager {
           model: this.db.settings.defaultImageModel,
         },
         veoVideo: {
-          status: hasKey ? 'online' : 'standby',
+          status: hasKey ? 'online' : 'unconfigured',
           model: this.db.settings.defaultVideoModel,
         },
-        cinematicEngine: {
-          status: 'online',
-          engine: 'Studio 10s Keyframe Motion Renderer v2.4',
-        }
       },
       storageUsedBytes: storageBytes,
       averageRenderTimeSec: avgRender || 5,

@@ -10,6 +10,23 @@ import {
   VideoMotionConfig,
 } from '../types';
 
+let sessionUserId: string = 'user_creator_1';
+
+export function setSessionUserId(id: string) {
+  sessionUserId = id;
+}
+
+export function getSessionUserId(): string {
+  return sessionUserId;
+}
+
+function getAuthHeaders(): HeadersInit {
+  return {
+    'Content-Type': 'application/json',
+    'x-user-id': sessionUserId,
+  };
+}
+
 export async function fetchHealth(): Promise<{ status: string; hasGeminiKey: boolean }> {
   const res = await fetch('/api/health');
   if (!res.ok) throw new Error('Health check failed');
@@ -23,9 +40,16 @@ export async function fetchUsers(): Promise<UserProfile[]> {
 }
 
 export async function fetchCurrentUser(userId?: string): Promise<UserProfile> {
-  const res = await fetch(`/api/auth/current${userId ? `?userId=${encodeURIComponent(userId)}` : ''}`);
+  const id = userId || sessionUserId;
+  const res = await fetch(`/api/auth/current?userId=${encodeURIComponent(id)}`, {
+    headers: { 'x-user-id': id },
+  });
   if (!res.ok) throw new Error('Failed to load current user');
-  return res.json();
+  const user = await res.json();
+  if (user?.id) {
+    sessionUserId = user.id;
+  }
+  return user;
 }
 
 export async function enhancePrompt(params: {
@@ -38,8 +62,11 @@ export async function enhancePrompt(params: {
 }): Promise<AIBrainPlan> {
   const res = await fetch('/api/brain/enhance', {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(params),
+    headers: getAuthHeaders(),
+    body: JSON.stringify({
+      ...params,
+      userId: params.userId || sessionUserId,
+    }),
   });
   if (!res.ok) {
     const err = await res.json().catch(() => ({ error: 'Enhance failed' }));
@@ -59,7 +86,7 @@ export async function createGenerationJob(params: {
 }): Promise<GenerationJob> {
   const res = await fetch('/api/jobs/create', {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+    headers: getAuthHeaders(),
     body: JSON.stringify(params),
   });
   if (!res.ok) {
@@ -70,21 +97,32 @@ export async function createGenerationJob(params: {
 }
 
 export async function getJob(jobId: string): Promise<GenerationJob> {
-  const res = await fetch(`/api/jobs/${jobId}`);
+  const res = await fetch(`/api/jobs/${jobId}`, {
+    headers: { 'x-user-id': sessionUserId },
+  });
   if (!res.ok) throw new Error('Job not found');
   return res.json();
 }
 
 export async function cancelJob(jobId: string): Promise<boolean> {
-  const res = await fetch(`/api/jobs/${jobId}/cancel`, { method: 'POST' });
+  const res = await fetch(`/api/jobs/${jobId}/cancel`, {
+    method: 'POST',
+    headers: getAuthHeaders(),
+  });
   if (!res.ok) return false;
   const data = await res.json();
   return data.success;
 }
 
 export async function retryJob(jobId: string): Promise<GenerationJob> {
-  const res = await fetch(`/api/jobs/${jobId}/retry`, { method: 'POST' });
-  if (!res.ok) throw new Error('Failed to retry job');
+  const res = await fetch(`/api/jobs/${jobId}/retry`, {
+    method: 'POST',
+    headers: getAuthHeaders(),
+  });
+  if (!res.ok) {
+    const err = await res.json().catch(() => ({ error: 'Failed to retry job' }));
+    throw new Error(err.error || 'Failed to retry job');
+  }
   return res.json();
 }
 
@@ -100,33 +138,52 @@ export async function fetchCreations(filter?: {
   if (filter?.search) params.append('search', filter.search);
   if (filter?.favoriteOnly) params.append('favoriteOnly', 'true');
 
-  const res = await fetch(`/api/creations?${params.toString()}`);
+  const res = await fetch(`/api/creations?${params.toString()}`, {
+    headers: { 'x-user-id': sessionUserId },
+  });
   if (!res.ok) throw new Error('Failed to load creations');
   return res.json();
 }
 
 export async function toggleFavoriteCreation(id: string): Promise<boolean> {
-  const res = await fetch(`/api/creations/${id}/favorite`, { method: 'POST' });
-  if (!res.ok) throw new Error('Failed to favorite');
+  const res = await fetch(`/api/creations/${id}/favorite`, {
+    method: 'POST',
+    headers: getAuthHeaders(),
+  });
+  if (!res.ok) {
+    const err = await res.json().catch(() => ({ error: 'Failed to toggle favorite' }));
+    throw new Error(err.error || 'Failed to toggle favorite');
+  }
   const data = await res.json();
   return data.isFavorite;
 }
 
 export async function deleteCreation(id: string): Promise<boolean> {
-  const res = await fetch(`/api/creations/${id}`, { method: 'DELETE' });
-  if (!res.ok) throw new Error('Failed to delete');
+  const res = await fetch(`/api/creations/${id}`, {
+    method: 'DELETE',
+    headers: getAuthHeaders(),
+  });
+  if (!res.ok) {
+    const err = await res.json().catch(() => ({ error: 'Failed to delete' }));
+    throw new Error(err.error || 'Failed to delete');
+  }
   const data = await res.json();
   return data.success;
 }
 
-export async function fetchSystemStats(): Promise<SystemStats> {
-  const res = await fetch('/api/stats');
+export async function fetchSystemStats(userId?: string): Promise<SystemStats> {
+  const url = userId ? `/api/stats?userId=${encodeURIComponent(userId)}` : '/api/stats';
+  const res = await fetch(url, {
+    headers: getAuthHeaders(),
+  });
   if (!res.ok) throw new Error('Failed to load stats');
   return res.json();
 }
 
 export async function fetchAdminSettings(): Promise<any> {
-  const res = await fetch('/api/admin/settings');
+  const res = await fetch('/api/admin/settings', {
+    headers: getAuthHeaders(),
+  });
   if (!res.ok) throw new Error('Failed to load settings');
   return res.json();
 }
@@ -134,7 +191,7 @@ export async function fetchAdminSettings(): Promise<any> {
 export async function updateAdminSettings(settings: any): Promise<any> {
   const res = await fetch('/api/admin/settings', {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+    headers: getAuthHeaders(),
     body: JSON.stringify(settings),
   });
   if (!res.ok) throw new Error('Failed to update settings');

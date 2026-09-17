@@ -1,6 +1,15 @@
 export type GenerationMode = 'image' | 'video';
 
-export type JobStatus = 'queued' | 'analyzing' | 'planning' | 'generating' | 'finalizing' | 'completed' | 'failed';
+export type JobStatus =
+  | 'created'
+  | 'queued'
+  | 'analyzing'
+  | 'planning'
+  | 'generating'
+  | 'finalizing'
+  | 'completed'
+  | 'failed'
+  | 'cancelled';
 
 export type AspectRatio = '16:9' | '9:16' | '1:1' | '4:3' | '3:4' | '21:9';
 
@@ -13,6 +22,7 @@ export interface ReferenceImage {
   fileSize?: number;
   width?: number;
   height?: number;
+  storageUrl?: string;
 }
 
 export interface VideoMotionConfig {
@@ -35,6 +45,12 @@ export interface AIBrainPlan {
   colorPalette?: string[];
   referencePreservation?: string[];
   negativeConstraints: string;
+  generationSettings?: {
+    model?: string;
+    aspectRatio?: AspectRatio;
+    resolution?: string;
+    durationSeconds?: number;
+  };
   videoPlan?: {
     cameraMovement: string;
     subjectMotion: string;
@@ -63,7 +79,7 @@ export interface CreationAsset {
   durationSeconds?: number; // e.g. 10 for video
   fileSizeBytes?: number;
   mimeType: string;
-  provider: string; // 'veo' | 'gemini-image' | 'studio-cinematic-engine'
+  provider: string; // 'gemini-3.1-flash-lite-image' | 'gemini-3.1-flash-image' | 'veo-3.1-lite' | 'veo-3.1'
   createdAt: number;
   completedAt?: number;
   isFavorite?: boolean;
@@ -72,6 +88,8 @@ export interface CreationAsset {
     resolution?: string;
     fps?: number;
     renderTimeMs?: number;
+    model?: string;
+    operationName?: string;
   };
 }
 
@@ -81,6 +99,7 @@ export interface GenerationJob {
   userName: string;
   mode: GenerationMode;
   prompt: string;
+  enhancedPrompt?: string;
   referenceImage?: ReferenceImage;
   aspectRatio: AspectRatio;
   videoMotion?: VideoMotionConfig;
@@ -89,10 +108,13 @@ export interface GenerationJob {
   currentStepMessage: string;
   logs: Array<{ timestamp: number; message: string; step: string }>;
   aiPlan?: AIBrainPlan;
+  provider?: string;
+  providerJobId?: string;
   result?: CreationAsset;
   error?: string;
   createdAt: number;
   updatedAt: number;
+  completedAt?: number;
 }
 
 export interface UserProfile {
@@ -143,8 +165,8 @@ export interface SystemStats {
   };
   providers?: {
     geminiImage: { status: 'online' | 'degraded' | 'unconfigured'; model: string };
-    veoVideo: { status: 'online' | 'standby' | 'fallback_ready'; model: string };
-    cinematicEngine: { status: 'online'; engine: string };
+    veoVideo: { status: 'online' | 'standby' | 'unconfigured' | 'fallback_ready'; model: string };
+    cinematicEngine?: { status: 'online' | 'offline'; engine: string };
   };
   storageUsedBytes: number;
   averageRenderTimeSec: number;

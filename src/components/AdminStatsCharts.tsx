@@ -19,9 +19,10 @@ import { BarChart3, Users, Award, TrendingUp, Sparkles, CheckCircle2 } from 'luc
 interface AdminStatsChartsProps {
   stats: SystemStats;
   users: UserProfile[];
+  workspaceName?: string;
 }
 
-export const AdminStatsCharts: React.FC<AdminStatsChartsProps> = ({ stats, users }) => {
+export const AdminStatsCharts: React.FC<AdminStatsChartsProps> = ({ stats, users, workspaceName }) => {
   // 1. Creations Breakdown Data
   const totalCreations = stats?.creations?.total ?? stats?.totalCreations ?? 0;
   const imageCount = stats?.creations?.images ?? stats?.totalImages ?? 0;
@@ -341,16 +342,23 @@ export const AdminStatsCharts: React.FC<AdminStatsChartsProps> = ({ stats, users
         </div>
       </div>
 
-      {/* Chart 4: Daily Trends */}
-      <div className="mt-5 rounded-3xl border border-white/10 bg-slate-900/80 p-5 shadow-sm">
-        <div className="mb-4 flex items-center justify-between">
+      {/* Chart 4: Daily Trends (Recharts) */}
+      <div id="generation-trends-chart" className="mt-5 rounded-3xl border border-white/10 bg-slate-900/80 p-5 shadow-sm">
+        <div className="mb-4 flex flex-wrap items-center justify-between gap-2">
           <div className="flex items-center gap-2">
             <TrendingUp className="h-4 w-4 text-cyan-400" />
-            <span className="text-sm font-semibold text-white">Generation Trends (Last 7 Days)</span>
+            <span className="text-sm font-semibold text-white">
+              Generation Trends (Daily Volume)
+              {workspaceName && (
+                <span className="ml-2 text-xs font-normal text-cyan-300">
+                  • {workspaceName}
+                </span>
+              )}
+            </span>
           </div>
           {dailyTrendsData.length > 0 && (
             <span className="rounded-full bg-indigo-500/10 px-2.5 py-0.5 text-[11px] font-bold text-indigo-400">
-              {dailyTrendsData.reduce((acc, d) => acc + d.total, 0)} Recent Volume
+              {dailyTrendsData.reduce((acc, d) => acc + d.total, 0)} Total Recent Volume
             </span>
           )}
         </div>

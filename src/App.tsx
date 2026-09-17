@@ -30,6 +30,8 @@ import {
   fetchHealth,
   fetchUsers,
   getJob,
+  retryJob,
+  setSessionUserId,
   toggleFavoriteCreation,
 } from './lib/api';
 import { CheckCircle2, AlertCircle, Info, X } from 'lucide-react';
@@ -89,11 +91,30 @@ export default function App() {
 
         setHasGeminiKey(Boolean(health.hasGeminiKey));
         setUsers(userList);
-        setCurrentUser(curUser);
+        if (curUser) {
+          setCurrentUser(curUser);
+          setSessionUserId(curUser.id);
+        }
         setCreations(creationList);
 
         if (creationList.length > 0) {
           setLatestAsset(creationList[0]);
+        }
+
+        // Check if there was an active job running before page reload
+        const savedJobId = localStorage.getItem('ai_studio_active_job_id');
+        if (savedJobId) {
+          try {
+            const persistedJob = await getJob(savedJobId);
+            if (persistedJob && !['completed', 'failed', 'cancelled'].includes(persistedJob.status)) {
+              setActiveJob(persistedJob);
+              showToast(`Resumed monitoring active job (${persistedJob.mode})...`, 'info');
+            } else {
+              localStorage.removeItem('ai_studio_active_job_id');
+            }
+          } catch {
+            localStorage.removeItem('ai_studio_active_job_id');
+          }
         }
       } catch (err) {
         console.error('Initialization error:', err);
@@ -105,7 +126,7 @@ export default function App() {
   // Polling active generation job
   useEffect(() => {
     if (!activeJob) return;
-    if (activeJob.status === 'completed' || activeJob.status === 'failed') return;
+    if (activeJob.status === 'completed' || activeJob.status === 'failed' || activeJob.status === 'cancelled') return;
 
     const interval = setInterval(async () => {
       try {
@@ -113,6 +134,7 @@ export default function App() {
         setActiveJob(updated);
 
         if (updated.status === 'completed' && updated.result) {
+          localStorage.removeItem('ai_studio_active_job_id');
           setLatestAsset(updated.result);
           setCreations((prev) => [updated.result!, ...prev.filter((c) => c.id !== updated.result!.id)]);
           showToast(
@@ -125,8 +147,11 @@ export default function App() {
           if (currentUser) {
             fetchCurrentUser(currentUser.id).then(setCurrentUser).catch(() => {});
           }
-        } else if (updated.status === 'failed') {
-          showToast(`Synthesis failed: ${updated.error || 'Unknown error'}`, 'error');
+        } else if (updated.status === 'failed' || updated.status === 'cancelled') {
+          localStorage.removeItem('ai_studio_active_job_id');
+          if (updated.status === 'failed') {
+            showToast(`Synthesis failed: ${updated.error || 'Unknown error'}`, 'error');
+          }
         }
       } catch (err) {
         console.warn('Job poll error:', err);
@@ -177,6 +202,7 @@ export default function App() {
       });
 
       setActiveJob(job);
+      localStorage.setItem('ai_studio_active_job_id', job.id);
       setCurrentTab('studio');
       showToast(
         mode === 'video'
@@ -196,6 +222,7 @@ export default function App() {
       setIsCancelling(true);
       const ok = await cancelJob(activeJob.id);
       if (ok) {
+        localStorage.removeItem('ai_studio_active_job_id');
         setActiveJob(null);
         showToast('Generation cancelled.', 'info');
       }
@@ -203,6 +230,19 @@ export default function App() {
       console.error(err);
     } finally {
       setIsCancelling(false);
+    }
+  };
+
+  // Retry currently failed job
+  const handleRetryActiveJob = async () => {
+    if (!activeJob) return;
+    try {
+      const newJob = await retryJob(activeJob.id);
+      setActiveJob(newJob);
+      localStorage.setItem('ai_studio_active_job_id', newJob.id);
+      showToast(`Retrying ${newJob.mode} generation...`, 'info');
+    } catch (err: any) {
+      showToast(err.message || 'Failed to retry job', 'error');
     }
   };
 
@@ -344,12 +384,17 @@ export default function App() {
               )}
             />
 
-            {/* 2. Live Generation Monitor (when active) */}
+            {/* 2. Live Generation Monitor (when active or failed/cancelled) */}
             {activeJob && activeJob.status !== 'completed' && (
               <GenerationMonitor
                 job={activeJob}
                 onCancel={handleCancelJob}
                 isCancelling={isCancelling}
+                onRetry={handleRetryActiveJob}
+                onDismiss={() => {
+                  localStorage.removeItem('ai_studio_active_job_id');
+                  setActiveJob(null);
+                }}
               />
             )}
 
@@ -393,7 +438,7 @@ export default function App() {
           />
         )}
 
-        {currentTab === 'admin' && <AdminDashboard />}
+        {currentTab === 'admin' && <AdminDashboard currentUser={currentUser} />}
       </main>
 
       {/* Lightbox / Asset Inspector Modal */}
@@ -413,6 +458,7 @@ export default function App() {
           users={users}
           onSelectUser={(u) => {
             setCurrentUser(u);
+            setSessionUserId(u.id);
             showToast(`Switched workspace to ${u.name}`, 'info');
           }}
           onClose={() => setShowUserModal(false)}

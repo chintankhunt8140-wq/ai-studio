@@ -64,14 +64,28 @@ export const AssetModal: React.FC<AssetModalProps> = ({
     setTimeout(() => setCopied(false), 2000);
   };
 
-  const handleDownload = () => {
-    const link = document.createElement('a');
-    link.href = asset.mediaUrl;
-    const ext = asset.mode === 'video' ? 'mp4' : 'png';
-    link.download = `ai-studio-${asset.mode}-${asset.id}.${ext}`;
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+  const handleDownload = async () => {
+    try {
+      const response = await fetch(asset.mediaUrl);
+      const blob = await response.blob();
+      const blobUrl = window.URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = blobUrl;
+      const ext = asset.mode === 'video' ? 'mp4' : 'png';
+      link.download = `ai-studio-${asset.mode}-${asset.id}.${ext}`;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      setTimeout(() => window.URL.revokeObjectURL(blobUrl), 1000);
+    } catch {
+      const link = document.createElement('a');
+      link.href = asset.mediaUrl;
+      const ext = asset.mode === 'video' ? 'mp4' : 'png';
+      link.download = `ai-studio-${asset.mode}-${asset.id}.${ext}`;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
   };
 
   return (
