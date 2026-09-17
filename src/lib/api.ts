@@ -83,10 +83,15 @@ export async function createGenerationJob(params: {
   referenceImage?: ReferenceImage;
   aspectRatio: AspectRatio;
   videoMotion?: VideoMotionConfig;
+  idempotencyKey?: string;
 }): Promise<GenerationJob> {
+  const headers = getAuthHeaders() as Record<string, string>;
+  if (params.idempotencyKey) {
+    headers['x-idempotency-key'] = params.idempotencyKey;
+  }
   const res = await fetch('/api/jobs/create', {
     method: 'POST',
-    headers: getAuthHeaders(),
+    headers,
     body: JSON.stringify(params),
   });
   if (!res.ok) {

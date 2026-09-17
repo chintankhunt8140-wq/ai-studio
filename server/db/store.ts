@@ -13,7 +13,8 @@ export interface AppDatabase {
   settings: {
     defaultImageModel: string;
     defaultVideoModel: string;
-    enableFallbackRenderer: boolean;
+    preferredImageModel?: string;
+    preferredVideoModel?: string;
     autoEnhancePrompts: boolean;
     maxQueueConcurrency: number;
     videoResolution: string;
@@ -84,7 +85,6 @@ class StoreManager {
           settings: {
             defaultImageModel: 'gemini-3.1-flash-lite-image',
             defaultVideoModel: 'veo-3.1-lite-generate-preview',
-            enableFallbackRenderer: true,
             autoEnhancePrompts: true,
             maxQueueConcurrency: 3,
             videoResolution: '720p',
@@ -103,7 +103,6 @@ class StoreManager {
       settings: {
         defaultImageModel: 'gemini-3.1-flash-lite-image',
         defaultVideoModel: 'veo-3.1-lite-generate-preview',
-        enableFallbackRenderer: true,
         autoEnhancePrompts: true,
         maxQueueConcurrency: 3,
         videoResolution: '720p',

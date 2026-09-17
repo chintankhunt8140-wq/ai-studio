@@ -99,18 +99,30 @@ ${systemPrompt}`
       });
 
       const timeoutPromise = new Promise((_, reject) =>
-        setTimeout(() => reject(new Error('AI Brain generation timeout after 30000ms')), 30000)
+        setTimeout(() => reject(new Error('AI Brain generation timeout after 25000ms')), 25000)
       );
 
-      const generatePromise = ai.models.generateContent({
-        model: 'gemini-2.5-flash',
-        contents,
-        config: {
-          temperature: 0.7,
-        }
-      });
-
-      const response: any = await Promise.race([generatePromise, timeoutPromise]);
+      let response: any;
+      try {
+        const generatePromise = ai.models.generateContent({
+          model: 'gemini-flash-latest',
+          contents,
+          config: {
+            temperature: 0.7,
+          }
+        });
+        response = await Promise.race([generatePromise, timeoutPromise]);
+      } catch (err: any) {
+        // Fallback to gemini-3.8-flash or gemini-3.1-flash-lite if needed
+        const fallbackPromise = ai.models.generateContent({
+          model: 'gemini-3.1-flash-lite',
+          contents,
+          config: {
+            temperature: 0.7,
+          }
+        });
+        response = await Promise.race([fallbackPromise, timeoutPromise]);
+      }
 
       const text = response.text || '';
       const cleanJson = text.replace(/^```json\s*/i, '').replace(/^```\s*/i, '').replace(/\s*```$/, '').trim();

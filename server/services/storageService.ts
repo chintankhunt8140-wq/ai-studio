@@ -53,9 +53,18 @@ export class StorageService {
     if (buffer.length > maxSizeBytes) {
       throw new Error('Uploaded image exceeds the 15MB limit.');
     }
+    if (buffer.length < 12) {
+      throw new Error('Uploaded image file is empty or corrupted.');
+    }
+
+    // Verify magic bytes signature matches claimed image format
+    const isValidSignature = this.verifyImageSignature(buffer, mimeType);
+    if (!isValidSignature) {
+      throw new Error(`File contents do not match valid image signature for format: ${mimeType}`);
+    }
 
     const ext = allowedMimes[mimeType];
-    const fileId = `ref_${Date.now()}_${crypto.randomBytes(4).toString('hex')}`;
+    const fileId = `ref_${Date.now()}_${crypto.randomBytes(6).toString('hex')}`;
     const fileName = `${fileId}.${ext}`;
     const filePath = path.join(UPLOADS_DIR, fileName);
 
@@ -68,6 +77,118 @@ export class StorageService {
       sizeBytes: buffer.length,
       base64Data,
     };
+  }
+
+  /**
+   * Verifies file magic bytes against claimed MIME type
+   */
+  private verifyImageSignature(buffer: Buffer, mimeType: string): boolean {
+    if (mimeType.includes('png')) {
+      return (
+        buffer[0] === 0x89 &&
+        buffer[1] === 0x50 &&
+        buffer[2] === 0x4e &&
+        buffer[3] === 0x47 &&
+        buffer[4] === 0x0d &&
+        buffer[5] === 0x0a &&
+        buffer[6] === 0x1a &&
+        buffer[7] === 0x0a
+      );
+    }
+    if (mimeType.includes('jpeg') || mimeType.includes('jpg')) {
+      return buffer[0] === 0xff && buffer[1] === 0xd8 && buffer[2] === 0xff;
+    }
+    if (mimeType.includes('webp')) {
+      return (
+        buffer.subarray(0, 4).toString('ascii') === 'RIFF' &&
+        buffer.subarray(8, 12).toString('ascii') === 'WEBP'
+      );
+    }
+    if (mimeType.includes('gif')) {
+      const header = buffer.subarray(0, 4).toString('ascii');
+      return header === 'GIF8';
+    }
+    return false;
+  }
+
+  /**
+   * Validates generated image on disk before completing job
+   */
+  public validateImageOutput(filePath: string): { valid: boolean; sizeBytes: number; error?: string } {
+    try {
+      if (!fs.existsSync(filePath)) {
+        return { valid: false, sizeBytes: 0, error: 'Generated image file does not exist on disk' };
+      }
+      const stat = fs.statSync(filePath);
+      if (stat.size < 50) {
+        return { valid: false, sizeBytes: stat.size, error: 'Generated image file is empty or corrupted (size < 50 bytes)' };
+      }
+      const buf = Buffer.alloc(16);
+      const fd = fs.openSync(filePath, 'r');
+      fs.readSync(fd, buf, 0, 16, 0);
+      fs.closeSync(fd);
+
+      const isPng = buf[0] === 0x89 && buf[1] === 0x50 && buf[2] === 0x4e && buf[3] === 0x47;
+      const isJpg = buf[0] === 0xff && buf[1] === 0xd8 && buf[2] === 0xff;
+      const isWebp = buf.subarray(0, 4).toString('ascii') === 'RIFF' && buf.subarray(8, 12).toString('ascii') === 'WEBP';
+
+      if (!isPng && !isJpg && !isWebp) {
+        return { valid: false, sizeBytes: stat.size, error: 'Generated file is not a valid PNG, JPEG, or WebP image binary' };
+      }
+      return { valid: true, sizeBytes: stat.size };
+    } catch (e: any) {
+      return { valid: false, sizeBytes: 0, error: `Validation error: ${e.message}` };
+    }
+  }
+
+  /**
+   * Validates generated video on disk using ffprobe before completing job
+   */
+  public async validateVideoOutput(filePath: string): Promise<{
+    valid: boolean;
+    durationSeconds: number;
+    sizeBytes: number;
+    error?: string;
+  }> {
+    try {
+      if (!fs.existsSync(filePath)) {
+        return { valid: false, durationSeconds: 0, sizeBytes: 0, error: 'Generated video file does not exist on disk' };
+      }
+      const stat = fs.statSync(filePath);
+      if (stat.size < 1000) {
+        return { valid: false, durationSeconds: 0, sizeBytes: stat.size, error: 'Generated video file size is invalid (< 1KB)' };
+      }
+
+      // Check header box
+      const buf = Buffer.alloc(12);
+      const fd = fs.openSync(filePath, 'r');
+      fs.readSync(fd, buf, 0, 12, 0);
+      fs.closeSync(fd);
+      const ftyp = buf.subarray(4, 8).toString('ascii');
+      if (ftyp !== 'ftyp') {
+        return { valid: false, durationSeconds: 0, sizeBytes: stat.size, error: 'Generated file is not a valid MP4 container (missing ftyp box)' };
+      }
+
+      // Use ffprobe to inspect video stream & duration
+      const { stdout } = await execAsync(
+        `ffprobe -v error -show_entries format=duration,format_name -show_entries stream=codec_type,width,height -of json "${filePath}"`,
+        { timeout: 8000 }
+      );
+      const parsed = JSON.parse(stdout);
+      const hasVideoStream = parsed.streams?.some((s: any) => s.codec_type === 'video');
+      if (!hasVideoStream) {
+        return { valid: false, durationSeconds: 0, sizeBytes: stat.size, error: 'MP4 container does not contain a playable video stream' };
+      }
+
+      const duration = parseFloat(parsed.format?.duration || '10');
+      return {
+        valid: true,
+        durationSeconds: Math.round(duration) || 10,
+        sizeBytes: stat.size,
+      };
+    } catch (err: any) {
+      return { valid: false, durationSeconds: 0, sizeBytes: 0, error: `ffprobe validation failed: ${err.message}` };
+    }
   }
 
   /**
@@ -160,8 +281,8 @@ export class StorageService {
     try {
       if (!publicUrl || !publicUrl.startsWith('/assets/')) return false;
       const relPath = publicUrl.replace(/^\/assets\//, '');
-      const absPath = path.join(ASSETS_DIR, relPath);
-      // Path traversal check
+      const absPath = path.resolve(ASSETS_DIR, relPath);
+      // Path traversal check: must remain strictly inside ASSETS_DIR
       if (!absPath.startsWith(ASSETS_DIR)) return false;
 
       if (fs.existsSync(absPath)) {

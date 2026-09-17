@@ -12,11 +12,26 @@ import { planCreativeGeneration } from '../ai/brain';
 import { store } from '../db/store';
 import { providers } from '../services/providerRegistry';
 import { storage } from '../services/storageService';
+import { logJobEvent } from '../services/logger';
+
+const VALID_TRANSITIONS: Record<JobStatus, JobStatus[]> = {
+  created: ['queued', 'failed', 'cancelled'],
+  queued: ['analyzing', 'failed', 'cancelled'],
+  analyzing: ['planning', 'failed', 'cancelled'],
+  planning: ['generating', 'failed', 'cancelled'],
+  generating: ['finalizing', 'failed', 'cancelled'],
+  finalizing: ['completed', 'failed', 'cancelled'],
+  completed: [], // Terminal
+  failed: [], // Terminal
+  cancelled: [], // Terminal
+};
 
 class BackgroundJobQueue {
   private processingQueue: string[] = [];
   private activeJobs: Set<string> = new Set();
   private maxConcurrency = 3;
+  private idempotencyCache: Map<string, { jobId: string; timestamp: number }> = new Map();
+  private rapidSubmissionCache: Map<string, { jobId: string; timestamp: number }> = new Map();
 
   public createJob(params: {
     userId: string;
@@ -26,9 +41,32 @@ class BackgroundJobQueue {
     referenceImage?: ReferenceImage;
     aspectRatio: AspectRatio;
     videoMotion?: VideoMotionConfig;
+    idempotencyKey?: string;
   }): GenerationJob {
-    const jobId = `job_${Date.now()}_${crypto.randomBytes(4).toString('hex')}`;
     const now = Date.now();
+
+    // 1. Check client-supplied idempotency key
+    if (params.idempotencyKey) {
+      const cached = this.idempotencyCache.get(params.idempotencyKey);
+      if (cached && now - cached.timestamp < 300000) { // 5 min TTL
+        const existing = store.getJob(cached.jobId);
+        if (existing) {
+          return existing;
+        }
+      }
+    }
+
+    // 2. Check rapid duplicate protection (within 3 seconds for exact same user + mode + prompt)
+    const fingerprint = `${params.userId}:${params.mode}:${params.prompt.trim().toLowerCase()}`;
+    const recent = this.rapidSubmissionCache.get(fingerprint);
+    if (recent && now - recent.timestamp < 3000) {
+      const existing = store.getJob(recent.jobId);
+      if (existing && !['failed', 'cancelled'].includes(existing.status)) {
+        return existing;
+      }
+    }
+
+    const jobId = `job_${now}_${crypto.randomBytes(4).toString('hex')}`;
 
     // Process reference image through storage service if present to avoid storing giant base64 payloads
     let processedReferenceImage: ReferenceImage | undefined = undefined;
@@ -77,18 +115,56 @@ class BackgroundJobQueue {
 
     store.setJob(job);
 
-    // Transition to queued
-    job.status = 'queued';
-    job.logs.push({
-      timestamp: Date.now(),
-      step: 'queued',
-      message: 'Job enqueued in background dispatcher.',
+    // Save idempotency records
+    if (params.idempotencyKey) {
+      this.idempotencyCache.set(params.idempotencyKey, { jobId, timestamp: now });
+    }
+    this.rapidSubmissionCache.set(fingerprint, { jobId, timestamp: now });
+
+    logJobEvent({
+      event: 'job_created',
+      jobId,
+      userId: params.userId,
+      mode: params.mode,
+      details: { prompt: params.prompt.substring(0, 100), aspectRatio: params.aspectRatio },
     });
-    store.setJob(job);
+
+    // Transition to queued
+    this.safeTransition(job, 'queued', 10, 'Job enqueued in background dispatcher.');
 
     this.processingQueue.push(jobId);
     this.triggerWorker();
     return job;
+  }
+
+  private safeTransition(job: GenerationJob, nextStatus: JobStatus, progress: number, message: string): boolean {
+    const current = store.getJob(job.id);
+    if (!current) return false;
+
+    // Terminal state locks
+    if (['completed', 'failed', 'cancelled'].includes(current.status)) {
+      return false;
+    }
+
+    if (current.status !== nextStatus) {
+      const allowed = VALID_TRANSITIONS[current.status];
+      if (!allowed || !allowed.includes(nextStatus)) {
+        console.warn(`[STATE_MACHINE_REJECTED] Invalid transition from ${current.status} to ${nextStatus} for job ${job.id}`);
+        return false;
+      }
+    }
+
+    job.status = nextStatus;
+    job.progress = progress;
+    job.currentStepMessage = message;
+    job.updatedAt = Date.now();
+    job.logs.push({
+      timestamp: Date.now(),
+      step: nextStatus,
+      message,
+    });
+    store.setJob(job);
+    return true;
   }
 
   public cancelJob(jobId: string, requestedByUserId?: string): boolean {
@@ -117,6 +193,14 @@ class BackgroundJobQueue {
     store.setJob(job);
     this.activeJobs.delete(jobId);
     this.processingQueue = this.processingQueue.filter((id) => id !== jobId);
+
+    logJobEvent({
+      event: 'job_cancelled',
+      jobId,
+      userId: job.userId,
+      mode: job.mode,
+    });
+
     return true;
   }
 
@@ -125,6 +209,11 @@ class BackgroundJobQueue {
     if (!oldJob) return null;
 
     if (requestedByUserId && oldJob.userId !== requestedByUserId && requestedByUserId !== 'user_admin_root') {
+      return null;
+    }
+
+    // Only failed or cancelled jobs can be retried
+    if (!['failed', 'cancelled'].includes(oldJob.status)) {
       return null;
     }
 
@@ -157,20 +246,7 @@ class BackgroundJobQueue {
     if (!job || job.status === 'failed' || job.status === 'cancelled') return;
 
     const updateStep = (status: JobStatus, progress: number, message: string) => {
-      // Don't overwrite if cancelled in the background
-      const current = store.getJob(jobId);
-      if (current?.status === 'cancelled') return;
-
-      job.status = status;
-      job.progress = progress;
-      job.currentStepMessage = message;
-      job.updatedAt = Date.now();
-      job.logs.push({
-        timestamp: Date.now(),
-        step: status,
-        message,
-      });
-      store.setJob(job);
+      this.safeTransition(job, status, progress, message);
     };
 
     const isCancelled = () => {
@@ -184,10 +260,17 @@ class BackgroundJobQueue {
       if (isCancelled()) return;
 
       // 1. ANALYZING: AI Brain interprets prompt semantics and examines reference imagery
+      logJobEvent({
+        event: 'ai_brain_started',
+        jobId,
+        userId: job.userId,
+        mode: job.mode,
+      });
       updateStep('analyzing', 15, 'AI Brain analyzing prompt intent, semantics, and reference image features...');
 
       // 2. PLANNING: Synthesize visual roadmap
       updateStep('planning', 30, 'AI Brain synthesizing visual plan, negative constraints, and motion sequence...');
+      const brainStartTime = Date.now();
       const plan = await planCreativeGeneration({
         mode: job.mode,
         rawPrompt: job.prompt,
@@ -195,8 +278,17 @@ class BackgroundJobQueue {
         aspectRatio: job.aspectRatio,
         videoMotion: job.videoMotion,
       });
+      const brainDuration = Date.now() - brainStartTime;
 
       if (isCancelled()) return;
+
+      logJobEvent({
+        event: 'ai_brain_completed',
+        jobId,
+        userId: job.userId,
+        mode: job.mode,
+        durationMs: brainDuration,
+      });
 
       job.aiPlan = plan;
       job.enhancedPrompt = plan.enhancedPrompt;
@@ -224,11 +316,38 @@ class BackgroundJobQueue {
         job.provider = primaryProvider.model;
         store.setJob(job);
 
+        logJobEvent({
+          event: 'provider_selected',
+          jobId,
+          userId: job.userId,
+          mode: 'image',
+          provider: primaryProvider.name,
+          model: primaryProvider.model,
+        });
+
+        const providerReqStart = Date.now();
+        logJobEvent({
+          event: 'provider_request_started',
+          jobId,
+          userId: job.userId,
+          mode: 'image',
+          model: primaryProvider.model,
+        });
+
         try {
           const res = await primaryProvider.generate({
             plan,
             aspectRatio: job.aspectRatio,
             referenceImage: job.referenceImage,
+          });
+
+          logJobEvent({
+            event: 'provider_request_completed',
+            jobId,
+            userId: job.userId,
+            mode: 'image',
+            model: primaryProvider.model,
+            durationMs: Date.now() - providerReqStart,
           });
 
           assetResult = {
@@ -240,6 +359,18 @@ class BackgroundJobQueue {
             metadata: res.metadata,
           };
         } catch (primaryErr: any) {
+          const errCategory = categorizeError(primaryErr);
+          logJobEvent({
+            event: 'provider_request_failed',
+            jobId,
+            userId: job.userId,
+            mode: 'image',
+            model: primaryProvider.model,
+            durationMs: Date.now() - providerReqStart,
+            errorCategory: errCategory,
+            error: formatUserFacingError(primaryErr),
+          });
+
           console.warn(`Primary image provider (${primaryProvider.model}) failed:`, primaryErr);
 
           // Check if secondary real AI model exists
@@ -249,10 +380,37 @@ class BackgroundJobQueue {
             job.provider = secondary.model;
             store.setJob(job);
 
+            logJobEvent({
+              event: 'provider_selected',
+              jobId,
+              userId: job.userId,
+              mode: 'image',
+              model: secondary.model,
+              details: { fallback: true },
+            });
+
+            const secStart = Date.now();
+            logJobEvent({
+              event: 'provider_request_started',
+              jobId,
+              userId: job.userId,
+              mode: 'image',
+              model: secondary.model,
+            });
+
             const res = await secondary.generate({
               plan,
               aspectRatio: job.aspectRatio,
               referenceImage: job.referenceImage,
+            });
+
+            logJobEvent({
+              event: 'provider_request_completed',
+              jobId,
+              userId: job.userId,
+              mode: 'image',
+              model: secondary.model,
+              durationMs: Date.now() - secStart,
             });
 
             assetResult = {
@@ -274,6 +432,24 @@ class BackgroundJobQueue {
         job.provider = primaryVideoProvider.model;
         store.setJob(job);
 
+        logJobEvent({
+          event: 'provider_selected',
+          jobId,
+          userId: job.userId,
+          mode: 'video',
+          provider: primaryVideoProvider.name,
+          model: primaryVideoProvider.model,
+        });
+
+        const vidReqStart = Date.now();
+        logJobEvent({
+          event: 'provider_request_started',
+          jobId,
+          userId: job.userId,
+          mode: 'video',
+          model: primaryVideoProvider.model,
+        });
+
         try {
           const res = await primaryVideoProvider.generate({
             jobId: job.id,
@@ -288,6 +464,15 @@ class BackgroundJobQueue {
           });
 
           if (isCancelled()) return;
+
+          logJobEvent({
+            event: 'provider_request_completed',
+            jobId,
+            userId: job.userId,
+            mode: 'video',
+            model: primaryVideoProvider.model,
+            durationMs: Date.now() - vidReqStart,
+          });
 
           assetResult = {
             mediaUrl: res.videoUrl,
@@ -304,6 +489,18 @@ class BackgroundJobQueue {
             store.setJob(job);
           }
         } catch (videoErr: any) {
+          const errCategory = categorizeError(videoErr);
+          logJobEvent({
+            event: 'provider_request_failed',
+            jobId,
+            userId: job.userId,
+            mode: 'video',
+            model: primaryVideoProvider.model,
+            durationMs: Date.now() - vidReqStart,
+            errorCategory: errCategory,
+            error: formatUserFacingError(videoErr),
+          });
+
           console.warn(`Primary video provider (${primaryVideoProvider.model}) failed:`, videoErr);
 
           const secondary = providers.getSecondaryVideoProvider(primaryVideoProvider.model);
@@ -311,6 +508,24 @@ class BackgroundJobQueue {
             updateStep('generating', 45, `Retrying with ${secondary.model}...`);
             job.provider = secondary.model;
             store.setJob(job);
+
+            logJobEvent({
+              event: 'provider_selected',
+              jobId,
+              userId: job.userId,
+              mode: 'video',
+              model: secondary.model,
+              details: { fallback: true },
+            });
+
+            const secVidStart = Date.now();
+            logJobEvent({
+              event: 'provider_request_started',
+              jobId,
+              userId: job.userId,
+              mode: 'video',
+              model: secondary.model,
+            });
 
             const res = await secondary.generate({
               jobId: job.id,
@@ -325,6 +540,15 @@ class BackgroundJobQueue {
             });
 
             if (isCancelled()) return;
+
+            logJobEvent({
+              event: 'provider_request_completed',
+              jobId,
+              userId: job.userId,
+              mode: 'video',
+              model: secondary.model,
+              durationMs: Date.now() - secVidStart,
+            });
 
             assetResult = {
               mediaUrl: res.videoUrl,
@@ -400,13 +624,65 @@ class BackgroundJobQueue {
           job.mode === 'video' ? '10-second cinematic video' : 'master creative image'
         } in ${Math.round(renderTime / 1000)}s!`
       );
+
+      logJobEvent({
+        event: 'job_completed',
+        jobId,
+        userId: job.userId,
+        mode: job.mode,
+        durationMs: renderTime,
+        details: { assetId, fileSizeBytes: assetResult.fileSizeBytes },
+      });
     } catch (err: any) {
       if (isCancelled()) return;
       console.error(`Error processing job ${jobId}:`, err);
-      job.error = err.message || 'Generation failed';
-      updateStep('failed', 100, `Generation encountered error: ${err.message || 'Unknown failure'}`);
+      const cleanError = formatUserFacingError(err);
+      const category = categorizeError(err);
+      job.error = cleanError;
+      this.safeTransition(job, 'failed', 100, `Generation encountered error: ${cleanError}`);
+
+      logJobEvent({
+        event: 'job_failed',
+        jobId,
+        userId: job.userId,
+        mode: job.mode,
+        errorCategory: category,
+        error: cleanError,
+        durationMs: Date.now() - startTime,
+      });
     }
   }
+}
+
+function categorizeError(err: any): string {
+  const msg = (err?.message || String(err)).toLowerCase();
+  if (msg.includes('429') || msg.includes('quota') || msg.includes('resource_exhausted')) return 'quota_exceeded';
+  if (msg.includes('timeout') || msg.includes('timed out')) return 'timeout';
+  if (msg.includes('network') || msg.includes('enotfound') || msg.includes('econnrefused')) return 'network';
+  if (msg.includes('filter') || msg.includes('blocked') || msg.includes('safety')) return 'content_filtered';
+  if (msg.includes('validation') || msg.includes('corrupted') || msg.includes('signature')) return 'validation_failed';
+  if (msg.includes('403') || msg.includes('unauthorized') || msg.includes('permission')) return 'unauthorized';
+  return 'internal_error';
+}
+
+function formatUserFacingError(err: any): string {
+  const raw = err?.message || String(err) || 'Generation failed';
+  try {
+    const jsonMatch = raw.match(/\{[\s\S]*\}/);
+    if (jsonMatch) {
+      const parsed = JSON.parse(jsonMatch[0]);
+      if (parsed.error?.message) {
+        if (parsed.error.code === 429 || parsed.error.status === 'RESOURCE_EXHAUSTED') {
+          return 'Gemini AI Quota exceeded: The active Gemini API key does not have image/video generation quota enabled or has reached its rate limit. Please check your API key plan in Settings or retry shortly.';
+        }
+        return parsed.error.message.replace(/AIza[0-9A-Za-z-_]{35}/g, '[REDACTED_KEY]');
+      }
+    }
+  } catch {}
+  if (raw.includes('429') || raw.includes('RESOURCE_EXHAUSTED')) {
+    return 'Gemini AI Quota exceeded: The active Gemini API key does not have image/video generation quota enabled or has reached its rate limit.';
+  }
+  return raw.replace(/AIza[0-9A-Za-z-_]{35}/g, '[REDACTED_KEY]');
 }
 
 export const queue = new BackgroundJobQueue();

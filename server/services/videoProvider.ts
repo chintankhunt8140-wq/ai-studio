@@ -192,6 +192,13 @@ export class BaseVeoVideoProvider implements IVideoProvider {
     // Save video file to disk
     const saved = storage.saveGeneratedVideo(buffer, `veo_${jobId}`);
 
+    // Strictly validate MP4 container, video stream, and duration
+    const validation = await storage.validateVideoOutput(saved.filePath);
+    if (!validation.valid) {
+      storage.deleteAssetFile(saved.url);
+      throw new Error(`Generated video validation failed: ${validation.error}`);
+    }
+
     onProgress?.(96, 'Extracting video thumbnail frame...');
 
     // Extract legitimate video thumbnail using FFmpeg

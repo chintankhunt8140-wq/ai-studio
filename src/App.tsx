@@ -190,6 +190,14 @@ export default function App() {
       return;
     }
 
+    if (activeJob && !['completed', 'failed', 'cancelled'].includes(activeJob.status)) {
+      showToast('A generation job is already in progress. Please wait for it to complete.', 'info');
+      setCurrentTab('studio');
+      return;
+    }
+
+    const idempotencyKey = `req_${Date.now()}_${Math.random().toString(36).substring(2, 9)}`;
+
     try {
       const job = await createGenerationJob({
         userId: currentUser?.id || 'user_creator_1',
@@ -199,6 +207,7 @@ export default function App() {
         referenceImage: referenceImage || undefined,
         aspectRatio,
         videoMotion: mode === 'video' ? videoMotion : undefined,
+        idempotencyKey,
       });
 
       setActiveJob(job);

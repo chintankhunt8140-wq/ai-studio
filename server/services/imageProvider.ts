@@ -133,6 +133,13 @@ export class BaseGeminiImageProvider implements IImageProvider {
         // Save image to disk using storage service
         const saved = storage.saveGeneratedImage(part.inlineData.data, mime);
 
+        // Strictly validate real binary output on disk
+        const validation = storage.validateImageOutput(saved.filePath);
+        if (!validation.valid) {
+          storage.deleteAssetFile(saved.url);
+          throw new Error(`Generated image output validation failed: ${validation.error}`);
+        }
+
         return {
           imageUrl: saved.url,
           provider: this.model,
